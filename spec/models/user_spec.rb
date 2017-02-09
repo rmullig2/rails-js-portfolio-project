@@ -11,13 +11,8 @@ RSpec.describe User, type: :model do
     expect(@user.email).to match 'test_user@yahoo.com'
   end
 
-  it "#role is 'user' by default" do
-    expect(@user.role).to eq "user"
-  end
-
-  it "#role can be set to :admin" do
-    @user.role = :admin
-    expect(@user.role).to eq "admin"
+  it "#radmin is false by default" do
+    expect(@user.admin?).to eq false
   end
 
 end

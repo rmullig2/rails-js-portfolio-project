@@ -56,7 +56,7 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
-  gem'pry'
+  gem 'pry'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
