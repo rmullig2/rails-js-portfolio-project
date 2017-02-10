@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209212637) do
+ActiveRecord::Schema.define(version: 20170210023147) do
+
+  create_table "books", force: :cascade do |t|
+    t.string  "title"
+    t.string  "author"
+    t.integer "year"
+    t.boolean "fiction"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
