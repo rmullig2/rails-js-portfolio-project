@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :books, through: :reviews
   has_one :user_info
+  before_create :skip_confirmation!
   
   def self.find_for_oauth(auth, signed_in_resource = nil)
 

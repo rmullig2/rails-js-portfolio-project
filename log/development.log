@@ -1520,3 +1520,383 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:30:02 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-11 15:30:08 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-11 15:30:29 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"icPM5iP1Gf1vMhoqPrOZUM+wuaOSOavZXYp0pNR0gEjYtGvz1StNE2oPhIeie8f0vOC5UZfHnYbVo8PblFhV7g==", "user"=>{"email"=>"jsmith@google.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jsmith@google.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "f23478a38f78363e8761037b7315ab441c4524eb73f8c65f314e2444bfc11c63"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "jsmith@google.com"], ["encrypted_password", "$2a$11$KplzE0LfEoXXTFCNA7BwTeTrObUDShuxlOlk1RD/xhZroVtZhoEc2"], ["confirmation_token", "ERQRd3zzEtEzZjW6syfB"], ["confirmation_sent_at", 2017-02-11 20:30:30 UTC], ["created_at", 2017-02-11 20:30:29 UTC], ["updated_at", 2017-02-11 20:30:29 UTC]]
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb (1.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 305.5ms
+Sent mail to jsmith@google.com (431.0ms)
+Date: Sat, 11 Feb 2017 15:30:31 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: jsmith@google.com
+Message-ID: <589f746783a97_2bef3f955147f574709f9@upstairs.localdomain.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome jsmith@google.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://somedomain.com/users/confirmation?confirmation_token=ERQRd3zzEtEzZjW6syfB">Confirm my account</a></p>
+
+  [1m[35m (115.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2267ms (ActiveRecord: 117.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:30:32 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:30:49 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:30:57 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0fm343tr1JsC1JRw8DKbZi9GSyR/HssTLRgbK3xwIjyI+MUFKeECxCQ2BTEUCAvkvMIOan/ymDbmrOkdA6Qfmw==", "user"=>{"email"=>"jsmith@google.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jsmith@google.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 401 Unauthorized in 178ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:30:57 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:31:16 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BgDEM/qFQXcNmaMAhHkoSJW6G4x/cqhmjkTYXYi9qu+QmTEfFzdspB0VZwSSJfl6uE4wVMqqGTwMAoDQx4tGeQ==", "user"=>{"email"=>"rmullig2@optonline.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "rmullig2@optonline.net"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BgDEM/qFQXcNmaMAhHkoSJW6G4x/cqhmjkTYXYi9qu+QmTEfFzdspB0VZwSSJfl6uE4wVMqqGTwMAoDQx4tGeQ==", "user"=>{"email"=>"rmullig2@optonline.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 184ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:31:29 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-11 15:31:31 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-11 15:31:39 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WKk4w0BC6StfG4sWUARG/B6ULmh3RyxsoGU0VJRos5AJ3p/Wtpy9xVomFbvMzBhYbcQumnK5GjMoTIMr1ERmNg==", "user"=>{"email"=>"rmullig2@optonline.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rmullig2@optonline.net"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "c49d24b10901c0196ec3df4e683c6d672cfff8b2b4eaa5e34615aee35419063e"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "rmullig2@optonline.net"], ["encrypted_password", "$2a$11$mqRwYxq5KWd7YeK5KRhcNuf.5rdYvCyalgSR8j7.bhZgGpVNVUyji"], ["confirmation_token", "5vmTD6nez9tA9HE7-Xsr"], ["confirmation_sent_at", 2017-02-11 20:31:39 UTC], ["created_at", 2017-02-11 20:31:39 UTC], ["updated_at", 2017-02-11 20:31:39 UTC]]
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb (1.0ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 11.0ms
+Sent mail to rmullig2@optonline.net (327.6ms)
+Date: Sat, 11 Feb 2017 15:31:39 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: rmullig2@optonline.net
+Message-ID: <589f74ab46cdd_2bef3f955147f4e871049@upstairs.localdomain.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome rmullig2@optonline.net!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://somedomain.com/users/confirmation?confirmation_token=5vmTD6nez9tA9HE7-Xsr">Confirm my account</a></p>
+
+  [1m[35m (114.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 634ms (ActiveRecord: 116.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:31:39 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-11 15:39:41 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 51ms (Views: 31.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-11 15:39:59 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iNF8GgwuRgafYsz9Jf3cJr0Jv9MpRVwOrrYSs121/DfZptsP+vAS6JpfUlC5NYKCzlm/ISy7alEmn6XMHZkpkQ==", "user"=>{"email"=>"cfarley@snl.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "cfarley@snl.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "3cbb59f193aca5af5fb5a1774ff3f621d8829928ec5216cae5668af780ec6b67"], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "cfarley@snl.com"], ["encrypted_password", "$2a$11$X0hb.lmCzdLstilKgR14gu28WCbEgnVpjAN36atsLOPdWF5q6YRKa"], ["confirmation_token", "KHom8mkZPmx9LFxcbAzW"], ["confirmed_at", 2017-02-11 20:40:00 UTC], ["confirmation_sent_at", 2017-02-11 20:40:00 UTC], ["created_at", 2017-02-11 20:40:00 UTC], ["updated_at", 2017-02-11 20:40:00 UTC]]
+  [1m[35m (82.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 269ms (ActiveRecord: 85.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:40:00 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-11 15:40:03 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ftXulRyT78mEEwCygW9VUemxSfpUaOP39OovWvxZI4roTBu58SHCGpSfxLaXM4RjxEViIuGwUq12rHfXs2/PHA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:40:03 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-11 15:40:05 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-11 15:40:12 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7GKqAF98qvEwZHZfzcgQZRyu8Y5Nu10mJVF5lfLdLReYHhQ3nNeNASMYqjRtSrXC/qyeGS8eyUa2oY88avr3fA==", "user"=>{"email"=>"jsmith@google.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jsmith@google.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 187ms (Views: 26.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:40:18 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:40:28 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zXsDKjw0vN//jtgqXwRw0iTXYtepHfVczqcj7VWNfUw10OrghKEvZk6dD/pPX8oarg2GQwv0x3t0I/z/Q5tMxw==", "user"=>{"email"=>"jsmith@google.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jsmith@google.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 401 Unauthorized in 174ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:40:28 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (101.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (104.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170209210757)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209210757"]]
+  [1m[35m (108.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToUsers (20170209212637)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "users" ADD "admin?" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209212637"]]
+  [1m[35m (98.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170210023147)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year" integer, "fiction" boolean, "user_id" integer)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210023147"]]
+  [1m[35m (106.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20170210030106)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "summary" varchar, "body" text, "rating" integer, "user_id" integer, "book_id" integer)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210030106"]]
+  [1m[35m (98.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserInfo (20170210160707)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "user_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "state" varchar, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210160707"]]
+  [1m[35m (98.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToUsers (20170211193756)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211193756"]]
+  [1m[35m (98.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIdentities (20170211195112)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211195112"]]
+  [1m[35m (106.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-11 20:40:58 UTC], ["updated_at", 2017-02-11 20:40:58 UTC]]
+  [1m[35m (103.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:41:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:41:10 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 147ms (Views: 144.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 634ms (Views: 610.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-11 15:41:13 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/registrations/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 92ms (Views: 58.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-11 15:41:21 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"juu1mwp11FbzKYpfVQS6IuOfqOPqmyxaAP0DMQ34J6b6lwusyd7zpuBVVjT1hh+FAZ3HdIg+uDqTDfWYld/9zQ==", "user"=>{"email"=>"jsmith@google.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jsmith@google.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "b38e2f25112db15619b2e4a28a78d1508049df2768097945378ef0efba7be823"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jsmith@google.com"], ["encrypted_password", "$2a$11$REQCgJ5iMzk3aIGv35Jxi.azQZNVTWeasenEKwt9g6/7PicJtlAS."], ["confirmation_token", "afLJSuuU6ofWDdq7xhfc"], ["confirmed_at", 2017-02-11 20:41:22 UTC], ["confirmation_sent_at", 2017-02-11 20:41:22 UTC], ["created_at", 2017-02-11 20:41:21 UTC], ["updated_at", 2017-02-11 20:41:21 UTC]]
+  [1m[35m (159.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 894ms (ActiveRecord: 162.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:41:22 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-11 15:41:25 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pBTVLHNuyvHdhWVIVqQtSDoQRsDY7aeyngcq6L6l1y3G0ruQwbnldYtzMjdjInjcIn8k80zV6bwo/+TejKUhUA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:41:25 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
