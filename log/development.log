@@ -1900,3 +1900,525 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:45:06 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_linked_in_omniauth_authorize_path' for #<#<Class:0x007f8096fbd1f0>:0x007f8060237908>):
+    20:       <%= link_to("Sign Up", new_user_registration_path) %><br>
+    21:       <%= link_to("Sign In", new_user_session_path) %><br>
+    22:       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+    23:       <%= link_to "Sign in with LinkedIn", user_linked_in_omniauth_authorize_path %>
+    24:     <% end %>
+    25: </html>
+  
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___3892377266504224450_70094747661020'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.6ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:45:26 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_linkedin_omniauth_authorize_path' for #<#<Class:0x007f8096fbd1f0>:0x007f8069778508>):
+    20:       <%= link_to("Sign Up", new_user_registration_path) %><br>
+    21:       <%= link_to("Sign In", new_user_session_path) %><br>
+    22:       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+    23:       <%= link_to "Sign in with LinkedIn", user_linkedin_omniauth_authorize_path %>
+    24:     <% end %>
+    25: </html>
+  
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___3892377266504224450_70094750903780'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.5ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.3ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.2ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:52:42 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_linked_in_omniauth_authorize_path' for #<#<Class:0x007f8096fbd1f0>:0x007f80699bf460>):
+    20:       <%= link_to("Sign Up", new_user_registration_path) %><br>
+    21:       <%= link_to("Sign In", new_user_session_path) %><br>
+    22:       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+    23:       <%= link_to "Sign in with LinkedIn", user_linked_in_omniauth_authorize_path %>
+    24:     <% end %>
+    25: </html>
+  
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___3892377266504224450_70094705211200'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:56:28 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_linkedin_omniauth_authorize_path' for #<#<Class:0x007f8096fbd1f0>:0x007f80601320f8>):
+    20:       <%= link_to("Sign Up", new_user_registration_path) %><br>
+    21:       <%= link_to("Sign In", new_user_session_path) %><br>
+    22:       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+    23:       <%= link_to "Sign in with LinkedIn", user_linkedin_omniauth_authorize_path %>
+    24:     <% end %>
+    25: </html>
+  
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___3892377266504224450_70094752410920'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:58:02 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_linked_in_omniauth_authorize_path' for #<#<Class:0x007f8069491128>:0x007f8069482ab0>):
+    20:       <%= link_to("Sign Up", new_user_registration_path) %><br>
+    21:       <%= link_to("Sign In", new_user_session_path) %><br>
+    22:       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+    23:       <%= link_to "Sign in with LinkedIn", user_linked_in_omniauth_authorize_path %>
+    24:     <% end %>
+    25: </html>
+  
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___3892377266504224450_70094749359900'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.0ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:58:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 477ms (Views: 454.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:59:00 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linked_in" for 127.0.0.1 at 2017-02-11 15:59:01 -0500
+Processing by OmniauthCallbacksController#passthru as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/html`. (called from _normalize_render at /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/abstract_controller/rendering.rb:128)
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 15ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:59:11 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linked_in" for 127.0.0.1 at 2017-02-11 15:59:15 -0500
+Processing by OmniauthCallbacksController#passthru as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/html`. (called from _normalize_render at /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/abstract_controller/rendering.rb:128)
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:01:02 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 66ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linked_in" for 127.0.0.1 at 2017-02-11 16:01:04 -0500
+Processing by OmniauthCallbacksController#passthru as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/html`. (called from _normalize_render at /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/abstract_controller/rendering.rb:128)
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:04:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:04:20 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 120ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 576ms (Views: 553.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linked_in" for 127.0.0.1 at 2017-02-11 16:04:22 -0500
+Processing by OmniauthCallbacksController#passthru as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/html`. (called from _normalize_render at /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/abstract_controller/rendering.rb:128)
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:05:48 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 16:05:50 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 16:05:50 -0500
+Started GET "/users/auth/facebook/callback?code=AQAtYnJJVtIj6w104rzhaNQ0-CD6o-TFuQ-lctg3DNb9ymWN6a95e2FbyJdloy-f6O2477KNoLyFcZ-bzWNsJ4wJp3v2V2VQrlEC7jsUZfDpdy0_eX0p4OKRvl5vneRLgTd-Now0gC8nPf-DY6cwJK5ReiCpKszhGBi3PRcoqjV7WbESXqCHq4AoowbE9lKHbPoSSOiouyUm9ePZAXzBXsAr1_gU6aXVMtaQtbgtBspiIHx8HkfPU57DODuFgMG3VMMteM7UoE4OXhfliO8zGlVlQjlpEhc4j26JfsLPg3Y-npmfa269w35DTtkhc4qAbAiISUtscZNiErsEsRJn67eU&state=27484768941b0f2bde7dad220ed09cf10327741c749d745e" for 127.0.0.1 at 2017-02-11 16:05:50 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAtYnJJVtIj6w104rzhaNQ0-CD6o-TFuQ-lctg3DNb9ymWN6a95e2FbyJdloy-f6O2477KNoLyFcZ-bzWNsJ4wJp3v2V2VQrlEC7jsUZfDpdy0_eX0p4OKRvl5vneRLgTd-Now0gC8nPf-DY6cwJK5ReiCpKszhGBi3PRcoqjV7WbESXqCHq4AoowbE9lKHbPoSSOiouyUm9ePZAXzBXsAr1_gU6aXVMtaQtbgtBspiIHx8HkfPU57DODuFgMG3VMMteM7UoE4OXhfliO8zGlVlQjlpEhc4j26JfsLPg3Y-npmfa269w35DTtkhc4qAbAiISUtscZNiErsEsRJn67eU", "state"=>"27484768941b0f2bde7dad220ed09cf10327741c749d745e"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.5ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "identities" ("provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "148328415677144"], ["created_at", 2017-02-11 21:05:51 UTC], ["updated_at", 2017-02-11 21:05:51 UTC]]
+  [1m[35m (200.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "change@me-148328415677144-facebook.com"], ["LIMIT", 1]]
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "change@me-148328415677144-facebook.com"], ["encrypted_password", "$2a$11$WUWripa/sdqw9we62E.r9ulubT7YGJwNnGdaeT.zCERAUEblOnX0S"], ["confirmed_at", 2017-02-11 21:05:51 UTC], ["created_at", 2017-02-11 21:05:51 UTC], ["updated_at", 2017-02-11 21:05:51 UTC], ["name", "Raymond Mulligan"]]
+  [1m[35m (110.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND ("identities"."id" != ?) AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["id", 1], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (9.3ms)[0m  [1m[33mUPDATE "identities" SET "user_id" = ?, "updated_at" = ? WHERE "identities"."id" = ?[0m  [["user_id", 2], ["updated_at", 2017-02-11 21:05:51 UTC], ["id", 1]]
+  [1m[35m (123.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2/finish_signup
+Completed 302 Found in 733ms (ActiveRecord: 459.4ms)
+
+
+Started GET "/users/2/finish_signup" for 127.0.0.1 at 2017-02-11 16:05:51 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 48ms (Views: 44.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-11 16:05:55 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XZKNy8cgz6/UXspA3k5qZFKM7eIcfn2fKpJ8CXL3DDJd8Uxk+eKQxlLl1Z5EjYGxKLXXAt9vTf3WSQtGDFfu2g=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:05:56 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linked_in" for 127.0.0.1 at 2017-02-11 16:05:57 -0500
+Processing by OmniauthCallbacksController#passthru as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/html`. (called from _normalize_render at /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/abstract_controller/rendering.rb:128)
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 3ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:05:59 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linked_in" for 127.0.0.1 at 2017-02-11 16:07:33 -0500
+Processing by OmniauthCallbacksController#passthru as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/html`. (called from _normalize_render at /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/abstract_controller/rendering.rb:128)
+  Rendering text template
+  Rendered text template (0.1ms)
+Completed 404 Not Found in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:08:21 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linked_in" for 127.0.0.1 at 2017-02-11 16:08:23 -0500
+Processing by OmniauthCallbacksController#passthru as HTML
+DEPRECATION WARNING: `render :text` is deprecated because it does not actually render a `text/plain` response. Switch to `render plain: 'plain text'` to render as `text/plain`, `render html: '<strong>HTML</strong>'` to render as `text/html`, or `render body: 'raw'` to match the deprecated behavior and render with the default Content-Type, which is `text/html`. (called from _normalize_render at /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/abstract_controller/rendering.rb:128)
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 6ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:08:28 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:08:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 617ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_linked_in_omniauth_authorize_path' for #<#<Class:0x007f6b73d71050>:0x007f6b73d65b88>):
+    20:       <%= link_to("Sign Up", new_user_registration_path) %><br>
+    21:       <%= link_to("Sign In", new_user_session_path) %><br>
+    22:       <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %><br>
+    23:       <%= link_to "Sign in with LinkedIn", user_linked_in_omniauth_authorize_path %>
+    24:     <% end %>
+    25: </html>
+  
+app/views/layouts/application.html.erb:23:in `_app_views_layouts_application_html_erb___1983669429328382187_70049740677940'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:09:30 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linkedin" for 127.0.0.1 at 2017-02-11 16:09:32 -0500
+Started GET "/users/auth/linkedin" for 127.0.0.1 at 2017-02-11 16:09:33 -0500
+Started GET "/users/auth/linkedin/callback?oauth_token=77--90d8e84f-5dea-4195-8380-33adb045dcd0&oauth_verifier=89741" for 127.0.0.1 at 2017-02-11 16:09:38 -0500
+  
+AbstractController::ActionNotFound (The action 'linkedin' could not be found for OmniauthCallbacksController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.4.2) lib/omniauth/strategy.rb:403:in `call_app!'
+omniauth (1.4.2) lib/omniauth/strategy.rb:357:in `callback_phase'
+omniauth-oauth (1.1.0) lib/omniauth/strategies/oauth.rb:57:in `callback_phase'
+omniauth (1.4.2) lib/omniauth/strategy.rb:227:in `callback_call'
+omniauth (1.4.2) lib/omniauth/strategy.rb:184:in `call!'
+omniauth (1.4.2) lib/omniauth/strategy.rb:164:in `call'
+omniauth (1.4.2) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.4.2) lib/omniauth/strategy.rb:164:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+Started GET "/users/auth/linkedin/callback?oauth_token=77--90d8e84f-5dea-4195-8380-33adb045dcd0&oauth_verifier=89741" for 127.0.0.1 at 2017-02-11 16:10:15 -0500
+Processing by OmniauthCallbacksController#linkedin as HTML
+  Parameters: {"oauth_token"=>"77--90d8e84f-5dea-4195-8380-33adb045dcd0", "oauth_verifier"=>"89741"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from linkedin at (eval):3)
+  [1m[36mIdentity Load (0.3ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "IR6xzEHIIb"], ["provider", "linkedin"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "IR6xzEHIIb"], ["provider", "linkedin"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "identities" ("provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["provider", "linkedin"], ["uid", "IR6xzEHIIb"], ["created_at", 2017-02-11 21:10:17 UTC], ["updated_at", 2017-02-11 21:10:17 UTC]]
+  [1m[35m (85.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "change@me-ir6xzehiib-linkedin.com"], ["LIMIT", 1]]
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "change@me-ir6xzehiib-linkedin.com"], ["encrypted_password", "$2a$11$/jGuz6j5HCmcITk0pQikAOgE0Ac3ttBN9tIM.jAjrGUbs0n8Jdv76"], ["confirmed_at", 2017-02-11 21:10:17 UTC], ["created_at", 2017-02-11 21:10:17 UTC], ["updated_at", 2017-02-11 21:10:17 UTC]]
+  [1m[35m (110.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND ("identities"."id" != ?) AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "IR6xzEHIIb"], ["id", 2], ["provider", "linkedin"], ["LIMIT", 1]]
+  [1m[35mSQL (7.8ms)[0m  [1m[33mUPDATE "identities" SET "user_id" = ?, "updated_at" = ? WHERE "identities"."id" = ?[0m  [["user_id", 3], ["updated_at", 2017-02-11 21:10:17 UTC], ["id", 2]]
+  [1m[35m (102.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3/finish_signup
+Completed 302 Found in 544ms (ActiveRecord: 316.8ms)
+
+
+Started GET "/users/3/finish_signup" for 127.0.0.1 at 2017-02-11 16:10:17 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-11 16:10:22 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WN/HyyCjLco2Eu/x6yF/ITg7vt+0jc0jMotKYh2k9BnA1EpPNYrV4PCymAb9MCtP2vHN9s1on90P9W17pXvRvw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:10:22 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/linkedin" for 127.0.0.1 at 2017-02-11 16:10:25 -0500
+Started GET "/users/auth/linkedin" for 127.0.0.1 at 2017-02-11 16:10:25 -0500
+Started GET "/users/auth/linkedin/callback?oauth_token=77--4eb9534b-78c8-4ae1-9f64-1418bb580c20&oauth_verifier=54849" for 127.0.0.1 at 2017-02-11 16:10:25 -0500
+Processing by OmniauthCallbacksController#linkedin as HTML
+  Parameters: {"oauth_token"=>"77--4eb9534b-78c8-4ae1-9f64-1418bb580c20", "oauth_verifier"=>"54849"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from linkedin at (eval):3)
+  [1m[36mIdentity Load (0.3ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "IR6xzEHIIb"], ["provider", "linkedin"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/3/finish_signup
+Completed 302 Found in 13ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/3/finish_signup" for 127.0.0.1 at 2017-02-11 16:10:26 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-11 16:10:28 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V5NSwknYYvl+kbVYxo7xalj8lqCyORLjVEtTnsg+uPpyHEP2pvwOa82Dh2Ag/r1hoOVfqr2lGL/bHATWpPU+fA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 16:10:28 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
