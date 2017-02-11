@@ -331,3 +331,1192 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 67ms (Views: 66.2ms | ActiveRecord: 0.2ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOmniauthToUsers (20170211190405)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211190405"]]
+  [1m[35m (86.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-11 14:23:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (14.3ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 14:23:15 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 550ms (Views: 548.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1178ms (Views: 1146.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:23:18 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:23:18 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:26:28 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:26:28 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:28:54 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:28:55 -0500
+Started GET "/users/auth/facebook/callback?code=AQDuNHFMuYLIaFsCfoBhnjD0WtM1ElSd8TyGT-3mSeT04CUAq_iWFpgjbe5rDcqxbwG9hZWNZ6K-l4Mb2B1lG0WhzRBHoNIjnKTxGqvW-1nLu3TL07obPqlZvZvO3W_Cpdd6KwMjEgeMw1LCkwExU_mXL5ySJx3W8wotkwJd4jb2W2XNUH-exO4NKlWJoVtRIIIURHZctPxVMkk5UesNHcRBv12oUPEnWIk9mgixpYBEME1MRms_tKKG6bzsuvKUTKPVBgHuMosCHXxEl1bnv4DfNUSj7C_Nsz9HuEEGJDxpBjIdVzHEP3HDdPcPLlVKtynIgG5i9b5iKrN7aaj5E7ZW&state=e09fe40c9e459e3b0178816030d76f39dcd3aca0506b999b" for 127.0.0.1 at 2017-02-11 14:29:00 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDuNHFMuYLIaFsCfoBhnjD0WtM1ElSd8TyGT-3mSeT04CUAq_iWFpgjbe5rDcqxbwG9hZWNZ6K-l4Mb2B1lG0WhzRBHoNIjnKTxGqvW-1nLu3TL07obPqlZvZvO3W_Cpdd6KwMjEgeMw1LCkwExU_mXL5ySJx3W8wotkwJd4jb2W2XNUH-exO4NKlWJoVtRIIIURHZctPxVMkk5UesNHcRBv12oUPEnWIk9mgixpYBEME1MRms_tKKG6bzsuvKUTKPVBgHuMosCHXxEl1bnv4DfNUSj7C_Nsz9HuEEGJDxpBjIdVzHEP3HDdPcPLlVKtynIgG5i9b5iKrN7aaj5E7ZW", "state"=>"e09fe40c9e459e3b0178816030d76f39dcd3aca0506b999b"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User::Identity):
+  
+app/models/user.rb:14:in `find_for_oauth'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.6ms)
+Started GET "/users/auth/facebook/callback?code=AQDuNHFMuYLIaFsCfoBhnjD0WtM1ElSd8TyGT-3mSeT04CUAq_iWFpgjbe5rDcqxbwG9hZWNZ6K-l4Mb2B1lG0WhzRBHoNIjnKTxGqvW-1nLu3TL07obPqlZvZvO3W_Cpdd6KwMjEgeMw1LCkwExU_mXL5ySJx3W8wotkwJd4jb2W2XNUH-exO4NKlWJoVtRIIIURHZctPxVMkk5UesNHcRBv12oUPEnWIk9mgixpYBEME1MRms_tKKG6bzsuvKUTKPVBgHuMosCHXxEl1bnv4DfNUSj7C_Nsz9HuEEGJDxpBjIdVzHEP3HDdPcPLlVKtynIgG5i9b5iKrN7aaj5E7ZW&state=e09fe40c9e459e3b0178816030d76f39dcd3aca0506b999b" for 127.0.0.1 at 2017-02-11 14:33:02 -0500
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDuNHFMuYLIaFsCfoBhnjD0WtM1ElSd8TyGT-3mSeT04CUAq_iWFpgjbe5rDcqxbwG9hZWNZ6K-l4Mb2B1lG0WhzRBHoNIjnKTxGqvW-1nLu3TL07obPqlZvZvO3W_Cpdd6KwMjEgeMw1LCkwExU_mXL5ySJx3W8wotkwJd4jb2W2XNUH-exO4NKlWJoVtRIIIURHZctPxVMkk5UesNHcRBv12oUPEnWIk9mgixpYBEME1MRms_tKKG6bzsuvKUTKPVBgHuMosCHXxEl1bnv4DfNUSj7C_Nsz9HuEEGJDxpBjIdVzHEP3HDdPcPLlVKtynIgG5i9b5iKrN7aaj5E7ZW", "state"=>"e09fe40c9e459e3b0178816030d76f39dcd3aca0506b999b"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 29ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 14:33:02 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.6ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (67.3ms)
+Completed 200 OK in 132ms (Views: 111.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 14:33:17 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:33:19 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:33:19 -0500
+Started GET "/users/auth/facebook/callback?code=AQAxTdNHsODksPTHr4RProTDMyKK2fI3DxlCm5vVQbYY1xJGtC5ON1JEdBDjB_8KjyGHAsvxfZymRI-zT7cyQPf5dYy6hnCn4uuhBVMATehUdjo15ICdDeCeyTHfvPXonxKgzMK7AXaGw_CheXPDME3fMgase4QiSzENlzUeruVbEHW47YOxsq-DUC24VUjheNoNuwvxzhSN6zB11EiOO600RyUHGuBVTKHEoz271WkxzgtsWwF5tijGBbfXS-oUEme5e1YGljLDNOFEzqa0sF__TL3M0w8J7z_vg1TGG_AQ6Gwdy6J6wx5JaVoIoqf9ikLOq_mcbB--3i9il4wpJJwE&state=1679f0019bc948b5d858b408466118f81b828b6ef16c407b" for 127.0.0.1 at 2017-02-11 14:33:20 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAxTdNHsODksPTHr4RProTDMyKK2fI3DxlCm5vVQbYY1xJGtC5ON1JEdBDjB_8KjyGHAsvxfZymRI-zT7cyQPf5dYy6hnCn4uuhBVMATehUdjo15ICdDeCeyTHfvPXonxKgzMK7AXaGw_CheXPDME3fMgase4QiSzENlzUeruVbEHW47YOxsq-DUC24VUjheNoNuwvxzhSN6zB11EiOO600RyUHGuBVTKHEoz271WkxzgtsWwF5tijGBbfXS-oUEme5e1YGljLDNOFEzqa0sF__TL3M0w8J7z_vg1TGG_AQ6Gwdy6J6wx5JaVoIoqf9ikLOq_mcbB--3i9il4wpJJwE", "state"=>"1679f0019bc948b5d858b408466118f81b828b6ef16c407b"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'identities'):
+  
+app/models/identity.rb:7:in `find_for_oauth'
+app/models/user.rb:14:in `find_for_oauth'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.7ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddOmniauthToUsers (20170211190405)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin?" boolean DEFAULT 'f', "provider" varchar, "uid" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","admin?","provider","uid")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","admin?","provider","uid" FROM "users"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin?" boolean DEFAULT 'f', "provider" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","admin?","provider")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","admin?","provider" FROM "ausers"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin?" boolean DEFAULT 'f', "provider" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","admin?","provider")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","admin?","provider" FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin?" boolean DEFAULT 'f')[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","admin?")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","created_at","updated_at","admin?" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20170211190405"]]
+  [1m[35m (95.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-11 14:44:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNameToUsers (20170211193756)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211193756"]]
+  [1m[35m (105.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-11 14:44:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 477ms (Views: 452.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:44:54 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:44:54 -0500
+Started GET "/users/auth/facebook/callback?code=AQAmUqq8fj45vL4yppqF6PygO-5G7bsO7gV0cf6Up-fk00zMOBjprB2_jora7X-Q4vuNRVsVAMoEczzFCLeagMlurPWxS-YoDlUApSr4OFyHBWK97faeZkwMxyAYxb_IUgHXRmfVXokNzd5LTyVrepYrWJPBRsPqgEy9TbSc9jM-3Edq5DbI_dT-dYZZPFZKlEOwMq2pVfeeuG65IZzToKK_UHr-9humn7kfYRBmfu_BFjNdRibIkYD_5YwgAWg8mGQ0OxPOXZCo-7OKqAPuaHOjwjFixQXx9qiHPqNoeSbfCETBiO3vdFMaHEe84Sc-1kcJPrRSCkSSA3c-HnXiyV7t&state=6cb9b2e8a3b7af74211db5ec55dffb466cd9082742e6111e" for 127.0.0.1 at 2017-02-11 14:44:54 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAmUqq8fj45vL4yppqF6PygO-5G7bsO7gV0cf6Up-fk00zMOBjprB2_jora7X-Q4vuNRVsVAMoEczzFCLeagMlurPWxS-YoDlUApSr4OFyHBWK97faeZkwMxyAYxb_IUgHXRmfVXokNzd5LTyVrepYrWJPBRsPqgEy9TbSc9jM-3Edq5DbI_dT-dYZZPFZKlEOwMq2pVfeeuG65IZzToKK_UHr-9humn7kfYRBmfu_BFjNdRibIkYD_5YwgAWg8mGQ0OxPOXZCo-7OKqAPuaHOjwjFixQXx9qiHPqNoeSbfCETBiO3vdFMaHEe84Sc-1kcJPrRSCkSSA3c-HnXiyV7t", "state"=>"6cb9b2e8a3b7af74211db5ec55dffb466cd9082742e6111e"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'identities'):
+  
+app/models/identity.rb:7:in `find_for_oauth'
+app/models/user.rb:14:in `find_for_oauth'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateIdentities (20170211195112)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211195112"]]
+  [1m[35m (100.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/users/auth/facebook/callback?code=AQAmUqq8fj45vL4yppqF6PygO-5G7bsO7gV0cf6Up-fk00zMOBjprB2_jora7X-Q4vuNRVsVAMoEczzFCLeagMlurPWxS-YoDlUApSr4OFyHBWK97faeZkwMxyAYxb_IUgHXRmfVXokNzd5LTyVrepYrWJPBRsPqgEy9TbSc9jM-3Edq5DbI_dT-dYZZPFZKlEOwMq2pVfeeuG65IZzToKK_UHr-9humn7kfYRBmfu_BFjNdRibIkYD_5YwgAWg8mGQ0OxPOXZCo-7OKqAPuaHOjwjFixQXx9qiHPqNoeSbfCETBiO3vdFMaHEe84Sc-1kcJPrRSCkSSA3c-HnXiyV7t&state=6cb9b2e8a3b7af74211db5ec55dffb466cd9082742e6111e" for 127.0.0.1 at 2017-02-11 14:51:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAmUqq8fj45vL4yppqF6PygO-5G7bsO7gV0cf6Up-fk00zMOBjprB2_jora7X-Q4vuNRVsVAMoEczzFCLeagMlurPWxS-YoDlUApSr4OFyHBWK97faeZkwMxyAYxb_IUgHXRmfVXokNzd5LTyVrepYrWJPBRsPqgEy9TbSc9jM-3Edq5DbI_dT-dYZZPFZKlEOwMq2pVfeeuG65IZzToKK_UHr-9humn7kfYRBmfu_BFjNdRibIkYD_5YwgAWg8mGQ0OxPOXZCo-7OKqAPuaHOjwjFixQXx9qiHPqNoeSbfCETBiO3vdFMaHEe84Sc-1kcJPrRSCkSSA3c-HnXiyV7t", "state"=>"6cb9b2e8a3b7af74211db5ec55dffb466cd9082742e6111e"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 20ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 14:51:40 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.8ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 530ms (Views: 492.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:51:44 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:51:44 -0500
+Started GET "/users/auth/facebook/callback?code=AQBBzuUav9ieqRmGlRPGKEsVaHAlaRbT2bvln7hjoij7Ayt8Ar6n_xY-GElrjojITJ_99ZiU-vyFfwteodjljv8KTnXn-WGYS2s-5Lh4h-y6vR3PLNt_uXR1R6Al7smgCgUoIigWHk2wcPTHDTCkpien8MNeE2CRp1ImIwkCyx6YuoIHc5g9m_-rw6yfIi6bYmaoIK9qhO68jzAuDSs1f47aIxnXYy3RRMINx3XDPOUP5DSm_EDympkYgKbAiNqJeLyto_jB39p0PPX2tU_lyKr3D9ZLlHzQOQi0UBNZXXtiAozXG3SDHrDMrIYx0a5oAKq2XYCFwsmNGQ-i8Z9BV0iP&state=c6b6eab1bed51fa0aafe7ca6a89785e5a97b5f380878d153" for 127.0.0.1 at 2017-02-11 14:51:44 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBBzuUav9ieqRmGlRPGKEsVaHAlaRbT2bvln7hjoij7Ayt8Ar6n_xY-GElrjojITJ_99ZiU-vyFfwteodjljv8KTnXn-WGYS2s-5Lh4h-y6vR3PLNt_uXR1R6Al7smgCgUoIigWHk2wcPTHDTCkpien8MNeE2CRp1ImIwkCyx6YuoIHc5g9m_-rw6yfIi6bYmaoIK9qhO68jzAuDSs1f47aIxnXYy3RRMINx3XDPOUP5DSm_EDympkYgKbAiNqJeLyto_jB39p0PPX2tU_lyKr3D9ZLlHzQOQi0UBNZXXtiAozXG3SDHrDMrIYx0a5oAKq2XYCFwsmNGQ-i8Z9BV0iP", "state"=>"c6b6eab1bed51fa0aafe7ca6a89785e5a97b5f380878d153"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find_for_oauth' for #<Class:0x007f59842bdd30>):
+  
+app/models/user.rb:14:in `find_for_oauth'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (22.4ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.3ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.5ms)
+Started GET "/users/auth/facebook/callback?code=AQBBzuUav9ieqRmGlRPGKEsVaHAlaRbT2bvln7hjoij7Ayt8Ar6n_xY-GElrjojITJ_99ZiU-vyFfwteodjljv8KTnXn-WGYS2s-5Lh4h-y6vR3PLNt_uXR1R6Al7smgCgUoIigWHk2wcPTHDTCkpien8MNeE2CRp1ImIwkCyx6YuoIHc5g9m_-rw6yfIi6bYmaoIK9qhO68jzAuDSs1f47aIxnXYy3RRMINx3XDPOUP5DSm_EDympkYgKbAiNqJeLyto_jB39p0PPX2tU_lyKr3D9ZLlHzQOQi0UBNZXXtiAozXG3SDHrDMrIYx0a5oAKq2XYCFwsmNGQ-i8Z9BV0iP&state=c6b6eab1bed51fa0aafe7ca6a89785e5a97b5f380878d153" for 127.0.0.1 at 2017-02-11 14:53:14 -0500
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBBzuUav9ieqRmGlRPGKEsVaHAlaRbT2bvln7hjoij7Ayt8Ar6n_xY-GElrjojITJ_99ZiU-vyFfwteodjljv8KTnXn-WGYS2s-5Lh4h-y6vR3PLNt_uXR1R6Al7smgCgUoIigWHk2wcPTHDTCkpien8MNeE2CRp1ImIwkCyx6YuoIHc5g9m_-rw6yfIi6bYmaoIK9qhO68jzAuDSs1f47aIxnXYy3RRMINx3XDPOUP5DSm_EDympkYgKbAiNqJeLyto_jB39p0PPX2tU_lyKr3D9ZLlHzQOQi0UBNZXXtiAozXG3SDHrDMrIYx0a5oAKq2XYCFwsmNGQ-i8Z9BV0iP", "state"=>"c6b6eab1bed51fa0aafe7ca6a89785e5a97b5f380878d153"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 14:53:14 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 45ms (Views: 28.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:53:16 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:53:16 -0500
+Started GET "/users/auth/facebook/callback?code=AQDYp7CffNg862djjpmWxLY-AalTHnXW0Mp5zNjWGKfUTDeGQog0UvjsZlWdDlWR5kAxUXUu-4KnGszyEhymiSW0HQCSBW-ZE-r_C2Z420bUC13v9ZJXGYq5f8Aa0RiebrAGktR8aBkqOer8qc_3nyXL8BcG6k6oJTqvV99AibItOaB-6Q3pmP3gUfU5yirQxBkv6v3mfAYHTyM_gjvOIPxqcvSwUkCvVAFlb1tCN_E_fQHpeRx6NSN2AiNK-otirv_SwRXGVuSbRjtXHamR_E6YNMvI0N5voMK8z9iDYK8QtczIIJ0lWZ1uOLXtD7jU5x0vXkEXmSTgZiuJQy8taL-m&state=7ef2de02fe5f6fff10f030602194b9c991cd3fa304cd2d2f" for 127.0.0.1 at 2017-02-11 14:53:16 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDYp7CffNg862djjpmWxLY-AalTHnXW0Mp5zNjWGKfUTDeGQog0UvjsZlWdDlWR5kAxUXUu-4KnGszyEhymiSW0HQCSBW-ZE-r_C2Z420bUC13v9ZJXGYq5f8Aa0RiebrAGktR8aBkqOer8qc_3nyXL8BcG6k6oJTqvV99AibItOaB-6Q3pmP3gUfU5yirQxBkv6v3mfAYHTyM_gjvOIPxqcvSwUkCvVAFlb1tCN_E_fQHpeRx6NSN2AiNK-otirv_SwRXGVuSbRjtXHamR_E6YNMvI0N5voMK8z9iDYK8QtczIIJ0lWZ1uOLXtD7jU5x0vXkEXmSTgZiuJQy8taL-m", "state"=>"7ef2de02fe5f6fff10f030602194b9c991cd3fa304cd2d2f"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.6ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "identities" ("provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "148328415677144"], ["created_at", 2017-02-11 19:53:17 UTC], ["updated_at", 2017-02-11 19:53:17 UTC]]
+  [1m[35m (110.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 113.7ms)
+
+
+  
+NameError (uninitialized constant User::TEMP_EMAIL_PREFIX):
+  
+app/models/user.rb:37:in `find_for_oauth'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.8ms)
+Started GET "/users/auth/facebook/callback?code=AQDYp7CffNg862djjpmWxLY-AalTHnXW0Mp5zNjWGKfUTDeGQog0UvjsZlWdDlWR5kAxUXUu-4KnGszyEhymiSW0HQCSBW-ZE-r_C2Z420bUC13v9ZJXGYq5f8Aa0RiebrAGktR8aBkqOer8qc_3nyXL8BcG6k6oJTqvV99AibItOaB-6Q3pmP3gUfU5yirQxBkv6v3mfAYHTyM_gjvOIPxqcvSwUkCvVAFlb1tCN_E_fQHpeRx6NSN2AiNK-otirv_SwRXGVuSbRjtXHamR_E6YNMvI0N5voMK8z9iDYK8QtczIIJ0lWZ1uOLXtD7jU5x0vXkEXmSTgZiuJQy8taL-m&state=7ef2de02fe5f6fff10f030602194b9c991cd3fa304cd2d2f" for 127.0.0.1 at 2017-02-11 14:54:48 -0500
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDYp7CffNg862djjpmWxLY-AalTHnXW0Mp5zNjWGKfUTDeGQog0UvjsZlWdDlWR5kAxUXUu-4KnGszyEhymiSW0HQCSBW-ZE-r_C2Z420bUC13v9ZJXGYq5f8Aa0RiebrAGktR8aBkqOer8qc_3nyXL8BcG6k6oJTqvV99AibItOaB-6Q3pmP3gUfU5yirQxBkv6v3mfAYHTyM_gjvOIPxqcvSwUkCvVAFlb1tCN_E_fQHpeRx6NSN2AiNK-otirv_SwRXGVuSbRjtXHamR_E6YNMvI0N5voMK8z9iDYK8QtczIIJ0lWZ1uOLXtD7jU5x0vXkEXmSTgZiuJQy8taL-m", "state"=>"7ef2de02fe5f6fff10f030602194b9c991cd3fa304cd2d2f"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 14:54:49 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 48ms (Views: 29.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:54:51 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 14:54:51 -0500
+Started GET "/users/auth/facebook/callback?code=AQDppjBVTEvQMRhg6DVkxOtHPwc0guT8LYUY89HGokPJPkcPHQmCnM7ZOSW3H7YGuCIbhr6MWYwBI4fWLCt3lBK61GJYne85BpHiXp5VNd7L5fvUYT2R496JD9OacjYW0covetCGuJhVuYBDanIeqAWNDmP3nulU8rMzLbztXe4-rZVPu3paviWtPv1lBZ0NE625wIysdtBe-Eq7o-RYneIVR1QCnUf7tkoNSDodx3lBQFAX9a8v3ziap3jLnuEy1vaaWgi__hVqmq0psEPcsgKU9EVI9SS1z7nnlKbccIWtb3hbVb5UIepgMHdWGsnZUBFOLJXpWZ2BHSQ8sZR0sGKQ&state=507309781d498499a61dc38c0dcc0e9aa48a4c2f4e02edf5" for 127.0.0.1 at 2017-02-11 14:54:51 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDppjBVTEvQMRhg6DVkxOtHPwc0guT8LYUY89HGokPJPkcPHQmCnM7ZOSW3H7YGuCIbhr6MWYwBI4fWLCt3lBK61GJYne85BpHiXp5VNd7L5fvUYT2R496JD9OacjYW0covetCGuJhVuYBDanIeqAWNDmP3nulU8rMzLbztXe4-rZVPu3paviWtPv1lBZ0NE625wIysdtBe-Eq7o-RYneIVR1QCnUf7tkoNSDodx3lBQFAX9a8v3ziap3jLnuEy1vaaWgi__hVqmq0psEPcsgKU9EVI9SS1z7nnlKbccIWtb3hbVb5UIepgMHdWGsnZUBFOLJXpWZ2BHSQ8sZR0sGKQ", "state"=>"507309781d498499a61dc38c0dcc0e9aa48a4c2f4e02edf5"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `skip_confirmation!' for #<User:0x007f59a0257d98>):
+  
+app/models/user.rb:42:in `find_for_oauth'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.8ms)
+Started GET "/users/auth/facebook/callback?code=AQDppjBVTEvQMRhg6DVkxOtHPwc0guT8LYUY89HGokPJPkcPHQmCnM7ZOSW3H7YGuCIbhr6MWYwBI4fWLCt3lBK61GJYne85BpHiXp5VNd7L5fvUYT2R496JD9OacjYW0covetCGuJhVuYBDanIeqAWNDmP3nulU8rMzLbztXe4-rZVPu3paviWtPv1lBZ0NE625wIysdtBe-Eq7o-RYneIVR1QCnUf7tkoNSDodx3lBQFAX9a8v3ziap3jLnuEy1vaaWgi__hVqmq0psEPcsgKU9EVI9SS1z7nnlKbccIWtb3hbVb5UIepgMHdWGsnZUBFOLJXpWZ2BHSQ8sZR0sGKQ&state=507309781d498499a61dc38c0dcc0e9aa48a4c2f4e02edf5" for 127.0.0.1 at 2017-02-11 15:02:48 -0500
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDppjBVTEvQMRhg6DVkxOtHPwc0guT8LYUY89HGokPJPkcPHQmCnM7ZOSW3H7YGuCIbhr6MWYwBI4fWLCt3lBK61GJYne85BpHiXp5VNd7L5fvUYT2R496JD9OacjYW0covetCGuJhVuYBDanIeqAWNDmP3nulU8rMzLbztXe4-rZVPu3paviWtPv1lBZ0NE625wIysdtBe-Eq7o-RYneIVR1QCnUf7tkoNSDodx3lBQFAX9a8v3ziap3jLnuEy1vaaWgi__hVqmq0psEPcsgKU9EVI9SS1z7nnlKbccIWtb3hbVb5UIepgMHdWGsnZUBFOLJXpWZ2BHSQ8sZR0sGKQ", "state"=>"507309781d498499a61dc38c0dcc0e9aa48a4c2f4e02edf5"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:02:53 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (240.9ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (248.2ms)
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x007f5998537b38>:0x007f5998536aa8>):
+    11: <% end -%>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end -%>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  
+devise (4.0.0) app/views/devise/shared/_links.html.erb:14:in `__home_rmulligan_vendor_bundle_gems_devise_______app_views_devise_shared__links_html_erb__3279024915513754463_70011223886140'
+actionview (5.0.1) lib/action_view/template.rb:159:in `block in render'
+activesupport (5.0.1) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.0.1) lib/action_view/template.rb:354:in `instrument'
+actionview (5.0.1) lib/action_view/template.rb:157:in `render'
+actionview (5.0.1) lib/action_view/renderer/partial_renderer.rb:343:in `render_partial'
+actionview (5.0.1) lib/action_view/renderer/partial_renderer.rb:311:in `block in render'
+actionview (5.0.1) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionview (5.0.1) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.0.1) lib/action_view/renderer/partial_renderer.rb:310:in `render'
+actionview (5.0.1) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+actionview (5.0.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+devise (4.0.0) app/views/devise/sessions/new.html.erb:26:in `__home_rmulligan_vendor_bundle_gems_devise_______app_views_devise_sessions_new_html_erb___1176832639979016255_70011392205940'
+actionview (5.0.1) lib/action_view/template.rb:159:in `block in render'
+activesupport (5.0.1) lib/active_support/notifications.rb:166:in `instrument'
+actionview (5.0.1) lib/action_view/template.rb:354:in `instrument'
+actionview (5.0.1) lib/action_view/template.rb:157:in `render'
+actionview (5.0.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+actionview (5.0.1) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionview (5.0.1) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+actionview (5.0.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+actionview (5.0.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+actionview (5.0.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+actionview (5.0.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+actionview (5.0.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+actionview (5.0.1) lib/action_view/renderer/renderer.rb:23:in `render'
+actionview (5.0.1) lib/action_view/rendering.rb:103:in `_render_template'
+actionpack (5.0.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+actionview (5.0.1) lib/action_view/rendering.rb:83:in `render_to_body'
+actionpack (5.0.1) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (5.0.1) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (5.0.1) lib/abstract_controller/rendering.rb:26:in `render'
+actionpack (5.0.1) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (5.0.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+/home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+activesupport (5.0.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.0.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+responders (2.1.2) lib/action_controller/responder.rb:238:in `default_render'
+responders (2.1.2) lib/action_controller/responder.rb:170:in `to_html'
+responders (2.1.2) lib/action_controller/responder.rb:163:in `respond'
+responders (2.1.2) lib/action_controller/responder.rb:156:in `call'
+responders (2.1.2) lib/action_controller/respond_with.rb:205:in `respond_with'
+devise (4.0.0) app/controllers/devise/sessions_controller.rb:12:in `new'
+actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.4.2) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.4.2) lib/omniauth/strategy.rb:164:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (25.3ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.1ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.7ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:03:03 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:03:05 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:03:05 -0500
+Started GET "/users/auth/facebook/callback?code=AQCGohMRKXuhnQEyB_tzGOBQHhpypK8ODAmioylIQhcbS5CW9cgjAHsNjU1rCyYL7O2ODSFq5GjH4Qy8vFZqBK5BgF7Qe3Q8wFZi9i38uc4pPKdpfogPvHVIioSCEERPTvI6KDdMJ94tMkEYYD__h2OBBxVBu4pZ22y5zaX6bv1Fcqij3A-7N4lAM57pZvckZFT_hiEGYNLFLg6_JbiJL3IGWvnLZSbEwYLA-gRTPw4hDJ70uRASemPFD99WWGZs1VDTUS34EI-FXUWjAxpriyhUzVi-6Hfb_rk-LxVXLPmcjlJSfTb3PPYmagy9J3d2wFuVHa_2YA079EXUU0aQcfhg&state=4848566300a545d8b1ea1079e14f9bfdf540b674a79ca6a7" for 127.0.0.1 at 2017-02-11 15:03:05 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCGohMRKXuhnQEyB_tzGOBQHhpypK8ODAmioylIQhcbS5CW9cgjAHsNjU1rCyYL7O2ODSFq5GjH4Qy8vFZqBK5BgF7Qe3Q8wFZi9i38uc4pPKdpfogPvHVIioSCEERPTvI6KDdMJ94tMkEYYD__h2OBBxVBu4pZ22y5zaX6bv1Fcqij3A-7N4lAM57pZvckZFT_hiEGYNLFLg6_JbiJL3IGWvnLZSbEwYLA-gRTPw4hDJ70uRASemPFD99WWGZs1VDTUS34EI-FXUWjAxpriyhUzVi-6Hfb_rk-LxVXLPmcjlJSfTb3PPYmagy9J3d2wFuVHa_2YA079EXUU0aQcfhg", "state"=>"4848566300a545d8b1ea1079e14f9bfdf540b674a79ca6a7"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `confirmed_at=' for #<User:0x007f5998418a90>):
+  
+app/models/user.rb:42:in `find_for_oauth'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.5ms)
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:04:35 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:04:35 -0500
+Started GET "/users/auth/facebook/callback?code=AQCLfLkoq0xaonTtL4nePg44XvlldM7ldLVZBRHRZNBzEta4RUKycpH990UbFnfZZjhTAU8lh49j0o5vG8QU6dYdrEI3LsmeocCC8CRyAhQtnhGXfnyve4BFgIeTLRzfsRmgVMzBGpMY5wpxsLJW2d5Lxkl88KMnfyJNLD1IbTTqgACE903v6V3pQtR6DeC5wxzpmgkSs1FBW5VtTfOK3whmt7UsUQK0FMw6WZRQB6apEe0486wgjPpmF8nN-Y4n4HOFf-F55yeiUv-gllw5AcrCEicKDwa3QAkyaBq-kjnaIRVZoELqT__GEv1QwT3eYs71QgiOob3dxMKjmxXm3n-A&state=56e3d3aa014fda9ec3bfacab774f905e754ecdfe5aaed176" for 127.0.0.1 at 2017-02-11 15:04:35 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCLfLkoq0xaonTtL4nePg44XvlldM7ldLVZBRHRZNBzEta4RUKycpH990UbFnfZZjhTAU8lh49j0o5vG8QU6dYdrEI3LsmeocCC8CRyAhQtnhGXfnyve4BFgIeTLRzfsRmgVMzBGpMY5wpxsLJW2d5Lxkl88KMnfyJNLD1IbTTqgACE903v6V3pQtR6DeC5wxzpmgkSs1FBW5VtTfOK3whmt7UsUQK0FMw6WZRQB6apEe0486wgjPpmF8nN-Y4n4HOFf-F55yeiUv-gllw5AcrCEicKDwa3QAkyaBq-kjnaIRVZoELqT__GEv1QwT3eYs71QgiOob3dxMKjmxXm3n-A", "state"=>"56e3d3aa014fda9ec3bfacab774f905e754ecdfe5aaed176"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.1ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `confirmed_at=' for #<User:0x007f59987b7520>):
+  
+app/models/user.rb:42:in `find_for_oauth'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddConfirmableToDeviseV1 (20170211200753)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddConfirmableToDeviseV1 (20170211200753)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (93.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (110.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170209210757)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209210757"]]
+  [1m[35m (95.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToUsers (20170209212637)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (8.2ms)[0m  [1m[35mALTER TABLE "users" ADD "admin?" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209212637"]]
+  [1m[35m (90.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170210023147)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year" integer, "fiction" boolean, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210023147"]]
+  [1m[35m (99.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20170210030106)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "summary" varchar, "body" text, "rating" integer, "user_id" integer, "book_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210030106"]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserInfo (20170210160707)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "user_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "state" varchar, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210160707"]]
+  [1m[35m (89.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToUsers (20170211193756)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.8ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211193756"]]
+  [1m[35m (90.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIdentities (20170211195112)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211195112"]]
+  [1m[35m (89.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-11 20:10:43 UTC], ["updated_at", 2017-02-11 20:10:43 UTC]]
+  [1m[35m (92.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:11:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 480ms (Views: 456.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:11:12 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:11:14 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:11:15 -0500
+Started GET "/users/auth/facebook/callback?code=AQAlgxRjJwXP8Q31wnveJ6YknqW4gsNkBYduWVtQps6YDeYcgyk1kpAxHyCuRLt36IijLne5fIAOtvARFIr9Ni9hfe-gwtMP_Qm9e1rqtsc6tsh1tMeW7iPBbWqRVxSSythAhaFjWKu1msg6wMyKf6zv5u59pLNZE_DTw93COB1D65t7wULNg2nYOOhFdLZ1OkIj4v311Rou6RKrtu5JrFWYLZGPQO94-7ZEKZYsXrgfnN4h4Audw5kA___2Ne0zKaMKz8F8PMZ0SjyAOBDqtVqxlAPY_UKqxHF40EW7v77NH5YwF1Dk-6YrPWksMxVqG6HLDtFcHIHG3U554bBGx4tr&state=6724161e3d06ca777c98453d1047b68bb9ce52b1a5acf905" for 127.0.0.1 at 2017-02-11 15:11:15 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAlgxRjJwXP8Q31wnveJ6YknqW4gsNkBYduWVtQps6YDeYcgyk1kpAxHyCuRLt36IijLne5fIAOtvARFIr9Ni9hfe-gwtMP_Qm9e1rqtsc6tsh1tMeW7iPBbWqRVxSSythAhaFjWKu1msg6wMyKf6zv5u59pLNZE_DTw93COB1D65t7wULNg2nYOOhFdLZ1OkIj4v311Rou6RKrtu5JrFWYLZGPQO94-7ZEKZYsXrgfnN4h4Audw5kA___2Ne0zKaMKz8F8PMZ0SjyAOBDqtVqxlAPY_UKqxHF40EW7v77NH5YwF1Dk-6YrPWksMxVqG6HLDtFcHIHG3U554bBGx4tr", "state"=>"6724161e3d06ca777c98453d1047b68bb9ce52b1a5acf905"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.3ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "identities" ("provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "148328415677144"], ["created_at", 2017-02-11 20:11:15 UTC], ["updated_at", 2017-02-11 20:11:15 UTC]]
+  [1m[35m (103.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "change@me-148328415677144-facebook.com"], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "change@me-148328415677144-facebook.com"], ["encrypted_password", "$2a$11$gzV3odh0ytDKINzIVIwVC.DiNxy//mWp6qbkglWlx3iquxE0q6EHq"], ["confirmed_at", 2017-02-11 20:11:16 UTC], ["created_at", 2017-02-11 20:11:16 UTC], ["updated_at", 2017-02-11 20:11:16 UTC], ["name", "Raymond Mulligan"]]
+  [1m[35m (83.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND ("identities"."id" != ?) AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["id", 1], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (6.9ms)[0m  [1m[33mUPDATE "identities" SET "user_id" = ?, "updated_at" = ? WHERE "identities"."id" = ?[0m  [["user_id", 1], ["updated_at", 2017-02-11 20:11:16 UTC], ["id", 1]]
+  [1m[35m (81.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 588ms (ActiveRecord: 286.9ms)
+
+
+  
+NoMethodError (undefined method `email_verified?' for #<User:0x007f2a58542318>):
+  
+app/controllers/omniauth_callbacks_controller.rb:23:in `after_sign_in_path_for'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.0ms)
+Started GET "/users/auth/facebook/callback?code=AQAlgxRjJwXP8Q31wnveJ6YknqW4gsNkBYduWVtQps6YDeYcgyk1kpAxHyCuRLt36IijLne5fIAOtvARFIr9Ni9hfe-gwtMP_Qm9e1rqtsc6tsh1tMeW7iPBbWqRVxSSythAhaFjWKu1msg6wMyKf6zv5u59pLNZE_DTw93COB1D65t7wULNg2nYOOhFdLZ1OkIj4v311Rou6RKrtu5JrFWYLZGPQO94-7ZEKZYsXrgfnN4h4Audw5kA___2Ne0zKaMKz8F8PMZ0SjyAOBDqtVqxlAPY_UKqxHF40EW7v77NH5YwF1Dk-6YrPWksMxVqG6HLDtFcHIHG3U554bBGx4tr&state=6724161e3d06ca777c98453d1047b68bb9ce52b1a5acf905" for 127.0.0.1 at 2017-02-11 15:16:00 -0500
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAlgxRjJwXP8Q31wnveJ6YknqW4gsNkBYduWVtQps6YDeYcgyk1kpAxHyCuRLt36IijLne5fIAOtvARFIr9Ni9hfe-gwtMP_Qm9e1rqtsc6tsh1tMeW7iPBbWqRVxSSythAhaFjWKu1msg6wMyKf6zv5u59pLNZE_DTw93COB1D65t7wULNg2nYOOhFdLZ1OkIj4v311Rou6RKrtu5JrFWYLZGPQO94-7ZEKZYsXrgfnN4h4Audw5kA___2Ne0zKaMKz8F8PMZ0SjyAOBDqtVqxlAPY_UKqxHF40EW7v77NH5YwF1Dk-6YrPWksMxVqG6HLDtFcHIHG3U554bBGx4tr", "state"=>"6724161e3d06ca777c98453d1047b68bb9ce52b1a5acf905"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:16:00 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.7ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 84ms (Views: 64.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:16:02 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:16:03 -0500
+Started GET "/users/auth/facebook/callback?code=AQAGTZ34Ij2lrIb24kNwULPFqxj0yGYWHhg-HTs5I_w0vJ56jt_0Fv5AzImLYTmFzTvsczZ_qoFoGrB0eBBsz_dgXZMPLKsjsWZK9lfsvB0cyn91sPQQDNwQ6M-hAwAg_cExJHZDH4aKUO5E-9sfzolt2ZL8HExjzTIrl9IgEss0tAZ8EWh-hFe2XyKR8DDEqptdm39ATc2dCFzd14aveATpobsT5b2qDdtpFkPqBokL0fwCykCBZHwFwHbSYaXme3iwT7ySp0iPmnw_U1tVNVVIxb_FjTNma7oeQmTiV9PzakeAebkABeFPU6BC3Sd_qSLvMMTXPCtRFilTLb-IwKzi&state=39e27aebb1cb471a2b579b1bef536e86918c2c9985bdec97" for 127.0.0.1 at 2017-02-11 15:16:03 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAGTZ34Ij2lrIb24kNwULPFqxj0yGYWHhg-HTs5I_w0vJ56jt_0Fv5AzImLYTmFzTvsczZ_qoFoGrB0eBBsz_dgXZMPLKsjsWZK9lfsvB0cyn91sPQQDNwQ6M-hAwAg_cExJHZDH4aKUO5E-9sfzolt2ZL8HExjzTIrl9IgEss0tAZ8EWh-hFe2XyKR8DDEqptdm39ATc2dCFzd14aveATpobsT5b2qDdtpFkPqBokL0fwCykCBZHwFwHbSYaXme3iwT7ySp0iPmnw_U1tVNVVIxb_FjTNma7oeQmTiV9PzakeAebkABeFPU6BC3Sd_qSLvMMTXPCtRFilTLb-IwKzi", "state"=>"39e27aebb1cb471a2b579b1bef536e86918c2c9985bdec97"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `finish_signup_path' for #<OmniauthCallbacksController:0x007f2a75e49840>):
+  
+app/controllers/omniauth_callbacks_controller.rb:26:in `after_sign_in_path_for'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.5ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.2ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-11 15:18:44 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (6.6ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 103ms (Views: 70.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:18:47 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:18:47 -0500
+Started GET "/users/auth/facebook/callback?code=AQBD14EvZG1iUGEij4EFUMGuBTvDHkNM4P04xazjyEOW0WJDwId84kMczp55zQGLjWaky2cwAJDUcDEgNv3MbUHhCUyeaCB0UkZexFilV7Ub-89R0Gn8fd0sobtddJdgEvZKJKd4GsFGCoihtpy1XbWYJV49g33pbSMpk8nCUUwkDTWOogyt0CRVMnig3fvcpwobiamsXRyHtVV6biVhV-8dQ3z48_URNdZmSAiLRzeh8WmlAesoRWKY3MN5oS1tjqJONveZ7v15GlJRzijB83tPvR3RbJV_uEZsYwzeWRb97DVwej05uxB71HlzSGthSjUTZy3_d8HfNMPONoQoASgS&state=0957209de1a54ea9318cf11f04a3dede8eb62bd914fe6c0d" for 127.0.0.1 at 2017-02-11 15:18:47 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBD14EvZG1iUGEij4EFUMGuBTvDHkNM4P04xazjyEOW0WJDwId84kMczp55zQGLjWaky2cwAJDUcDEgNv3MbUHhCUyeaCB0UkZexFilV7Ub-89R0Gn8fd0sobtddJdgEvZKJKd4GsFGCoihtpy1XbWYJV49g33pbSMpk8nCUUwkDTWOogyt0CRVMnig3fvcpwobiamsXRyHtVV6biVhV-8dQ3z48_URNdZmSAiLRzeh8WmlAesoRWKY3MN5oS1tjqJONveZ7v15GlJRzijB83tPvR3RbJV_uEZsYwzeWRb97DVwej05uxB71HlzSGthSjUTZy3_d8HfNMPONoQoASgS", "state"=>"0957209de1a54ea9318cf11f04a3dede8eb62bd914fe6c0d"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `finish_signup_path' for #<OmniauthCallbacksController:0x007f2a75bd8ac0>):
+  
+app/controllers/omniauth_callbacks_controller.rb:26:in `after_sign_in_path_for'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.7ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:20:32 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:20:35 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:20:35 -0500
+Started GET "/users/auth/facebook/callback?code=AQB9mMEV2z6Ar9orhMN9nafvc1sY3ZV8x00nS8AZd_ILA3kUN03OGdPOY2Vaccw8DBLbL0EvqMEQMS8zA3lZoTmX1OOGa9obdAcYXK61RzJapBZxvnh3PwlniwIMCO8pCLBIjEKEiJL0X7vVvuTUTMpu5j77ykdJAS1d-7QweFr2cIMd6sw8xJO8D3bwQ2n3FKV9au_pBSCQAI-QQDnjLZdebw_eGHOWkIbj5bU4WqfeM8tqes9-kB6ccdpDMyW3xhFgWvGi4CXdChI5LQthOPtH-3J0s4gNFuUXRyq2K_GqUtUINpaW9BloO3CmdoXjYLH_QagfZKX68bzuOOkyV_8g&state=cec328eade65b43faa1d7a28d30476f5bf4d16a31d6daace" for 127.0.0.1 at 2017-02-11 15:20:35 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB9mMEV2z6Ar9orhMN9nafvc1sY3ZV8x00nS8AZd_ILA3kUN03OGdPOY2Vaccw8DBLbL0EvqMEQMS8zA3lZoTmX1OOGa9obdAcYXK61RzJapBZxvnh3PwlniwIMCO8pCLBIjEKEiJL0X7vVvuTUTMpu5j77ykdJAS1d-7QweFr2cIMd6sw8xJO8D3bwQ2n3FKV9au_pBSCQAI-QQDnjLZdebw_eGHOWkIbj5bU4WqfeM8tqes9-kB6ccdpDMyW3xhFgWvGi4CXdChI5LQthOPtH-3J0s4gNFuUXRyq2K_GqUtUINpaW9BloO3CmdoXjYLH_QagfZKX68bzuOOkyV_8g", "state"=>"cec328eade65b43faa1d7a28d30476f5bf4d16a31d6daace"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `finish_signup_path' for #<OmniauthCallbacksController:0x007f2a75219c50>):
+  
+app/controllers/omniauth_callbacks_controller.rb:26:in `after_sign_in_path_for'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.2ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:22:28 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:22:30 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:22:30 -0500
+Started GET "/users/auth/facebook/callback?code=AQDGu-LukhkAMmi4YD4hLr3hWq9Cj0HkgpBoh7vrlGIejkgsnPpqXEGTeIkNcyFWXu3Y5MbUu_8evWecXRwdJ-jmlNtT7gCuSue8cPbyAfWbol9NPVHFCAqp06AziA4gCC3zPvJWg-5JE5QHtlvBSFre4MTQlzVBWGdLDdDGq5AbYICr0P_pnV4yF0y5u_DCtGnq29r4lEdJFIJXbV4CHVXYiIzmZ0W10rojRRa9e-gwKyjs_GrFYTO1UGGIyGdefNSddxtnSJLSURsb2RpaNP_kqPfVqMM1nrMheSBcaUzJN048hmK4NvQhSZryrnxrNxTYB3oNnNqstnKxE_ZQ4KXc&state=90a0df25755050832704b2b4dfed76c6540551ae9ee38edc" for 127.0.0.1 at 2017-02-11 15:22:30 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDGu-LukhkAMmi4YD4hLr3hWq9Cj0HkgpBoh7vrlGIejkgsnPpqXEGTeIkNcyFWXu3Y5MbUu_8evWecXRwdJ-jmlNtT7gCuSue8cPbyAfWbol9NPVHFCAqp06AziA4gCC3zPvJWg-5JE5QHtlvBSFre4MTQlzVBWGdLDdDGq5AbYICr0P_pnV4yF0y5u_DCtGnq29r4lEdJFIJXbV4CHVXYiIzmZ0W10rojRRa9e-gwKyjs_GrFYTO1UGGIyGdefNSddxtnSJLSURsb2RpaNP_kqPfVqMM1nrMheSBcaUzJN048hmK4NvQhSZryrnxrNxTYB3oNnNqstnKxE_ZQ4KXc", "state"=>"90a0df25755050832704b2b4dfed76c6540551ae9ee38edc"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.3ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `finish_signup_path' for #<OmniauthCallbacksController:0x007f2a58a18068>):
+  
+app/controllers/omniauth_callbacks_controller.rb:26:in `after_sign_in_path_for'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.3ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.9ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:23:35 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:23:36 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:23:37 -0500
+Started GET "/users/auth/facebook/callback?code=AQDCTfIM7zmwchkjpRU0eGGM0rWoDYm-XtTJZf3_6bT8D4ihL7oAarpKuSbRi6242GFAJxjyxI5muus6hWwaXfDVLoIt0Lhf8GGOzadFgTgiaV7QWUfzlvwQg42w5Oy_jrFw4BVAAs0umv23jFOIj0UKOAF0d4_17syxg37ROczZjzemWdBrRX3T5Az5EfN0r-KpcX_zgwg24JvdKTASQE_mLtFpCu0q_5E91jLoGExYK03eQQYggFtKMeeQpA4Zbpt29w94Lx09IVvpSTtvpXksCOY1y6u16G2hkPravABCOELz_Fw2hhJRLYwxj6_yK4e9gcbmieh5hwUNxNn0Jt_D&state=35e879b766f68a5aa6d045255dba06e5d847318e9a65d103" for 127.0.0.1 at 2017-02-11 15:23:37 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDCTfIM7zmwchkjpRU0eGGM0rWoDYm-XtTJZf3_6bT8D4ihL7oAarpKuSbRi6242GFAJxjyxI5muus6hWwaXfDVLoIt0Lhf8GGOzadFgTgiaV7QWUfzlvwQg42w5Oy_jrFw4BVAAs0umv23jFOIj0UKOAF0d4_17syxg37ROczZjzemWdBrRX3T5Az5EfN0r-KpcX_zgwg24JvdKTASQE_mLtFpCu0q_5E91jLoGExYK03eQQYggFtKMeeQpA4Zbpt29w94Lx09IVvpSTtvpXksCOY1y6u16G2hkPravABCOELz_Fw2hhJRLYwxj6_yK4e9gcbmieh5hwUNxNn0Jt_D", "state"=>"35e879b766f68a5aa6d045255dba06e5d847318e9a65d103"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/finish_signup
+Completed 302 Found in 48ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/1/finish_signup" for 127.0.0.1 at 2017-02-11 15:23:38 -0500
+  
+SyntaxError (/home/rmulligan/learn/rails-portfolio-project/app/controllers/users_controller.rb:4: syntax error, unexpected ..., expecting keyword_end):
+  
+app/controllers/users_controller.rb:4: syntax error, unexpected ..., expecting keyword_end
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.4ms)
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:24:52 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 44.6ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-11 15:24:55 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XMXarOxmoeaGtgFWdztZ9hNN0kYd52P9BCgRs5LIm/LRiuH+gUd9JLw67V+XGrTvAnFqyHn3PbZlHP+vEMUcPw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 32ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:24:55 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:24:56 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-11 15:24:56 -0500
+Started GET "/users/auth/facebook/callback?code=AQBg3EHkoUFNwH1SA01Tn-R2wmGeCE08Q3smMpQWpbL8_hNwwfVvMKZ2hVM2YkSlVokQKT18b-UXK32JXSfodNZsetfKYywiaJYORUcuTOYjZElIMfoqakMx2nsEQHs3ZCatiiAvfrbvMaI4q5C1fcb-APnZwvU1lQybZ1d9pPL3oJp60O9qWGoVkfV_ov9dAi668EfltZ_PQk0eMbmKbrpkLolX3EcCPQGes-tXajbwX1WQ_nYzfuMlFtozTzfdLISOjCKKrwNAXyJqewJJZUN0Y3FmdFdRXw-n4U1hOAn-9upcmfGx963Go2j-ixWu81YUN0PQLTtxb3F_Lk6UkvnI&state=53cad0871e861f14b0bbd63d69dd8ebf38b661d9cba0573b" for 127.0.0.1 at 2017-02-11 15:24:56 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBg3EHkoUFNwH1SA01Tn-R2wmGeCE08Q3smMpQWpbL8_hNwwfVvMKZ2hVM2YkSlVokQKT18b-UXK32JXSfodNZsetfKYywiaJYORUcuTOYjZElIMfoqakMx2nsEQHs3ZCatiiAvfrbvMaI4q5C1fcb-APnZwvU1lQybZ1d9pPL3oJp60O9qWGoVkfV_ov9dAi668EfltZ_PQk0eMbmKbrpkLolX3EcCPQGes-tXajbwX1WQ_nYzfuMlFtozTzfdLISOjCKKrwNAXyJqewJJZUN0Y3FmdFdRXw-n4U1hOAn-9upcmfGx963Go2j-ixWu81YUN0PQLTtxb3F_Lk6UkvnI", "state"=>"53cad0871e861f14b0bbd63d69dd8ebf38b661d9cba0573b"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1/finish_signup
+Completed 302 Found in 18ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1/finish_signup" for 127.0.0.1 at 2017-02-11 15:24:57 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#finish_signup is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.0.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
+actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.4.2) lib/omniauth/strategy.rb:186:in `call!'
+omniauth (1.4.2) lib/omniauth/strategy.rb:164:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.8ms)
+Started GET "/users/1/finish_signup" for 127.0.0.1 at 2017-02-11 15:26:27 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/finish_signup.html.erb within layouts/application
+  Rendered users/finish_signup.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/finish_signup" for 127.0.0.1 at 2017-02-11 15:26:45 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-11 15:26:50 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uxVtdqS8yHiCJgI4e8XHy0DeaM5qcjzaLdRFGNosVYsBUZJYUnRvnff2S816xizBMUomFQwiBzDh3a6N7qbTRQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-11 15:26:50 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
