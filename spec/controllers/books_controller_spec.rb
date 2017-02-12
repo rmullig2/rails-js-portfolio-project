@@ -28,12 +28,14 @@ RSpec.describe BooksController, type: :controller do
     end
 
     it "views a single book" do
-      get :book, { id: book.id }
+      #get :show, { id: book.id }
+      get :show, params: { id: book.id }
       expect(assigns(:book)).to eq(book)
     end
 
     it "fetches a book for editing" do
-      get :edit, { id: book.id }
+      #get :edit, { id: book.id }
+      get :edit, params: { id: book.id }
       expect(assigns(:book)).to eq(book)
     end
   end
