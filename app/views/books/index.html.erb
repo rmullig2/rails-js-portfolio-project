@@ -1,4 +1,4 @@
-<% if !@books,empty %>
+<% if !@books.empty? %>
   <table border="1">
     <tbody>
       <% @books.each do |book| %>
@@ -12,4 +12,4 @@
     </tbody>
   </table>
 <% end %>
-<br><a href="/books/new">Create new book</a>
+<br><a href="/books/new">Create new book</a><br>
