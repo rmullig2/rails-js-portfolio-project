@@ -25,4 +25,15 @@ class BooksController < ApplicationController
     @book = Book.new
   end
   
+  def update
+    @book = Book.find(params[:id])
+    @book.assign_attributes(params.require(:book).permit(:title, :author, :year, :fiction))
+    if @book.valid?
+      @book.update(params.require(:book).permit(:title, :author, :year, :year, :fiction))
+      redirect_to book_path(@book)
+    else
+      render :edit
+    end
+  end
+  
 end

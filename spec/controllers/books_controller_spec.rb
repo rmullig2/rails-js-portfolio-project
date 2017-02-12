@@ -56,7 +56,6 @@ RSpec.describe BooksController, type: :controller do
   end
 
   context "creating an invalid book" do
-    #before { post(:create, { book: invalid_attributes}) }
     before { post(:create, params: { book: invalid_attributes}) }
 
     it "has not been persisted" do
@@ -75,7 +74,7 @@ RSpec.describe BooksController, type: :controller do
     let(:book) { Book.create!(valid_attributes) }
 
     before do
-      patch :update, { id: book.id, book: new_attributes }
+      patch :update, params: { id: book.id, book: new_attributes }
     end
 
     it "updates the book" do
