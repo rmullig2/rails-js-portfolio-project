@@ -90,7 +90,7 @@ RSpec.describe BooksController, type: :controller do
   context "updating a book with invalid data" do
     let(:book) { Book.create!(valid_attributes) }
     before do
-      patch :update, { id: book.id, book: invalid_attributes }
+      patch :update, params: { id: book.id, book: invalid_attributes }
     end
 
     it "does not persist changes" do
@@ -103,9 +103,9 @@ RSpec.describe BooksController, type: :controller do
   end
 
   context "destroying a book" do
-    let(:song) { Book.create!(valid_attributes) }
+    let(:book) { Book.create!(valid_attributes) }
     before do
-      delete :destroy, { id: book.id }
+      delete :destroy, params: { id: book.id }
     end
 
     it "destroys the requested book" do
