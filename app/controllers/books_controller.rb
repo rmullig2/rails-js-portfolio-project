@@ -12,4 +12,13 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
   
+  def create
+    @book = Book.new(params.require(:book).permit(:title, :author, :year, :fiction))
+    if @book.save
+      redirect_to book_path(@book)
+    else
+      render :new
+    end
+  end
+  
 end

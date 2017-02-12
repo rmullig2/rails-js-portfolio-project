@@ -28,20 +28,18 @@ RSpec.describe BooksController, type: :controller do
     end
 
     it "views a single book" do
-      #get :show, { id: book.id }
       get :show, params: { id: book.id }
       expect(assigns(:book)).to eq(book)
     end
 
     it "fetches a book for editing" do
-      #get :edit, { id: book.id }
       get :edit, params: { id: book.id }
       expect(assigns(:book)).to eq(book)
     end
   end
 
   context "creating a valid book" do
-    before { post(:create, { book: valid_attributes }) }
+    before { post(:create, params: { book: valid_attributes }) }
 
     it "creates a new Book" do
       expect(Book.count).to eq(1)
@@ -58,7 +56,8 @@ RSpec.describe BooksController, type: :controller do
   end
 
   context "creating an invalid book" do
-    before { post(:create, { book: invalid_attributes}) }
+    #before { post(:create, { book: invalid_attributes}) }
+    before { post(:create, params: { book: invalid_attributes}) }
 
     it "has not been persisted" do
       expect(assigns(:book)).to be_new_record
