@@ -1,0 +1,12 @@
+<h1>Edit Song</h1>
+<%= form_for(@book) do |book| %>
+  <%= book.label :title %>
+  <%= book.text_field :title %>
+  <%= book.label :author %>
+  <%= book.text_box :author %>
+  <%= book.label :ear %>
+  <%= book.number_field :year %>
+  <%= book.label :fiction %>
+  <%= book.check_box :fiction %>
+  <%= book.submit %>
+<% end %>
