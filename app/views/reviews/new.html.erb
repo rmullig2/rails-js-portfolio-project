@@ -1,0 +1,12 @@
+<h1>Edit Review</h1>
+<%= form_for(@review) do |review| %>
+  <%= review.label :summary %>
+  <%= review.text_field :summary %>
+  <%= review.label :rating %>
+  <%= review.number_field :rating %>
+  <%= review.label :body %>
+  <%= review.text_field :body %>
+  <%= hidden_field :user_id, value: current_user.id %>
+  <%= hidden_field :book_id, value: @book.id %>
+  <%= review.submit %>
+<% end %>

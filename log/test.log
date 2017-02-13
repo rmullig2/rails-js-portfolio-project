@@ -4560,3 +4560,71 @@ Processing by ReviewsController#edit as HTML
   Rendered reviews/edit.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.1ms)
   [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test_user@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  Rendered reviews/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction") VALUES (?, ?, ?, ?)[0m  [["title", "Angels and Demons"], ["author", "Dan Brown"], ["year", 2005], ["fiction", true]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "A genuine page turner"], ["body", "The book is laced with fun facts about electing a pope and the\n                          Vatican, like that St. Peter's bones are not in the golden casket in St.\n                          Peter's Basilica, but two stories under it. Brown knows the layout.\n                          And that the artist Raphael's last name was Santi. He also knows how marble\n                          statues were carved. Brown's no Irving Stone (THE AGONY AND THE ECSTACY),\n                          but he does manage to inform without being pedantic.\n                                       \n                          As Vittoria and Langdon race around Rome, we get quite a tour, with great\n                          descriptions. (Pick up a paperback copy next summer and bring it to Rome.\n                          Take the Brown tour.) What's interesting is that all the places and pieces of\n                          art in this book really exist."], ["rating", 3], ["user_id", 1], ["book_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (4.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (19.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction") VALUES (?, ?, ?, ?)[0m  [["title", "Angels and Demons"], ["author", "Dan Brown"], ["year", 2005], ["fiction", true]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "A genuine page turner"], ["body", "The book is laced with fun facts about electing a pope and the\n                          Vatican, like that St. Peter's bones are not in the golden casket in St.\n                          Peter's Basilica, but two stories under it. Brown knows the layout.\n                          And that the artist Raphael's last name was Santi. He also knows how marble\n                          statues were carved. Brown's no Irving Stone (THE AGONY AND THE ECSTACY),\n                          but he does manage to inform without being pedantic.\n                                       \n                          As Vittoria and Langdon race around Rome, we get quite a tour, with great\n                          descriptions. (Pick up a paperback copy next summer and bring it to Rome.\n                          Take the Brown tour.) What's interesting is that all the places and pieces of\n                          art in this book really exist."], ["rating", 3], ["user_id", 1], ["book_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (8.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction") VALUES (?, ?, ?, ?)[0m  [["title", "Angels and Demons"], ["author", "Dan Brown"], ["year", 2005], ["fiction", true]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "A genuine page turner"], ["body", "The book is laced with fun facts about electing a pope and the\n                          Vatican, like that St. Peter's bones are not in the golden casket in St.\n                          Peter's Basilica, but two stories under it. Brown knows the layout.\n                          And that the artist Raphael's last name was Santi. He also knows how marble\n                          statues were carved. Brown's no Irving Stone (THE AGONY AND THE ECSTACY),\n                          but he does manage to inform without being pedantic.\n                                       \n                          As Vittoria and Langdon race around Rome, we get quite a tour, with great\n                          descriptions. (Pick up a paperback copy next summer and bring it to Rome.\n                          Take the Brown tour.) What's interesting is that all the places and pieces of\n                          art in this book really exist."], ["rating", 3], ["user_id", 1], ["book_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (3.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test_user@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction") VALUES (?, ?, ?, ?)[0m  [["title", "Angels and Demons"], ["author", "Dan Brown"], ["year", 2005], ["fiction", true]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "A genuine page turner"], ["body", "The book is laced with fun facts about electing a pope and the\n                          Vatican, like that St. Peter's bones are not in the golden casket in St.\n                          Peter's Basilica, but two stories under it. Brown knows the layout.\n                          And that the artist Raphael's last name was Santi. He also knows how marble\n                          statues were carved. Brown's no Irving Stone (THE AGONY AND THE ECSTACY),\n                          but he does manage to inform without being pedantic.\n                                       \n                          As Vittoria and Langdon race around Rome, we get quite a tour, with great\n                          descriptions. (Pick up a paperback copy next summer and bring it to Rome.\n                          Take the Brown tour.) What's interesting is that all the places and pieces of\n                          art in this book really exist."], ["rating", 3], ["user_id", 1], ["book_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (12.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction") VALUES (?, ?, ?, ?)[0m  [["title", "Angels and Demons"], ["author", "Dan Brown"], ["year", 2005], ["fiction", true]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "A genuine page turner"], ["body", "The book is laced with fun facts about electing a pope and the\n                          Vatican, like that St. Peter's bones are not in the golden casket in St.\n                          Peter's Basilica, but two stories under it. Brown knows the layout.\n                          And that the artist Raphael's last name was Santi. He also knows how marble\n                          statues were carved. Brown's no Irving Stone (THE AGONY AND THE ECSTACY),\n                          but he does manage to inform without being pedantic.\n                                       \n                          As Vittoria and Langdon race around Rome, we get quite a tour, with great\n                          descriptions. (Pick up a paperback copy next summer and bring it to Rome.\n                          Take the Brown tour.) What's interesting is that all the places and pieces of\n                          art in this book really exist."], ["rating", 3], ["user_id", 1], ["book_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m

@@ -1,3 +1,4 @@
+require 'pry'
 class BooksController < ApplicationController
   
   def index
