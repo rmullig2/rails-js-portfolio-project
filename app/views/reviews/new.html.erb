@@ -1,0 +1,12 @@
+<h1>Create Review</h1>
+<%= form_for(@review, url: {action: "create"} ) do |review| %>
+  <%= review.label :summary %>
+  <%= review.text_field :summary %><br><br>
+  <%= review.label :rating %>
+  <%= review.number_field :rating, in: 1..5 %><br><br>
+  <%= review.label :body %>
+  <%= review.text_area :body %><br><br>
+  <%= hidden_field :user_id, value: current_user.id %>
+  <%= hidden_field :book_id, value: @book.id %>
+  <%= review.submit %>
+<% end %>

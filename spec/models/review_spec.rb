@@ -37,5 +37,12 @@ RSpec.describe Review, type: :model do
   it 'belongs to a book' do 
     expect(@review.book).to eq (@book)
   end
+  
+  it 'does not allow a user to write multiple reviews of the same book' do
+    @review.save
+    @review2 = Review.new(user: @user, book: @book, rating: 4, summary: "A new review", body: "Try to create a new review")
+    @review2.save
+    expect(Review.last.summary).to match "A genuine page turner"
+  end
 
 end
