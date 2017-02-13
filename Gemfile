@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# gem selenium
+gem 'selenium-webdriver'
 
 # devise gem
 gem 'devise'
@@ -57,6 +59,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'pry'
+  gem 'factory_girl_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
