@@ -31,10 +31,10 @@ RSpec.describe ReviewsController, type: :controller do
       expect(assigns(:review)).to eq(review)
     end
     
-    #it "fetches a review for editing" do
-    #  get :edit, params: { id: review.id }
-    #  expect(assigns(:review)).to eq(review)
-    #end
+    it "fetches a review for editing" do
+      get :edit, params: { id: review.id }
+      expect(assigns(:review)).to eq(review)
+    end
   end
 
   #context "creating a valid review" do
