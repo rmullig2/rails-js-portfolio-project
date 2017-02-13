@@ -26,11 +26,11 @@ RSpec.describe ReviewsController, type: :controller do
       expect(assigns(:reviews)).to eq([review])
     end
 
-    #it "views a single review" do
-    #  get :show, params: { id: review.id }
-    #  expect(assigns(:review)).to eq(review)
-    #end
-    #
+    it "views a single review" do
+      get :show, params: { id: review.id }
+      expect(assigns(:review)).to eq(review)
+    end
+    
     #it "fetches a review for editing" do
     #  get :edit, params: { id: review.id }
     #  expect(assigns(:review)).to eq(review)
