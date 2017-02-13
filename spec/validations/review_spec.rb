@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Review, type: :model do
-  before(:each) { @user = User.create(email: 'test_user@yahoo.com', password: "password123", password_confirmation: 'password123') }
-  #binding.pry
+  @user = User.create(email: 'test_user@yahoo.com', password: "password123", password_confirmation: 'password123')
   before(:each) { @book = Book.new(title: 'Angels and Demons', author: "Dan Brown", year: 2005, fiction: true) }
   before(:each) { @summary = 'A genuine page turner' }
   before(:each) { @rating = 3 }
@@ -43,6 +42,7 @@ RSpec.describe Review, type: :model do
   end
   
   it "should save with all necessary information" do
+    @user = User.last
     @review = Review.new(rating: @rating, summary: @summary, body: @body, user: @user, book: @book)
     @review.save
     expect(Review.last.user).to match @user
