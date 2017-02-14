@@ -1,12 +1,23 @@
+<h1>Reviewed Books</h1>
 <% if !@books.empty? %>
   <table border="1">
+    <thead>
+      <td>Title</td>
+      <td>Author</td>
+      <td>Year</td>
+      <td>Fiction?</td>
+    </thead>
     <tbody>
       <% @books.each do |book| %>
         <tr>
         <td><%= book.title %></td>
-        <td><%= book.release_year %></td>
-        <td><%= book.artist_name %></td>
-        <td><%= book.genre %></td>
+        <td><%= book.author %></td>
+        <td><%= book.year %></td>
+        <% if book.fiction %>
+          <td>Fiction</td>
+        <% else %>
+          <td>Non-Fiction %></td>
+        <% end %>
         </tr>
       <% end %>
     </tbody>
