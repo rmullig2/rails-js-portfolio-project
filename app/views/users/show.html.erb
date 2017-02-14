@@ -1,11 +1,22 @@
 <h3>Welcome, <%= @user.email %></h3>
 <% if !Review.user_review(current_user).empty? %>
-  <% Review.user_review(current_user).each do |review| %>
-  <%= review.book.title %><br>
-  <%= review.rating %><br>
-  <%= review.summary %><br>
-  <%= review.body %><br><br>
-  <% end %>
+  <p>Your Reviews</p>
+  <table border='1'>
+    <tr>
+      <th>Title</th>
+      <th>Rating</th>
+      <th>body</th>
+    </tr>
+    <% Review.user_review(current_user).each do |review| %>
+    <tr>
+      <td><%= review.book.title %></td>
+      <td><%= review.rating %></td>
+      <td><%= review.summary %></td>
+      <td><%= review.body %></td>
+    <% end %>
+    </tr>
+  </table>
 <% else %>
   <h3>You have not reviewed any books!</h3>
 <% end %>
+<br>
