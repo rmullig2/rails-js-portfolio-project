@@ -64,11 +64,8 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'pry'
-<<<<<<< HEAD
   gem 'factory_girl_rails'
-=======
   gem 'rails-controller-testing'
->>>>>>> e92f31be75f40a42ba07f83dbe7655781042f746
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
