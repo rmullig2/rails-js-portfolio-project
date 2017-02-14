@@ -49,5 +49,10 @@ class User < ApplicationRecord
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+  
+  def set_info=(user_info)
+    info = UserInfo.find_or_create_by(user_id: current_user_id)
+    info.update(user_info)
+  end
 
 end

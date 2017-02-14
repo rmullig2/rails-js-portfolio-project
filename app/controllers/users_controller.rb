@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 
   # GET /users/:id/edit
   def edit
-    # authorize! :update, @user
+    @user = User.find(params[:id])
+    #binding.pry
   end
 
   # PATCH/PUT /users/:id.:format
