@@ -1,0 +1,21 @@
+<% userinfo = UserInfo.find_by(user_id: @user.id) %>
+<%= form_for @user do |f| %>
+  <%= f.fields_for :info do |i| %>
+    <% if userinfo.nil? %>
+      <%= i.label :name %>
+      <%= i.text_field :name %><br>
+      <%= i.label :city %>
+      <%= i.text_field :city %><br>
+      <%= i.label :state %>
+      <%= i.text_field :state %><br>
+    <% else %>
+      <%= i.label :name %>
+      <%= i.text_field :name, value: userinfo.name %><br>
+      <%= i.label :city %>
+      <%= i.text_field :city, value: userinfo.city%><br>
+      <%= i.label :state %>
+      <%= i.text_field :state, value: userinfo.state %><br>
+    <% end %>
+    <%= f.submit %>
+  <% end %>
+<% end %>

@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     #binding.pry
   end
+  
+  def updateinfo
+    binding.pry
+  end
 
   # PATCH/PUT /users/:id.:format
   def update
