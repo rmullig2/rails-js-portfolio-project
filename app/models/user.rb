@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :books, through: :reviews
   has_one :user_info
+  accepts_nested_attributes_for :user_info
   before_create :skip_confirmation!
   
   def self.find_for_oauth(auth, signed_in_resource = nil)
@@ -51,7 +52,7 @@ class User < ApplicationRecord
   end
   
   def set_info=(user_info)
-    info = UserInfo.find_or_create_by(user_id: current_user_id)
+    info = UserInfo.find_or_create_by(user_id: self.id)
     info.update(user_info)
   end
 

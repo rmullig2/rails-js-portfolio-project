@@ -13,7 +13,9 @@ class UsersController < ApplicationController
   end
   
   def updateinfo
-    binding.pry
+    @user = User.find(params[:id])
+    @user.set_info = params[:user].require(:info).permit(:name, :city, :state)
+    redirect_to user_path(current_user)
   end
 
   # PATCH/PUT /users/:id.:format
@@ -60,9 +62,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    def user_params
+    def info_params
       accessible = [ :name, :email ] # extend with your own params
       accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
       params.require(:user).permit(accessible)
     end
+    
 end
