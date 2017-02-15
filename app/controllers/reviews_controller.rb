@@ -5,7 +5,9 @@ class ReviewsController < ApplicationController
   end
   
   def show
-    @review = Review.find(params[:id])
+    #binding.pry
+    @reviews = Review.book_review(params[:book_id])
+    #@review = Review.find(params[:id])
   end
   
   def edit

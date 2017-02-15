@@ -1,4 +1,10 @@
-<h3>Summary: <%= @review.summary %></h3>
-<h3>Rating: <%= @review.rating %></h3>
-<h3>Body: <%= @review.body %></h3>
-<a href="/reviews">Return to index</a>
+<% if !@reviews.empty? %>
+  <% @reviews.each do |review| %>
+    <h3>Summary: <%= review.summary %></h3>
+    <h3>Rating: <%= review.rating %></h3>
+    <h3>Body: <%= review.body %></h3>
+  <% end %>
+<% else %>
+  <h3>There are no reviews for this book</h3>
+<% end %>
+<a href="/reviews">Return to index</a><br>
