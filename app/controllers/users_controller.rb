@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     # authorize! :update, @user
     respond_to do |format|
       if @user.update(user_params)
-        sign_in(@user == current_user ? @user : current_user, :bypass => true)
+        sign_in(@user == current_user ? @user : current_user, :bypass => false)
         format.html { redirect_to @user, notice: 'Your profile was successfully updated.' }
         format.json { head :no_content }
       else
@@ -35,10 +35,12 @@ class UsersController < ApplicationController
 
   # GET/PATCH /users/:id/finish_signup
   def finish_signup
-    # authorize! :update, @user 
+    # authorize! :update, @user
+    #binding.pry
+    @user = User.find(params[:id])
     if request.patch? && params[:user] #&& params[:user][:email]
       if @user.update(user_params)
-        @user.skip_reconfirmation!
+        #@user.skip_reconfirmation!
         sign_in(@user, :bypass => true)
         redirect_to @user, notice: 'Your profile was successfully updated.'
       else
@@ -60,6 +62,10 @@ class UsersController < ApplicationController
   private
     def set_user
       @user = User.find(params[:id])
+    end
+    
+    def user_params
+      params.require(:user).permit(:email)
     end
 
     def info_params

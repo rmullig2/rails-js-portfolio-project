@@ -7185,3 +7185,533 @@ Processing by ReviewsController#show as HTML
 Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-02-15 18:21:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 1567ms (Views: 1473.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-15 19:09:35 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-15 19:09:35 -0500
+Started GET "/users/auth/facebook/callback?code=AQArg4omvMTvnxO0AqKZ9EjW0LcY2JkmWQ73IA3Cw2WvRK6bxMeHA5NLaMod8uEBiupRJHHArHt6YWLym-EyCqixQOdDE1oGuOZgbcB2shjWHg2VaRu0aar5DFDY6hTOfBKLPD-F60X8D6b7mC0rQgrA5_KTr3LuCZadECkeWcc28KBQ_U0qz_yiKfe3v2RBG8Wx2dTXFmnKpbjvXYP4O2I6aup-EMKd2xqeV3uv9kDV9ruEb-Aui5fwZqULQI6S_OFywGVPl3MOF7WdpXkA0Jx57Yk6sb8pgdFic9ejE5D2OaegXiDYzPzCIuL_cwX0LpeaouDb2xuGlkb6t4q7Oq2Q&state=b4b241203fe268d5fea077d6d0c38b0c4d93271ca9df7966" for 127.0.0.1 at 2017-02-15 19:09:36 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQArg4omvMTvnxO0AqKZ9EjW0LcY2JkmWQ73IA3Cw2WvRK6bxMeHA5NLaMod8uEBiupRJHHArHt6YWLym-EyCqixQOdDE1oGuOZgbcB2shjWHg2VaRu0aar5DFDY6hTOfBKLPD-F60X8D6b7mC0rQgrA5_KTr3LuCZadECkeWcc28KBQ_U0qz_yiKfe3v2RBG8Wx2dTXFmnKpbjvXYP4O2I6aup-EMKd2xqeV3uv9kDV9ruEb-Aui5fwZqULQI6S_OFywGVPl3MOF7WdpXkA0Jx57Yk6sb8pgdFic9ejE5D2OaegXiDYzPzCIuL_cwX0LpeaouDb2xuGlkb6t4q7Oq2Q", "state"=>"b4b241203fe268d5fea077d6d0c38b0c4d93271ca9df7966"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/2/finish_signup
+Completed 302 Found in 313ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/2/finish_signup" for 127.0.0.1 at 2017-02-15 19:09:37 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (71.8ms)
+Completed 200 OK in 205ms (Views: 180.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-02-15 19:09:51 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (user_id = 2)[0m
+  Rendered users/show.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 133ms (Views: 129.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2/finish_signup" for 127.0.0.1 at 2017-02-15 19:09:56 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 129ms (Views: 78.2ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/2/finish_signup" for 127.0.0.1 at 2017-02-15 19:10:01 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wwjXMG5hIUMthaI3iny3ThbRZwBJo6Ds1h0jKAUERiMAIuOoOA3Iujhpe3rXOB6idCuVAENftQhO7HGElmjhHA==", "user"=>{"email"=>"rmullig2@optonline.net"}, "commit"=>"Continue", "id"=>"2"}
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007f98801c95d8>):
+  
+app/controllers/users_controller.rb:40:in `finish_signup'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.6ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (302.4ms)
+  [1m[35m (95.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170209210757)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209210757"]]
+  [1m[35m (23.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToUsers (20170209212637)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "admin?" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209212637"]]
+  [1m[35m (44.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170210023147)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year" integer, "fiction" boolean, "user_id" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210023147"]]
+  [1m[35m (71.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20170210030106)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "summary" varchar, "body" text, "rating" integer, "user_id" integer, "book_id" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210030106"]]
+  [1m[35m (42.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserInfo (20170210160707)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "user_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "state" varchar, "user_id" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210160707"]]
+  [1m[35m (25.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToUsers (20170211193756)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211193756"]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIdentities (20170211195112)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211195112"]]
+  [1m[35m (47.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-16 00:11:45 UTC], ["updated_at", 2017-02-16 00:11:45 UTC]]
+  [1m[35m (30.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-15 19:11:49 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 65.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-15 19:11:52 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-15 19:11:52 -0500
+Started GET "/users/auth/facebook/callback?code=AQDt4_u42JZ4pvOSHRUTxXdVF7JlX7RgIKi1FmzD1YyMYMQ_fDuJHBkqTmXecSUuqr6cRHV1OMo780yjY7Xv4xkt9AMmoEA9aP3UKy8aBhG5kDXymulh3Cfvj07GON8mSk6frk6vmxSr66KPMCrXE0C5fnGNLHpqCyzsf13J1F41ioK7szQyixgvqoV_gQ3UDT6_ESD7WUIOMigjueT53dReL_rbCENuCulL_IP7S-ZunlGnafBCmAftpJbXyq_eyHuQNzsHW6W0W5fwS1eY4qFMs9-z7EoaxHhOOTt-2o_owcQQFNhqll76L1OCeq7p3dM9nMXmPjK1snY9d8lZ3PYW&state=730b805c556e334c78ba2e0323a5c7f18975477ef377ffc4" for 127.0.0.1 at 2017-02-15 19:11:52 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDt4_u42JZ4pvOSHRUTxXdVF7JlX7RgIKi1FmzD1YyMYMQ_fDuJHBkqTmXecSUuqr6cRHV1OMo780yjY7Xv4xkt9AMmoEA9aP3UKy8aBhG5kDXymulh3Cfvj07GON8mSk6frk6vmxSr66KPMCrXE0C5fnGNLHpqCyzsf13J1F41ioK7szQyixgvqoV_gQ3UDT6_ESD7WUIOMigjueT53dReL_rbCENuCulL_IP7S-ZunlGnafBCmAftpJbXyq_eyHuQNzsHW6W0W5fwS1eY4qFMs9-z7EoaxHhOOTt-2o_owcQQFNhqll76L1OCeq7p3dM9nMXmPjK1snY9d8lZ3PYW", "state"=>"730b805c556e334c78ba2e0323a5c7f18975477ef377ffc4"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.1ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "identities" ("provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "148328415677144"], ["created_at", 2017-02-16 00:11:53 UTC], ["updated_at", 2017-02-16 00:11:53 UTC]]
+  [1m[35m (31.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "change@me-148328415677144-facebook.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "change@me-148328415677144-facebook.com"], ["encrypted_password", "$2a$11$MSGY8rHHJpl4EzJZAIEMZe.YBd2MVPsom4iMG6xG.f1kAZbc/VfAK"], ["confirmed_at", 2017-02-16 00:11:54 UTC], ["created_at", 2017-02-16 00:11:54 UTC], ["updated_at", 2017-02-16 00:11:54 UTC], ["name", "Raymond Mulligan"]]
+  [1m[35m (52.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND ("identities"."id" != ?) AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["id", 1], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "identities" SET "user_id" = ?, "updated_at" = ? WHERE "identities"."id" = ?[0m  [["user_id", 1], ["updated_at", 2017-02-16 00:11:54 UTC], ["id", 1]]
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1/finish_signup
+Completed 302 Found in 709ms (ActiveRecord: 104.9ms)
+
+
+Started GET "/users/1/finish_signup" for 127.0.0.1 at 2017-02-15 19:11:54 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (70.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 96ms (Views: 24.1ms | ActiveRecord: 70.7ms)
+
+
+Started PATCH "/users/1/finish_signup" for 127.0.0.1 at 2017-02-15 19:12:51 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cMGfp6qUL+FbTT/RKhXGLvf3Bhazo05omNCMiPwReCvkHo0xINogfSsc3mG/bHUpCpwpLbGiL+bj5whNgCe4zg==", "user"=>{"email"=>"rmullig2@optonline.net"}, "commit"=>"Continue", "id"=>"1"}
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007f988032f5f8>):
+  
+app/controllers/users_controller.rb:40:in `finish_signup'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (142.2ms)
+Started PATCH "/users/1/finish_signup" for 127.0.0.1 at 2017-02-15 19:14:58 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cMGfp6qUL+FbTT/RKhXGLvf3Bhazo05omNCMiPwReCvkHo0xINogfSsc3mG/bHUpCpwpLbGiL+bj5whNgCe4zg==", "user"=>{"email"=>"rmullig2@optonline.net"}, "commit"=>"Continue", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 241055ms (ActiveRecord: 2.4ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007f98adeeed08>):
+  
+app/controllers/users_controller.rb:41:in `finish_signup'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (35.0ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (176.0ms)
+Started PATCH "/users/1/finish_signup" for 127.0.0.1 at 2017-02-15 19:19:16 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cMGfp6qUL+FbTT/RKhXGLvf3Bhazo05omNCMiPwReCvkHo0xINogfSsc3mG/bHUpCpwpLbGiL+bj5whNgCe4zg==", "user"=>{"email"=>"rmullig2@optonline.net"}, "commit"=>"Continue", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `params_require' for #<UsersController:0x007f988dcc6a00>):
+  
+app/controllers/users_controller.rb:68:in `user_params'
+app/controllers/users_controller.rb:42:in `finish_signup'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (232.9ms)
+Started PATCH "/users/1/finish_signup" for 127.0.0.1 at 2017-02-15 19:19:34 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cMGfp6qUL+FbTT/RKhXGLvf3Bhazo05omNCMiPwReCvkHo0xINogfSsc3mG/bHUpCpwpLbGiL+bj5whNgCe4zg==", "user"=>{"email"=>"rmullig2@optonline.net"}, "commit"=>"Continue", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "rmullig2@optonline.net"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "68a518731c8d8a16cdca8e8baf13a594f034fb84cf614c5bc6726be10f868a99"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "confirmation_token" = ?, "confirmation_sent_at" = ?, "unconfirmed_email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmation_token", "ynZcTaYK68duiit3MiMs"], ["confirmation_sent_at", 2017-02-16 00:19:36 UTC], ["unconfirmed_email", "rmullig2@optonline.net"], ["updated_at", 2017-02-16 00:19:35 UTC], ["id", 1]]
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb (8.5ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 504.6ms
+Sent mail to rmullig2@optonline.net (324.8ms)
+Date: Wed, 15 Feb 2017 19:19:38 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: rmullig2@optonline.net
+Message-ID: <58a4f01a3d4b_3f913fcc5693452475671@localhost.localdomain.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome rmullig2@optonline.net!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://somedomain.com/users/confirmation?confirmation_token=ynZcTaYK68duiit3MiMs">Confirm my account</a></p>
+
+  [1m[35m (48.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 3419ms (ActiveRecord: 50.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-15 19:19:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (user_id = 1)[0m
+  Rendered users/show.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 103ms (Views: 100.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-02-15 19:19:47 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 108ms (Views: 90.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-02-15 19:19:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (user_id = 1)[0m
+  Rendered users/show.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 89ms (Views: 87.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-15 19:23:51 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"P1e4KA4Qh8rN3USfU+yWmSzP7V/6JAVdb9DAimiBwZmriKq+hF6IVr2MpS/GlSWe0aTCZPglZNMU50RPFLcBfA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-15 19:23:51 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 89ms (Views: 88.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-15 19:24:14 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-15 19:24:15 -0500
+Started GET "/users/auth/facebook/callback?code=AQCzcSJwsLKvOzb02WsG2e3yHngu5jkhGZ5pXhCnfeKCtE7emFpf_pBVRZrJXjR-fywXICRGHIre98xtDCAUpMXvgnz_wl0KAtSzIjAiEWeSPbBxlSDpvLYOjMa9s2ZdGgzFBC2NaIJLIwgP-LcztP8SGTtfl7-mUSuhRtlONygLLvGPDgNx8HFn0kEASy3np625cOXAxx5F9UU0gM8GLYz_Xx3S0xfQfYda8YHL_Y4PD0P-vczb5ahDJJ_S4ELunSwZdG3xzCMbjA3rWBeRcxXrYEsUCFRl6bMeP8krrIsSdr9gchVnU1ADmytuzivrK6ly6g_Djqp6G7KhFZyQQccD&state=0967a2517f8e05769524ac83c3f5cde0702416325c14e5be" for 127.0.0.1 at 2017-02-15 19:24:16 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCzcSJwsLKvOzb02WsG2e3yHngu5jkhGZ5pXhCnfeKCtE7emFpf_pBVRZrJXjR-fywXICRGHIre98xtDCAUpMXvgnz_wl0KAtSzIjAiEWeSPbBxlSDpvLYOjMa9s2ZdGgzFBC2NaIJLIwgP-LcztP8SGTtfl7-mUSuhRtlONygLLvGPDgNx8HFn0kEASy3np625cOXAxx5F9UU0gM8GLYz_Xx3S0xfQfYda8YHL_Y4PD0P-vczb5ahDJJ_S4ELunSwZdG3xzCMbjA3rWBeRcxXrYEsUCFRl6bMeP8krrIsSdr9gchVnU1ADmytuzivrK6ly6g_Djqp6G7KhFZyQQccD", "state"=>"0967a2517f8e05769524ac83c3f5cde0702416325c14e5be"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.1ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "change@me-148328415677144-facebook.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "change@me-148328415677144-facebook.com"], ["encrypted_password", "$2a$11$uAklWLWUINpuO9nKMItlz.0epEhLrgrY608EQ3vN3OP7i3tQAJJla"], ["confirmed_at", 2017-02-16 00:24:17 UTC], ["created_at", 2017-02-16 00:24:17 UTC], ["updated_at", 2017-02-16 00:24:17 UTC], ["name", "Raymond Mulligan"]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND ("identities"."id" != ?) AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["id", 1], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "identities" SET "user_id" = ?, "updated_at" = ? WHERE "identities"."id" = ?[0m  [["user_id", 2], ["updated_at", 2017-02-16 00:24:17 UTC], ["id", 1]]
+  [1m[35m (30.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2/finish_signup
+Completed 302 Found in 567ms (ActiveRecord: 44.2ms)
+
+
+Started GET "/users/2/finish_signup" for 127.0.0.1 at 2017-02-15 19:24:17 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 77ms (Views: 62.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2/finish_signup" for 127.0.0.1 at 2017-02-15 19:24:23 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YHtysg5+VKOtKq4VcRsNuMysKy6gEzvUpsbcVTCLmWGDxoyFAIApSno7V2D6XrvdblbiySbAPgz0kuC6n4Q8Bw==", "user"=>{"email"=>"rmullig2@optonline.net"}, "commit"=>"Continue", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "rmullig2@optonline.net"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (23.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "2686a11d31039116642e63b1fb9782a6df10d46c7de01f7f3cff1e999ba360d7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "confirmation_token" = ?, "confirmation_sent_at" = ?, "unconfirmed_email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmation_token", "U9oxhTyVfduNz2Nm8atq"], ["confirmation_sent_at", 2017-02-16 00:24:23 UTC], ["unconfirmed_email", "rmullig2@optonline.net"], ["updated_at", 2017-02-16 00:24:23 UTC], ["id", 2]]
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb (0.8ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 36.7ms
+Sent mail to rmullig2@optonline.net (251.6ms)
+Date: Wed, 15 Feb 2017 19:24:23 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: rmullig2@optonline.net
+Message-ID: <58a4f137e863c_3f913fcc56934bf0757ab@localhost.localdomain.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome rmullig2@optonline.net!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://somedomain.com/users/confirmation?confirmation_token=U9oxhTyVfduNz2Nm8atq">Confirm my account</a></p>
+
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 331ms (ActiveRecord: 32.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-02-15 19:24:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (user_id = 2)[0m
+  Rendered users/show.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 116ms (Views: 113.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-15 19:24:55 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"86twcnn9KSm2pg3eZce4WYBy8xxoG6S1RlL0zooPUncQFo5FdwNUwGG39Kvugg48Iog6++7IoW0UBsghJQD3EQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-15 19:24:56 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (43.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-15 19:25:05 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-15 19:25:05 -0500
+Started GET "/users/auth/facebook/callback?code=AQBeH7wpfVrMLvDtsCAIXtXmtAYe3TDx5aGi4SOI5m6fI7DUFtQoH2SYlKQ_EvjDdyrU3EHCCByHV7MX0rIRbRRWstRJWQvUg26HyMkgwvPzfQ2wJmilLN8O-WUKUZtigWDxe44r5HaRE3ezUz6HNqlZjfnDHMRTEwFu716kTz76wJmm7w16wqQFbccmgQ5i5DYfLHvSMR5xy5SAxopauRz1TxILkGuYK6dxtahlsVgA6RnRxVPUxrIXmQgs2KmqrOa-f8EDtQUZpCuyOLN9vdqMVJmUt503oIys3rlhnAQ-8rsnPGs4jW2gdj1DQVbol3vo46Xy3z1g7Jjz75_IOZtG&state=06a3b984c615bcf9bd66eefdd1b6a8b464a3f1ba7763ad06" for 127.0.0.1 at 2017-02-15 19:25:05 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBeH7wpfVrMLvDtsCAIXtXmtAYe3TDx5aGi4SOI5m6fI7DUFtQoH2SYlKQ_EvjDdyrU3EHCCByHV7MX0rIRbRRWstRJWQvUg26HyMkgwvPzfQ2wJmilLN8O-WUKUZtigWDxe44r5HaRE3ezUz6HNqlZjfnDHMRTEwFu716kTz76wJmm7w16wqQFbccmgQ5i5DYfLHvSMR5xy5SAxopauRz1TxILkGuYK6dxtahlsVgA6RnRxVPUxrIXmQgs2KmqrOa-f8EDtQUZpCuyOLN9vdqMVJmUt503oIys3rlhnAQ-8rsnPGs4jW2gdj1DQVbol3vo46Xy3z1g7Jjz75_IOZtG", "state"=>"06a3b984c615bcf9bd66eefdd1b6a8b464a3f1ba7763ad06"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.1ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (22.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "change@me-148328415677144-facebook.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "change@me-148328415677144-facebook.com"], ["encrypted_password", "$2a$11$f/B4uFTYBm7B28OBvkBObOaFUi.q5B2VK9wbuIXQ8tG1VsmC6TvBK"], ["confirmed_at", 2017-02-16 00:25:07 UTC], ["created_at", 2017-02-16 00:25:07 UTC], ["updated_at", 2017-02-16 00:25:07 UTC], ["name", "Raymond Mulligan"]]
+  [1m[35m (27.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND ("identities"."id" != ?) AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["id", 1], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "identities" SET "user_id" = ?, "updated_at" = ? WHERE "identities"."id" = ?[0m  [["user_id", 3], ["updated_at", 2017-02-16 00:25:07 UTC], ["id", 1]]
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3/finish_signup
+Completed 302 Found in 469ms (ActiveRecord: 70.5ms)
+
+
+Started GET "/users/3/finish_signup" for 127.0.0.1 at 2017-02-15 19:25:07 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 118ms (Views: 115.2ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/users/3/finish_signup" for 127.0.0.1 at 2017-02-15 19:25:11 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yVOcxZq7r5fiqDChe6xk38LzgQ4mMYcceXDvGJzUM5CPI/g2uI3QcGaukhyaQct9+pHH00MXH0FVHUrQOKNI2Q==", "user"=>{"email"=>"rmullig2@optonline.net"}, "commit"=>"Continue", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "rmullig2@optonline.net"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "fac033cbfb3b2c36250d4c795c19a57d3133421a79f68a079d8befbf0fb54241"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "confirmation_token" = ?, "confirmation_sent_at" = ?, "unconfirmed_email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmation_token", "8QZHKr3d9wmTjcMwBzLQ"], ["confirmation_sent_at", 2017-02-16 00:25:11 UTC], ["unconfirmed_email", "rmullig2@optonline.net"], ["updated_at", 2017-02-16 00:25:11 UTC], ["id", 3]]
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb (1.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 45.8ms
+Sent mail to rmullig2@optonline.net (278.2ms)
+Date: Wed, 15 Feb 2017 19:25:11 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: rmullig2@optonline.net
+Message-ID: <58a4f167bb133_3f913fcc56934bf0758cf@localhost.localdomain.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome rmullig2@optonline.net!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://somedomain.com/users/confirmation?confirmation_token=8QZHKr3d9wmTjcMwBzLQ">Confirm my account</a></p>
+
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 362ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2017-02-15 19:25:12 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (user_id = 3)[0m
+  Rendered users/show.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 85ms (Views: 82.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2017-02-15 19:26:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUserInfo Load (0.1ms)[0m  [1m[34mSELECT  "user_infos".* FROM "user_infos" WHERE "user_infos"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Started GET "/users/3" for 127.0.0.1 at 2017-02-15 19:29:42 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUserInfo Load (0.2ms)[0m  [1m[34mSELECT  "user_infos".* FROM "user_infos" WHERE "user_infos"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (user_id = 3)[0m
+  Rendered users/show.html.erb within layouts/application (5118.1ms)
+Completed 200 OK in 5210ms (Views: 5207.8ms | ActiveRecord: 0.6ms)
+
+
