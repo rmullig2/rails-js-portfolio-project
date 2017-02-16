@@ -18,6 +18,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to book_path(@book)
     else
+      flash[:error] = "Please fill in all fields"
       render :new
     end
   end
@@ -33,6 +34,7 @@ class BooksController < ApplicationController
       @book.update(params.require(:book).permit(:title, :author, :year, :year, :fiction))
       redirect_to book_path(@book)
     else
+      flash[:error] = "All fields must be specified"
       render :edit
     end
   end

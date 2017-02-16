@@ -5,9 +5,7 @@ class ReviewsController < ApplicationController
   end
   
   def show
-    #binding.pry
     @reviews = Review.book_review(params[:book_id])
-    #@review = Review.find(params[:id])
   end
   
   def edit
@@ -25,6 +23,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to book_reviews_path(@book)
     else
+      flash[:error] = "All fields must be filled in"
       redirect_to book_path(@book)
     end
   end

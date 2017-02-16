@@ -6,7 +6,6 @@
 <% else %>
   <h3>Non-Fiction %></h3>
 <% end %>
-<% book_id = @book.id %>
 <%= link_to("See reviews", book_review_path(@book)) %><br>
 <%= link_to("Write a review", new_book_review_path(@book)) %><br>
 <a href="/books">Return to index</a><br>
