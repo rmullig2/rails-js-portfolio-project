@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   def load_book
     @book = Book.find(params[:id])
   end
+  
+  def load_review
+    @review = Review.find(params[:id])
+  end
 
   protected
 

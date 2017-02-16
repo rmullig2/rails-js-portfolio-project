@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
-  
+  before_action :load_review, only: [:edit, :update, :destroy]
+  before_action :load_book, only: [:new]
+
   def index
     @reviews = Review.all
   end
@@ -9,11 +11,11 @@ class ReviewsController < ApplicationController
   end
   
   def edit
-    @review = Review.find(params[:id])
+ #   @review = Review.find(params[:id])
   end
   
   def new
-    @book = Book.find(params[:book_id])
+#    @book = Book.find(params[:book_id])
     @review = Review.new
   end
   
@@ -26,5 +28,13 @@ class ReviewsController < ApplicationController
       flash[:error] = "All fields must be filled in"
       redirect_to book_path(@book)
     end
+  end
+  
+  def update
+    #code
+  end
+  
+  def destroy
+    #code
   end
 end
