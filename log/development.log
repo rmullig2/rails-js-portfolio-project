@@ -7869,3 +7869,480 @@ Processing by BooksController#show as HTML
 Completed 200 OK in 177ms (Views: 142.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/books/new" for 127.0.0.1 at 2017-02-15 20:29:14 -0500
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_book.html.erb (51.5ms)
+  Rendered books/new.html.erb within layouts/application (52.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 151ms (Views: 149.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-02-15 20:31:09 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 74ms (Views: 73.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-02-15 20:31:11 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (45.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 112ms (Views: 109.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:31:14 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (269.2ms)
+  Rendered reviews/new.html.erb within layouts/application (270.1ms)
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007f988e1c8698>:0x007f988236a868>):
+    1: <%= form_for(@review) do |review| %>
+    2:   <%= review.label :summary %>
+    3:   <%= review.text_field :summary %>
+    4:   <%= review.label :rating %>
+  
+app/views/reviews/_review.html.erb:1:in `_app_views_reviews__review_html_erb__2661671907749041667_70146494427160'
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146498189840'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.7ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.1ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:35:11 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (188.0ms)
+  Rendered reviews/new.html.erb within layouts/application (188.9ms)
+Completed 500 Internal Server Error in 11796ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007f988e818908>:0x007f988cff78d8>):
+    1: <%= form_for(@review) do |review| %>
+    2:   <%= review.label :summary %>
+    3:   <%= review.text_field :summary %>
+    4:   <%= review.label :rating %>
+  
+app/views/reviews/_review.html.erb:1:in `_app_views_reviews__review_html_erb__2661671907749041667_70146450142840'
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146601306340'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (33.7ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (29.4ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (95.6ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:37:30 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (135.2ms)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007f988e818908>:0x007f9882479060>):
+    1: <h1>Create Review</h1>
+    2: <%= form_for(@review) do |review| %>
+    3:   <%= review.label :summary %>
+    4:   <%= review.text_field :summary %>
+    5:   <%= review.label :rating %>
+  
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146498743700'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (27.3ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.8ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:41:11 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (22760.4ms)
+  Rendered reviews/new.html.erb within layouts/application (22761.2ms)
+Completed 500 Internal Server Error in 28356ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007f988e818908>:0x007f988087a878>):
+    1: <% binding.pry %>
+    2: <%= form_for(@review) do |review| %>
+    3:   <%= review.label :summary %>
+    4:   <%= review.text_field :summary %>
+    5:   <%= review.label :rating %>
+  
+app/views/reviews/_review.html.erb:2:in `_app_views_reviews__review_html_erb__2661671907749041667_70146484030680'
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146484066840'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (63.9ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.2ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:42:50 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (1554.0ms)
+  Rendered reviews/new.html.erb within layouts/application (1554.9ms)
+Completed 500 Internal Server Error in 7570ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <% binding.pry %>
+    2: <%= form_for(@book_review) do |review| %>
+    3:   <%= review.label :summary %>
+    4:   <%= review.text_field :summary %>
+    5:   <%= review.label :rating %>
+  
+app/views/reviews/_review.html.erb:2:in `_app_views_reviews__review_html_erb__2661671907749041667_70146497963640'
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146497867300'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.9ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (171.4ms)
+Started GET "/books/1" for 127.0.0.1 at 2017-02-15 20:43:46 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 127ms (Views: 125.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books/1/reviews/1" for 127.0.0.1 at 2017-02-15 20:43:52 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"1", "id"=>"1"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '1')[0m
+  Rendered reviews/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 92.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-02-15 20:43:56 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 130ms (Views: 128.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-02-15 20:43:57 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 102ms (Views: 99.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1/reviews/1" for 127.0.0.1 at 2017-02-15 20:44:03 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"1", "id"=>"1"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '1')[0m
+  Rendered reviews/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 120ms (Views: 118.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-02-15 20:46:28 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 135ms (Views: 90.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-02-15 20:46:35 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 131ms (Views: 129.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:46:39 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (145.5ms)
+  Rendered reviews/new.html.erb within layouts/application (146.7ms)
+Completed 500 Internal Server Error in 5401ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007f988e818908>:0x007f988dc3be78>):
+    1: <%= form_for(@review) do |review| %>
+    2:   <%= review.label :summary %>
+    3:   <%= review.text_field :summary %>
+    4:   <%= review.label :rating %>
+  
+app/views/reviews/_review.html.erb:1:in `_app_views_reviews__review_html_erb__2661671907749041667_70146594847500'
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146595107880'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.5ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (84.2ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (111.1ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:48:30 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (1.5ms)
+  Rendered reviews/new.html.erb within layouts/application (16.8ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (can't write unknown attribute `html`):
+    1: <%= form_for(@book, @review) do |review| %>
+    2:   <%= review.label :summary %>
+    3:   <%= review.text_field :summary %>
+    4:   <%= review.label :rating %>
+  
+app/views/reviews/_review.html.erb:1:in `_app_views_reviews__review_html_erb__2661671907749041667_70146496668280'
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146481074800'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (47.5ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.3ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.1ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:49:47 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (0.7ms)
+  Rendered reviews/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+...d=  form_for[@book, @review] do |review| @output_buffer.safe...
+...                               ^
+/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/reviews/_review.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/reviews/_review.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146894781120'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.6ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (38.3ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.9ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 20:57:41 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (162.0ms)
+  Rendered reviews/new.html.erb within layouts/application (162.9ms)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007f98802c5bf8>:0x007f988d33b5f8>):
+    1: <%= form_for(@review) do |review| %>
+    2:   <%= review.label :summary %>
+    3:   <%= review.text_field :summary %>
+    4:   <%= review.label :rating %>
+  
+app/views/reviews/_review.html.erb:1:in `_app_views_reviews__review_html_erb__2661671907749041667_70146590132060'
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146590403720'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (30.0ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (113.9ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 21:06:44 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (0.8ms)
+  Rendered reviews/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:1: syntax error, unexpected tLABEL
+...ppend=  form_for(@review), url: {action: create}, do |review...
+...                               ^
+/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:1: syntax error, unexpected ',', expecting keyword_end
+...review), url: {action: create}, do |review| @output_buffer.s...
+...                               ^
+/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/reviews/_review.html.erb:1: syntax error, unexpected tLABEL
+app/views/reviews/_review.html.erb:1: syntax error, unexpected ',', expecting keyword_end
+app/views/reviews/_review.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146500783460'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (22.9ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.3ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 21:10:46 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (137.2ms)
+  Rendered reviews/new.html.erb within layouts/application (138.2ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007f98802c5bf8>:0x007f9880c9b3a8>):
+    1: <%= form_for(@review) do |review| %>
+    2:   <%= review.label :summary %>
+    3:   <%= review.text_field :summary %>
+    4:   <%= review.label :rating %>
+  
+app/views/reviews/_review.html.erb:1:in `_app_views_reviews__review_html_erb__2661671907749041667_70146494414800'
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146486526120'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (23.0ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.7ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 21:15:09 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (0.6ms)
+  Rendered reviews/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+...d=  form_for[:book, @review] do |review| @output_buffer.safe...
+...                               ^
+/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/reviews/_review.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/reviews/_review.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146451575020'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.4ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.6ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 21:21:54 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (0.8ms)
+  Rendered reviews/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+...d=  form_for[@book, @review] do |review| @output_buffer.safe...
+...                               ^
+/home/rmulligan/learn/rails-portfolio-project/app/views/reviews/_review.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/reviews/_review.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/reviews/_review.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb___3534887775087168319_70146452259280'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (33.0ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.0ms)
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 21:22:29 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (2.4ms)
+  Rendered reviews/new.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 140ms (Views: 124.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2017-02-15 21:22:55 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (2.0ms)
+  Rendered reviews/new.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 74.0ms | ActiveRecord: 0.3ms)
+
+

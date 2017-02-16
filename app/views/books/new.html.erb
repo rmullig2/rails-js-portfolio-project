@@ -1,12 +1,2 @@
 <h1>New Book</h1>
-<%= form_for(@book) do |book| %>
-  <%= book.label :title %>
-  <%= book.text_field :title %><br>
-  <%= book.label :author %>
-  <%= book.text_field :author %><br>
-  <%= book.label :year %>
-  <%= book.number_field :year %><br>
-  <%= book.label :fiction %>
-  <%= book.check_box :fiction %><br>
-  <%= book.submit %>
-<% end %>
+<%= render 'book' %>
