@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :updateinfo, :finish_signup, :destroy]
 
   def show
+    if @user.admin?
+      @books = Book.all
+      @users = User.all
+      render 'admin'
+    end
   end
 
   def edit

@@ -38,7 +38,6 @@ class BooksController < ApplicationController
   end
   
   def destroy
-#    @book = Book.find_by(params[:id])
     if !@book.nil?
       @book.destroy
     end
