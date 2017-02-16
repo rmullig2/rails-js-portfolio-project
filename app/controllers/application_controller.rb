@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   def load_review
     @review = Review.find(params[:id])
   end
+  
+  def load_user
+    @user = User.find(params[:id])
+  end
 
   protected
 

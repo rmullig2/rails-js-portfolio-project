@@ -11,11 +11,9 @@ class ReviewsController < ApplicationController
   end
   
   def edit
- #   @review = Review.find(params[:id])
   end
   
   def new
-#    @book = Book.find(params[:book_id])
     @review = Review.new
   end
   

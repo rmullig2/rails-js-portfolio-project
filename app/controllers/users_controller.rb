@@ -1,26 +1,18 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :load_user, only: [:show, :edit, :update, :updateinfo, :finish_signup, :destroy]
 
-  # GET /users/:id.:format
   def show
-    @user = User.find(params[:id])
   end
 
-  # GET /users/:id/edit
   def edit
-    @user = User.find(params[:id])
-    #binding.pry
   end
   
   def updateinfo
-    @user = User.find(params[:id])
     @user.set_info = params[:user].require(:info).permit(:name, :city, :state)
     redirect_to user_path(current_user)
   end
 
-  # PATCH/PUT /users/:id.:format
   def update
-    # authorize! :update, @user
     respond_to do |format|
       if @user.update(user_params)
         sign_in(@user == current_user ? @user : current_user, :bypass => false)
@@ -33,11 +25,8 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET/PATCH /users/:id/finish_signup
   def finish_signup
     # authorize! :update, @user
-    #binding.pry
-    @user = User.find(params[:id])
     if request.patch? && params[:user] #&& params[:user][:email]
       if @user.update(user_params)
         #@user.skip_reconfirmation!
@@ -60,10 +49,7 @@ class UsersController < ApplicationController
   end
   
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
-    
+
     def user_params
       params.require(:user).permit(:email)
     end
