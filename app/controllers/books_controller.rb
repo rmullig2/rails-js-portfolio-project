@@ -1,16 +1,15 @@
 require 'pry'
 class BooksController < ApplicationController
+  before_action :load_book, only: [:show, :edit, :update, :destroy]
   
   def index
     @books = Book.all
   end
   
   def show
-    @book = Book.find(params[:id])
   end
   
   def edit
-    @book = Book.find(params[:id])
   end
   
   def create
@@ -28,7 +27,6 @@ class BooksController < ApplicationController
   end
   
   def update
-    @book = Book.find(params[:id])
     @book.assign_attributes(params.require(:book).permit(:title, :author, :year, :fiction))
     if @book.valid?
       @book.update(params.require(:book).permit(:title, :author, :year, :year, :fiction))
@@ -40,7 +38,7 @@ class BooksController < ApplicationController
   end
   
   def destroy
-    @book = Book.find_by(params[:id])
+#    @book = Book.find_by(params[:id])
     if !@book.nil?
       @book.destroy
     end
