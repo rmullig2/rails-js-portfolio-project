@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   before_action :load_review, only: [:edit, :update, :destroy]
-  before_action :load_book, only: [:new]
 
   def index
     @reviews = Review.all
@@ -14,11 +13,12 @@ class ReviewsController < ApplicationController
   end
   
   def new
+    @book = Book.find(params[:book_id])
     @review = Review.new
   end
   
   def create
-    @review = Review.new(summary: params[:review][:summary], rating: params[:review][:rating], body: params[:review][:rating], book_id: params[:book_id], user_id: current_user.id)
+    @review = Review.new(summary: params[:review][:summary], rating: params[:review][:rating], body: params[:review][:body], book_id: params[:book_id], user_id: current_user.id)
     @book = Book.find(params[:book_id])
     if @review.save
       redirect_to book_reviews_path(@book)
@@ -33,6 +33,6 @@ class ReviewsController < ApplicationController
   end
   
   def destroy
-    #code
+    @review.destroy
   end
 end

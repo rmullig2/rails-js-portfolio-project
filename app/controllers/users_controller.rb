@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     if @user.admin?
       @books = Book.all
       @users = User.all
+      @reviews = Review.all
       render 'admin'
     end
   end
