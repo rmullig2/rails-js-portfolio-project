@@ -1,8 +1,9 @@
 <% if !@reviews.empty? %>
   <% @reviews.each do |review| %>
-    <h3>Summary: <%= review.summary %></h3>
-    <h3>Rating: <%= review.rating %></h3>
-    <h3>Body: <%= review.body %></h3>
+    <h3>Reviewed by: <%= review.user.email %></h3>
+    <p>Summary: <%= review.summary %></p>
+    <p>Rating: <%= review.rating %> stars</p>
+    <p>Body: <%= review.body %></p>
   <% end %>
 <% else %>
   <h3>There are no reviews for this book</h3>
