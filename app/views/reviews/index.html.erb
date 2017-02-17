@@ -3,10 +3,9 @@
     <tbody>
       <% @reviews.each do |review| %>
         <tr>
-        <td><%= review.title %></td>
-        <td><%= review.release_year %></td>
-        <td><%= review.artist_name %></td>
-        <td><%= review.genre %></td>
+        <td><%= review.rating %> stars</td>
+        <td><%= review.summary %></td>
+        <td><%= review.body %></td>
         </tr>
       <% end %>
     </tbody>

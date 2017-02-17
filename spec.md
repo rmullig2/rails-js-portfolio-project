@@ -15,10 +15,10 @@ Specs:
 - [x] Include third party signup/login (Devise/OmniAuth for Facebook and LinkedIn)
 - [x] Include nested resource show or index (/books/:book_id/reviews)
 - [x] Include nested resource "new" form (/books/:book_id/reviews/new)
-- [ ] Include form display of validation errors (book and review create/edit)
+- [x] Include form display of validation errors (book and review create/edit)
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate

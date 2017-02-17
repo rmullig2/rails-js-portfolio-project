@@ -11,7 +11,10 @@ Rails.application.routes.draw do
     resources :reviews
   end
   
+  resources :reviews, only: :destroy
+  
   get '/users/:id', to: 'users#show', as: 'user'
   get '/users/:id/edit', to: 'users#edit', as: 'user_edit'
+  delete '/users/:id', to: 'users#destroy'
   patch '/users/:id', to: 'users#updateinfo'
 end
