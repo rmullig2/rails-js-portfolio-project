@@ -12721,3 +12721,925 @@ Processing by ReviewsController#show as HTML
 Completed 200 OK in 77ms (Views: 74.9ms | ActiveRecord: 0.6ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (4.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@home.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "f062715e005fc488aa5dfcaffd1c8c7f4ad3d6fb38d069a241436e30b396aaf4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at", "admin?") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin@home.com"], ["encrypted_password", "$2a$11$ys4uO9zoi4rdyXXZzgHMye3bmdCwzCT30aKbss5mvuJmUhiiWRojW"], ["confirmation_token", "KaozWU1xbLbxA4E5Wzvc"], ["confirmed_at", 2017-03-01 03:15:40 UTC], ["confirmation_sent_at", 2017-03-01 03:15:40 UTC], ["created_at", 2017-03-01 03:15:39 UTC], ["updated_at", 2017-03-01 03:15:39 UTC], ["admin?", true]]
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bigreader@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "5377385d0bbe325059a6c0ce1b8309c8e7a27a3c9ae6c363896391a4e771beb8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bigreader@yahoo.com"], ["encrypted_password", "$2a$11$YZzU94aCbPJPcoZjbUMM4umnSk2r7EsPKZtK2zS7mlLRqjdkxYsr6"], ["confirmation_token", "qc4RLUjEQhfKWhaS6e-6"], ["confirmed_at", 2017-03-01 03:15:40 UTC], ["confirmation_sent_at", 2017-03-01 03:15:40 UTC], ["created_at", 2017-03-01 03:15:40 UTC], ["updated_at", 2017-03-01 03:15:40 UTC]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jackiec@msn.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "96346a2c99d76b00d6bcfda3084b6b382a158104fb657a98d782f57801aeb37a"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jackiec@msn.com"], ["encrypted_password", "$2a$11$F6YsryJJ06ZZyPp3wssC4OS8zCBb7mYln3Z0qUTZa7grgV6EPqfRq"], ["confirmation_token", "-v4ykFZ4HE3yBMVR6nnf"], ["confirmed_at", 2017-03-01 03:15:40 UTC], ["confirmation_sent_at", 2017-03-01 03:15:40 UTC], ["created_at", 2017-03-01 03:15:40 UTC], ["updated_at", 2017-03-01 03:15:40 UTC]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alliek@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "e7c92f6402947c6aa4cf140c8f9c48df0774b82e919e7c1ef0c9a90c3ce759a5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alliek@hotmail.com"], ["encrypted_password", "$2a$11$LslhNjy.Tc.lpGQiEFzevOZxJpGLswZDBuOrK9owDuWH5uAqjccGq"], ["confirmation_token", "4xyB5dR6aWZ-rE2oGxbr"], ["confirmed_at", 2017-03-01 03:15:40 UTC], ["confirmation_sent_at", 2017-03-01 03:15:40 UTC], ["created_at", 2017-03-01 03:15:40 UTC], ["updated_at", 2017-03-01 03:15:40 UTC]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joeyd@google.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "91a5936ed371068fc2de6a9ab708e48036affa89aaf9c3325ad36e7b62d104e1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "joeyd@google.com"], ["encrypted_password", "$2a$11$HknRt0CvG6/ptONkerhnAO2cZq3vk3yzwStDZLVY3/qExUlWWSHVS"], ["confirmation_token", "Qo1y4XJydskRgv6dj2yC"], ["confirmed_at", 2017-03-01 03:15:41 UTC], ["confirmation_sent_at", 2017-03-01 03:15:41 UTC], ["created_at", 2017-03-01 03:15:41 UTC], ["updated_at", 2017-03-01 03:15:41 UTC]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nlee@rutgers.edu"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "ac3f62816a6037a4844cac776a5254aa05c42615aa9190fa88aab88e8f0534fc"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nlee@rutgers.edu"], ["encrypted_password", "$2a$11$IILs8pZImpEwbIPaAokI9ey47BLgk0tH/vfC4/3rKoc3MkEwjlpuK"], ["confirmation_token", "_Ff-ydJSTFkW2PLmW8wZ"], ["confirmed_at", 2017-03-01 03:15:41 UTC], ["confirmation_sent_at", 2017-03-01 03:15:41 UTC], ["created_at", 2017-03-01 03:15:41 UTC], ["updated_at", 2017-03-01 03:15:41 UTC]]
+  [1m[35m (15.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "philm@irs.gov"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "0148f34df25e91baf019f1268d6fa8f4bccad324ca8f97575cecc6d3ce5c7d13"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "philm@irs.gov"], ["encrypted_password", "$2a$11$R8wZnK6BjO4o1r10DpfXXudg.HnYBwsqeklZnElBBOsEVg5ikaCpO"], ["confirmation_token", "UP7qZsNzKiUKxszbZTC2"], ["confirmed_at", 2017-03-01 03:15:41 UTC], ["confirmation_sent_at", 2017-03-01 03:15:41 UTC], ["created_at", 2017-03-01 03:15:41 UTC], ["updated_at", 2017-03-01 03:15:41 UTC]]
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bigfish@abc.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "00d61b643f01d4c17839575f605e69acc3227ab27ce00778dcfd09514f1401a2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bigfish@abc.com"], ["encrypted_password", "$2a$11$fsyKla6.m4Wy500MocLLMeCSpXmPyfcrrHkBNSQutNGwu8ur9FdfC"], ["confirmation_token", "GydiLVR2Yn4FKzs7RbeQ"], ["confirmed_at", 2017-03-01 03:15:41 UTC], ["confirmation_sent_at", 2017-03-01 03:15:41 UTC], ["created_at", 2017-03-01 03:15:41 UTC], ["updated_at", 2017-03-01 03:15:41 UTC]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "frankief@nyu.edu"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "90fd3a62e93993bff2bcb5091f0d7eb5b9db3f081939a55c4ca328462e0befa8"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "frankief@nyu.edu"], ["encrypted_password", "$2a$11$pUOObuVSv6wyYmdkDAMDoum4zCes1yjWBDduW/M23wBQE.dFOEEue"], ["confirmation_token", "udTEByR-3qmFJqRSdMZ4"], ["confirmed_at", 2017-03-01 03:15:42 UTC], ["confirmation_sent_at", 2017-03-01 03:15:42 UTC], ["created_at", 2017-03-01 03:15:42 UTC], ["updated_at", 2017-03-01 03:15:42 UTC]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joannaz@sprint.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "0b0eb73ef50361a9973decef5baca6c554c5ebc07197429bff96f8358791f664"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "joannaz@sprint.com"], ["encrypted_password", "$2a$11$c9FLCXx8dFRwibGlemkJjexCRx555eZTWs043y5GoSy0ukXQpuCse"], ["confirmation_token", "CVg_S5KWsL1yityis151"], ["confirmed_at", 2017-03-01 03:15:42 UTC], ["confirmation_sent_at", 2017-03-01 03:15:42 UTC], ["created_at", 2017-03-01 03:15:42 UTC], ["updated_at", 2017-03-01 03:15:42 UTC]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Enid"], ["state", "OK"], ["user_id", 2]]
+  [1m[35m (44.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Chicago"], ["state", "ILL"], ["user_id", 3]]
+  [1m[35m (46.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Huntington"], ["state", "NY"], ["user_id", 4]]
+  [1m[35m (38.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Savannah"], ["state", "GA"], ["user_id", 5]]
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Sacremento"], ["state", "CA"], ["user_id", 6]]
+  [1m[35m (27.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Jackson"], ["state", "MS"], ["user_id", 7]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "St. Paul"], ["state", "MN"], ["user_id", 8]]
+  [1m[35m (16.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Houston"], ["state", "TX"], ["user_id", 9]]
+  [1m[35m (46.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Raleigh"], ["state", "NC"], ["user_id", 10]]
+  [1m[35m (23.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (76.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170209210757)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209210757"]]
+  [1m[35m (37.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAdminToUsers (20170209212637)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "admin?" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170209212637"]]
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBooks (20170210023147)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year" integer, "fiction" boolean, "user_id" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210023147"]]
+  [1m[35m (57.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20170210030106)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "summary" varchar, "body" text, "rating" integer, "user_id" integer, "book_id" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210030106"]]
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserInfo (20170210160707)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "user_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "state" varchar, "user_id" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210160707"]]
+  [1m[35m (31.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToUsers (20170211193756)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211193756"]]
+  [1m[35m (33.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIdentities (20170211195112)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170211195112"]]
+  [1m[35m (27.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-01 03:16:30 UTC], ["updated_at", 2017-03-01 03:16:30 UTC]]
+  [1m[35m (35.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_identities_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@home.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "db3394cfb6dcd6c4a643517d176008340ab27d6090f59d23b12353dff8143fe0"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at", "admin?") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin@home.com"], ["encrypted_password", "$2a$11$N3NHyHA5lDDIotG9Eh/9nea2HfeQHiNCC30tlP27AXEj6CjCErlua"], ["confirmation_token", "hW8266bTT-b3Di_nxzr5"], ["confirmed_at", 2017-03-01 03:16:36 UTC], ["confirmation_sent_at", 2017-03-01 03:16:36 UTC], ["created_at", 2017-03-01 03:16:36 UTC], ["updated_at", 2017-03-01 03:16:36 UTC], ["admin?", true]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bigreader@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "7f094cfc6df3347de9e1065264e458782154e66c74fd0d73373fa4c42a0cc249"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bigreader@yahoo.com"], ["encrypted_password", "$2a$11$KUH9wLcWjoRYGUDDeJ8Qo.TLnpDoDlsvCDwFD87oPGDSZ5T5rnZ0W"], ["confirmation_token", "GXPHTVQonzGij1QP2wpv"], ["confirmed_at", 2017-03-01 03:16:36 UTC], ["confirmation_sent_at", 2017-03-01 03:16:36 UTC], ["created_at", 2017-03-01 03:16:36 UTC], ["updated_at", 2017-03-01 03:16:36 UTC]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jackiec@msn.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "144762dbf6c979ab36fa18e7b6d9d4998fe96cb967ff2458ddc35637fc5fd589"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jackiec@msn.com"], ["encrypted_password", "$2a$11$9dtNlPfZamuSnrIeYeU5luDTr3XvH3kcSWMvKwUtTresCPXfjcb1a"], ["confirmation_token", "NwyjZhwg9XLoogppjyDi"], ["confirmed_at", 2017-03-01 03:16:37 UTC], ["confirmation_sent_at", 2017-03-01 03:16:37 UTC], ["created_at", 2017-03-01 03:16:37 UTC], ["updated_at", 2017-03-01 03:16:37 UTC]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alliek@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "db73d209fe7f8aa899f8026c0eb9f9ee0fa14a538415987bfc1b74f78063fcef"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alliek@hotmail.com"], ["encrypted_password", "$2a$11$Wlc0a4zKV43gJGis1T0q4.jMdQoIMgqaN8xaiP2f6a6W1sWDY28/i"], ["confirmation_token", "Uxzb7zBJ2zN2z9Yn2B4W"], ["confirmed_at", 2017-03-01 03:16:37 UTC], ["confirmation_sent_at", 2017-03-01 03:16:37 UTC], ["created_at", 2017-03-01 03:16:37 UTC], ["updated_at", 2017-03-01 03:16:37 UTC]]
+  [1m[35m (26.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joeyd@google.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "2615b558e94c6da47f09c1c0c85add7bccc88024bbc1cd5faeb338c47a36410d"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "joeyd@google.com"], ["encrypted_password", "$2a$11$mA7DNcOcQnPLmdY4TJGjs.T2YuGCMZOzkRJhAmDYFFh2PgXi4C0ZO"], ["confirmation_token", "yQEFwwRhuP2GZSyfQH92"], ["confirmed_at", 2017-03-01 03:16:37 UTC], ["confirmation_sent_at", 2017-03-01 03:16:37 UTC], ["created_at", 2017-03-01 03:16:37 UTC], ["updated_at", 2017-03-01 03:16:37 UTC]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nlee@rutgers.edu"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "a8292f0341f33257b2ba6037d353c3a159972658b208e590ee33f01cbcdaadc5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "nlee@rutgers.edu"], ["encrypted_password", "$2a$11$fzYgRn0U/qHBAqekRnwAmOGZKNOtkJ2pUzI6qgErCVyCUuYwgLX5O"], ["confirmation_token", "jYkffWHWYTcMWhu81Y9H"], ["confirmed_at", 2017-03-01 03:16:37 UTC], ["confirmation_sent_at", 2017-03-01 03:16:37 UTC], ["created_at", 2017-03-01 03:16:37 UTC], ["updated_at", 2017-03-01 03:16:37 UTC]]
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "philm@irs.gov"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "7c968183121fead38f499feff6dd72cf7ae9f0726df16a3e716803113643b60a"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "philm@irs.gov"], ["encrypted_password", "$2a$11$mcMtK.NFbGJ3EFcuhjGZoOKb4DJ.g3OMcoxQDV.jB8rBLZSdDMOHC"], ["confirmation_token", "zWqJt1-tU8BsevjxdGqT"], ["confirmed_at", 2017-03-01 03:16:37 UTC], ["confirmation_sent_at", 2017-03-01 03:16:37 UTC], ["created_at", 2017-03-01 03:16:37 UTC], ["updated_at", 2017-03-01 03:16:37 UTC]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bigfish@abc.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "5dc85dfaccb3f7fd83669874dc1ba1ccec181ef5802e383980981e17fa68824a"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "bigfish@abc.com"], ["encrypted_password", "$2a$11$ybmd3mvELX6i0sVwVSRc8.jZgsmr/1469GCLdqj/M11CNYEcSrQ2u"], ["confirmation_token", "YBuj6SoTpUGq22M4TiS5"], ["confirmed_at", 2017-03-01 03:16:38 UTC], ["confirmation_sent_at", 2017-03-01 03:16:38 UTC], ["created_at", 2017-03-01 03:16:38 UTC], ["updated_at", 2017-03-01 03:16:38 UTC]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "frankief@nyu.edu"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "2ca20b392269858b66eecdb0185469332634a12756ce1e4144b6f87388483c47"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "frankief@nyu.edu"], ["encrypted_password", "$2a$11$GigYfERGp81lfTm5oB0XEuQNiYdmLxk/dTAqJ//3TywUJR3uuyxvu"], ["confirmation_token", "t8ub6DQztvEd7S3nzGku"], ["confirmed_at", 2017-03-01 03:16:38 UTC], ["confirmation_sent_at", 2017-03-01 03:16:38 UTC], ["created_at", 2017-03-01 03:16:38 UTC], ["updated_at", 2017-03-01 03:16:38 UTC]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joannaz@sprint.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "1a1c1b2890d771f0650476dfac5a168db170ceaf72aec2972774b86affc8523a"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "joannaz@sprint.com"], ["encrypted_password", "$2a$11$C65yw2UUA5y6YaXlLkJ42eoQ/rFf3btItTn0AmYLzJbzCNrx81G7m"], ["confirmation_token", "NcERraqV3uWciqt_fxGX"], ["confirmed_at", 2017-03-01 03:16:38 UTC], ["confirmation_sent_at", 2017-03-01 03:16:38 UTC], ["created_at", 2017-03-01 03:16:38 UTC], ["updated_at", 2017-03-01 03:16:38 UTC]]
+  [1m[35m (80.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Enid"], ["state", "OK"], ["user_id", 2]]
+  [1m[35m (26.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Chicago"], ["state", "ILL"], ["user_id", 3]]
+  [1m[35m (40.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Huntington"], ["state", "NY"], ["user_id", 4]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Savannah"], ["state", "GA"], ["user_id", 5]]
+  [1m[35m (23.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Sacremento"], ["state", "CA"], ["user_id", 6]]
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Jackson"], ["state", "MS"], ["user_id", 7]]
+  [1m[35m (27.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "St. Paul"], ["state", "MN"], ["user_id", 8]]
+  [1m[35m (26.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Houston"], ["state", "TX"], ["user_id", 9]]
+  [1m[35m (24.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Raleigh"], ["state", "NC"], ["user_id", 10]]
+  [1m[35m (28.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@home.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bigreader@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jackiec@msn.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alliek@hotmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joeyd@google.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "nlee@rutgers.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "philm@irs.gov"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bigfish@abc.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "frankief@nyu.edu"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joannaz@sprint.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Enid"], ["state", "OK"], ["user_id", 2]]
+  [1m[35m (29.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Chicago"], ["state", "ILL"], ["user_id", 3]]
+  [1m[35m (20.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Huntington"], ["state", "NY"], ["user_id", 4]]
+  [1m[35m (44.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Savannah"], ["state", "GA"], ["user_id", 5]]
+  [1m[35m (20.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Sacremento"], ["state", "CA"], ["user_id", 6]]
+  [1m[35m (20.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Jackson"], ["state", "MS"], ["user_id", 7]]
+  [1m[35m (24.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "St. Paul"], ["state", "MN"], ["user_id", 8]]
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Houston"], ["state", "TX"], ["user_id", 9]]
+  [1m[35m (41.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["city", "Raleigh"], ["state", "NC"], ["user_id", 10]]
+  [1m[35m (27.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Catching Fire"], ["author", "Suzanne Collins"], ["year", 2009], ["fiction", true], ["user_id", 3]]
+  [1m[35m (73.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "StrengthsFinder 2.0"], ["author", "Tom Rath"], ["year", 2007], ["fiction", false], ["user_id", 8]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Gone Girl"], ["author", "Gillian Flynn"], ["year", 2014], ["fiction", true], ["user_id", 5]]
+  [1m[35m (25.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Help"], ["author", "Kathryn Stockett"], ["year", 2011], ["fiction", true], ["user_id", 2]]
+  [1m[35m (25.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Unbroken: A World War II Story of Survival, Resilience, and Redemption"], ["author", "Laura Hillenbrand"], ["year", 2014], ["fiction", false], ["user_id", 10]]
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Heaven is for Real"], ["author", "Todd Burpo"], ["year", 2010], ["fiction", false], ["user_id", 10]]
+  [1m[35m (27.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Who Moved My Cheese?"], ["author", "Kenneth Blanchard"], ["year", 1998], ["fiction", false], ["user_id", 4]]
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "A Game of Thrones"], ["author", "George Martin"], ["year", 2011], ["fiction", true], ["user_id", 3]]
+  [1m[35m (38.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Martian"], ["author", "Andy Weir"], ["year", 2014], ["fiction", true], ["user_id", 7]]
+  [1m[35m (18.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Atlas Shrugged"], ["author", "Ayn Rand"], ["year", 1996], ["fiction", true], ["user_id", 4]]
+  [1m[35m (44.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "An improvement in every aspect!"], ["body", "All too often, I find that sequels just don't provide a worthy follow up to the original or that sometimes the original story is just so incomplete that I hardly have any desire to move forward for fear of never receiving a satisfying conclusion. For this reason, I often stay away from sequels and even series in general, at least in terms of books. I think this is part of the reason it took me so long to pick up Suzanne Collins' CATCHING FIRE (The Hunger Games Book 2) despite having read the original and seen both of the respective movies a long while ago. The CATCHING FIRE movie adaptation was one of the few movie sequels that I ever thought to be drastically better than the previous film in every way possible. That's not to say that it made me like the first any less, just that I felt it had improved in all aspects. And so I went into this book with timid excitement, hoping I would feel the same way."], ["rating", 4], ["user_id", 3], ["book_id", 1]]
+  [1m[35m (35.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "This book is super short"], ["body", "I mean, in terms of actual analyses and content - otherwise it is just a gigantic dictionary for each strength it identifies. You're essentially paying a lot of money for the test and the dictionary. For me, I didn't tell me anything new, and I suppose personally I don't necessarily agree with the author's theories. Anyway, I won't go into that as I think the majority of the 2 star rating I'm giving is due to the surprise that the book is just a dictionary... In which I didn't find any of the terms to be significant or new. If you are someone that does a lot of self-analyses to begin with, I may just pass on this book and look for something more complex / in-depth."], ["rating", 2], ["user_id", 8], ["book_id", 2]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Disgusting time waster"], ["body", "Let me say this first. I rarely read books with this format, jumping from one character to another. I find it distracting and disconnected. I continued to plod my way through disliking everything about each of the players...surely one or the other would have a redeeming quality. But as we know this would not be the case. If there are these kinds of lunatics out there I am so glad I haven't knowingly come across any. To me, it became ridiculously foolish. I always finish a book so I did just that."], ["rating", 1], ["user_id", 5], ["book_id", 3]]
+  [1m[35m (28.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "A book for learning!!"], ["body", "Excellent book. The subject is always timely. It should be in every schools reading list. As the old saying..'If we don't learn from the past, we will be forest to relive it.'"], ["rating", 5], ["user_id", 2], ["book_id", 4]]
+  [1m[35m (18.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Testament of will power and resilience"], ["body", "Reading this book has been an absolutely exhilarating experience and extremely motivating to carry on in spite of insurmountable hurdles in life .\nThe suffering of veterans of world war 2 and how few of them had the will to live through days of being stranded in the ocean and years being violated as POW has been illustrated in great depths by the author . Great narrative of the live of war hero who didn't give up in spite of unspeakable horror that has bestowed upon him . Must read for young kids of this generation who have the tendency to give us so easily"], ["rating", 4], ["user_id", 10], ["book_id", 5]]
+  [1m[35m (30.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "amazing"], ["body", "I feel like so many people have questions about what will happen to them when they die and this book makes your heart happy. Mine was very happy. Happy to hear such wonderful descriptions. I myself wondered what would happen to me when I pass and often get scared of the thought. This book has made my faith stronger. I recommended this book to at least 6 of my friends before the days end. Can't wait to read it again tomorrow!"], ["rating", 5], ["user_id", 10], ["book_id", 6]]
+  [1m[35m (48.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quintesential Managment Book"], ["body", "Pros: Its short, sweet & to the point. Cons: I don't mind change, but usually when a group is asked to read this book it's like saying some sh%t is about to hit the fan & we don't want to hear any whining! Lol."], ["rating", 3], ["user_id", 4], ["book_id", 7]]
+  [1m[35m (47.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "SUMMER IS OVER. WINTER IS COMING. BOOKS RULE."], ["body", "Long term fans of the genre will make immediate comparisons to other giants (!) of the field, and the first name to spring to mind will, of course, be J R R Tolkien, with his breathtaking LORD OF THE RINGS trilogy. On a superficial level, Martin’s books are longer (by a looooong way) and yet despite the extra length and time involved in writing and reading them, he has failed to gift the reader with the quality of prose, and downright beauty, that is the trademark of Gandalf, Frodon, Elrond and company."], ["rating", 4], ["user_id", 3], ["book_id", 8]]
+  [1m[35m (44.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Extreme Tourism"], ["body", "Quite a few people who saw me reading 'The Martian' couldn't stop ranting and raving about Mr. Weir's novel. Maybe their enthusiasm boosted my expectations to unrealistic levels because I thought the book was just okay. The author loves science and describes in very specific detail what Mark Watney did to solve problems in order to survive."], ["rating", 3], ["user_id", 7], ["book_id", 9]]
+  [1m[35m (31.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Enjoyed reading"], ["body", "Was a book I was most curious to read. Once I started reading I had a hard time putting it down. I liked the development of the characters and found myself agreeing with the subject of the book. It's amazing how the story line fits into today's world. Even though this book was written a half century ago the authors' insights could easily be applied to life today. I intend to read more of Ayn Rands' work. Wish I had read this earlier in my life."], ["rating", 5], ["user_id", 4], ["book_id", 10]]
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2017-02-28 22:18:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 2900ms (Views: 2820.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-28 22:18:29 -0500
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2017-02-28 22:18:29 -0500
+Started GET "/users/auth/facebook/callback?code=AQBMRyEz7laXAuCD90mzt7Vw2qFB_9q6N4c5KdnUs6fWOX2Rhkm4kIO3ur-U4ftgQO4JhRc8RX4tkaJq4SL2AnUYLhP8lqQ1R7zrGUUK_9S7jyZnLpURJoyZrR_u42WkqzkvDi5TUH2ac0Rw-qoGn8DFiB3l-9F8hs7mL7A6xMFpdmA5eNTb2QLX2vOINhRSIXGgz1BJ53EhCOX2ucwc-YOEyG3wRSa7eoe4OfAMVJ0oZLs2uZB3FG5k2ETQxQ5bTHg8Lx9ZlIOy_HcKSecrYNzNtT2268xsfSDR5Xl0vFByXtAq2CM4UAlBMCulT2hpf0Ph8LmLUrnLs39eGib56Gpy&state=5804fd198f2e3837ede85199d94f87f72e91217f66f24673" for 127.0.0.1 at 2017-02-28 22:18:30 -0500
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBMRyEz7laXAuCD90mzt7Vw2qFB_9q6N4c5KdnUs6fWOX2Rhkm4kIO3ur-U4ftgQO4JhRc8RX4tkaJq4SL2AnUYLhP8lqQ1R7zrGUUK_9S7jyZnLpURJoyZrR_u42WkqzkvDi5TUH2ac0Rw-qoGn8DFiB3l-9F8hs7mL7A6xMFpdmA5eNTb2QLX2vOINhRSIXGgz1BJ53EhCOX2ucwc-YOEyG3wRSa7eoe4OfAMVJ0oZLs2uZB3FG5k2ETQxQ5bTHg8Lx9ZlIOy_HcKSecrYNzNtT2268xsfSDR5Xl0vFByXtAq2CM4UAlBMCulT2hpf0Ph8LmLUrnLs39eGib56Gpy", "state"=>"5804fd198f2e3837ede85199d94f87f72e91217f66f24673"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from facebook at (eval):3)
+  [1m[36mIdentity Load (0.2ms)[0m  [1m[34mSELECT  "identities".* FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "identities" ("provider", "uid", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["provider", "facebook"], ["uid", "148328415677144"], ["created_at", 2017-03-01 03:18:31 UTC], ["updated_at", 2017-03-01 03:18:31 UTC]]
+  [1m[35m (38.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "change@me-148328415677144-facebook.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "change@me-148328415677144-facebook.com"], ["encrypted_password", "$2a$11$1QVDPH1VOITfZ4ViNntgKuOE/3s3k2wDGX51OHWp8wjtwxFOKUSVa"], ["confirmed_at", 2017-03-01 03:18:31 UTC], ["created_at", 2017-03-01 03:18:31 UTC], ["updated_at", 2017-03-01 03:18:31 UTC], ["name", "Raymond Mulligan"]]
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIdentity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "identities" WHERE "identities"."uid" = ? AND ("identities"."id" != ?) AND "identities"."provider" = ? LIMIT ?[0m  [["uid", "148328415677144"], ["id", 1], ["provider", "facebook"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "identities" SET "user_id" = ?, "updated_at" = ? WHERE "identities"."id" = ?[0m  [["user_id", 11], ["updated_at", 2017-03-01 03:18:31 UTC], ["id", 1]]
+  [1m[35m (33.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/11/finish_signup
+Completed 302 Found in 787ms (ActiveRecord: 94.9ms)
+
+
+Started GET "/users/11/finish_signup" for 127.0.0.1 at 2017-02-28 22:18:31 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering users/finish_signup.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered users/finish_signup.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 199ms (Views: 109.2ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/users/11/finish_signup" for 127.0.0.1 at 2017-02-28 22:18:38 -0500
+Processing by UsersController#finish_signup as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eHf1WGWtnFE7G/oIDjEN8Ucb3+7MdTEsaGCba5P02yNWs2/OoiMXTVH3o/TBDUj3Y1QZbXh3RySiiZs4JXvq4Q==", "user"=>{"email"=>"rmullig2@optonline.net"}, "commit"=>"Continue", "id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "rmullig2@optonline.net"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "b657326b3cb07ab8cecbed1994b3facdfb2faae0ad1fe37ece6fd05d5fb8ce3c"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "confirmation_token" = ?, "confirmation_sent_at" = ?, "unconfirmed_email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmation_token", "7jmwLizsNfMbx9KQQHBp"], ["confirmation_sent_at", 2017-03-01 03:18:40 UTC], ["unconfirmed_email", "rmullig2@optonline.net"], ["updated_at", 2017-03-01 03:18:38 UTC], ["id", 11]]
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/devise-4.0.0/app/views/devise/mailer/confirmation_instructions.html.erb (22.5ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 898.0ms
+Sent mail to rmullig2@optonline.net (400.5ms)
+Date: Tue, 28 Feb 2017 22:18:42 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: rmullig2@optonline.net
+Message-ID: <58b63d92d7f1e_6ad3fc53f65a54c726a7@localhost.localdomain.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome rmullig2@optonline.net!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://somedomain.com/users/confirmation?confirmation_token=7jmwLizsNfMbx9KQQHBp">Confirm my account</a></p>
+
+  [1m[35m (33.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/11
+Completed 302 Found in 4912ms (ActiveRecord: 34.5ms)
+
+
+Started GET "/users/11" for 127.0.0.1 at 2017-02-28 22:18:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUserInfo Load (0.1ms)[0m  [1m[34mSELECT  "user_infos".* FROM "user_infos" WHERE "user_infos"."user_id" = ? LIMIT ?[0m  [["user_id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (user_id = 11)[0m
+  Rendered users/show.html.erb within layouts/application (78.0ms)
+Completed 200 OK in 215ms (Views: 145.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-02-28 22:18:47 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 108.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2017-02-28 22:18:56 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 117.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:18:59 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (8.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 60.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2017-02-28 22:19:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [45 times] (46.5ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.6ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (163.1ms)
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:19:17 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 74.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2017-02-28 22:19:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [45 times] (37.2ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (134.8ms)
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:19:22 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (48.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 154ms (Views: 151.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2017-02-28 22:19:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [45 times] (27.4ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.8ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (120.5ms)
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:21:22 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 91.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2017-02-28 22:24:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/reviews"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [45 times] (43.4ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.1ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (136.2ms)
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:24:31 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 97.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:24:32 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/book_reviews" for 127.0.0.1 at 2017-02-28 22:24:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/book_reviews"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [45 times] (44.4ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (140.8ms)
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:25:43 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 77.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:25:46 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/book_reviews" for 127.0.0.1 at 2017-02-28 22:25:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/book_reviews"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [45 times] (37.1ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/rmulligan/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (120.4ms)
+Started GET "/books/2/reviews/2" for 127.0.0.1 at 2017-02-28 22:26:28 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '2')[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (60.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 158ms (Views: 96.4ms | ActiveRecord: 60.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-02-28 22:26:31 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 140ms (Views: 114.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/5" for 127.0.0.1 at 2017-02-28 22:26:44 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 80ms (Views: 78.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/5/reviews/5" for 127.0.0.1 at 2017-02-28 22:26:47 -0500
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"5", "id"=>"5"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '5')[0m
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '5')[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 134ms (Views: 131.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-02-28 22:26:49 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 90.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-02-28 22:26:51 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 191ms (Views: 156.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-02-28 22:26:55 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 142ms (Views: 139.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/9" for 127.0.0.1 at 2017-02-28 22:26:57 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 114ms (Views: 111.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/9/reviews/new" for 127.0.0.1 at 2017-02-28 22:26:58 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"9"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_review.html.erb (32.9ms)
+  Rendered reviews/new.html.erb within layouts/application (53.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 124.1ms | ActiveRecord: 0.3ms)
+
+
