@@ -42,3 +42,16 @@ body {
     li a:hover {
         background-color: #171;
     }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    font-weight: bold;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
