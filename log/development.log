@@ -13857,3 +13857,1078 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-03-02 11:17:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+Started GET "/" for 127.0.0.1 at 2017-03-02 11:17:24 -0500
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (0.0ms)
+  Rendered welcome/home.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 1905ms (Views: 1820.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1876ms (Views: 1818.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-08 14:38:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 1046ms (Views: 993.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "trycia@kohlersawayn.info"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "822c624fc81b21c9b28c86c9abc196b25ff4ee03f9eb489906ee1f2088850195"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "trycia@kohlersawayn.info"], ["encrypted_password", "$2a$11$f1WfM7jKQzrn0VXzzAKmjOWyTEe/1haLnMd8TKfyImOVKcbUXhyPS"], ["confirmation_token", "svDoMqNTtwy4Fan7zRRL"], ["confirmed_at", 2017-04-08 18:51:02 UTC], ["confirmation_sent_at", 2017-04-08 18:51:02 UTC], ["created_at", 2017-04-08 18:51:01 UTC], ["updated_at", 2017-04-08 18:51:01 UTC]]
+  [1m[35m (108.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (87.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year" integer, "fiction" boolean, "user_id" integer)[0m
+  [1m[35m (98.2ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (98.3ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35m (91.1ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "summary" varchar, "body" text, "rating" integer, "user_id" integer, "book_id" integer)[0m
+  [1m[35m (92.9ms)[0m  [1m[35mCREATE TABLE "user_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "state" varchar, "user_id" integer)[0m
+  [1m[35m (102.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin?" boolean DEFAULT 'f', "name" varchar)[0m
+  [1m[35m (89.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (140.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (116.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (115.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170211195112')[0m
+  [1m[35m (116.0ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170209210757'),
+('20170209212637'),
+('20170210023147'),
+('20170210030106'),
+('20170210160707'),
+('20170211193756');
+
+[0m
+  [1m[35m (131.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-08 19:29:53 UTC], ["updated_at", 2017-04-08 19:29:53 UTC]]
+  [1m[35m (114.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (111.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year" integer, "fiction" boolean, "user_id" integer)[0m
+  [1m[35m (107.8ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (105.6ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35m (105.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "summary" varchar, "body" text, "rating" integer, "user_id" integer, "book_id" integer)[0m
+  [1m[35m (92.8ms)[0m  [1m[35mCREATE TABLE "user_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "state" varchar, "user_id" integer)[0m
+  [1m[35m (114.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin?" boolean DEFAULT 'f', "name" varchar)[0m
+  [1m[35m (132.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (190.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (106.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (88.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170211195112')[0m
+  [1m[35m (92.6ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170209210757'),
+('20170209212637'),
+('20170210023147'),
+('20170210030106'),
+('20170210160707'),
+('20170211193756');
+
+[0m
+  [1m[35m (98.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-08 19:29:55 UTC], ["updated_at", 2017-04-08 19:29:55 UTC]]
+  [1m[35m (101.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@home.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "9eb5f45f587c5114416046f46cbe789ec13fb3562cf9b6a5fd57dc5902d3c6a7"], ["LIMIT", 1]]
+  [1m[35mSQL (27.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at", "admin?") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin@home.com"], ["encrypted_password", "$2a$11$hSpynQF9v0x1EA3MHb7ri.WGEoM/jBPPv0WcB/0uhpY.zj1Mlhx/C"], ["confirmation_token", "_Cksu4DKpvestrsSj1gF"], ["confirmed_at", 2017-04-08 19:29:56 UTC], ["confirmation_sent_at", 2017-04-08 19:29:56 UTC], ["created_at", 2017-04-08 19:29:56 UTC], ["updated_at", 2017-04-08 19:29:56 UTC], ["admin?", true]]
+  [1m[35m (81.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "freda_sporer@connelly.name"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "1d50c3f211f4367707443e1941e2b03d6584752d591f6fb3534731d6893c55f1"], ["LIMIT", 1]]
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "freda_sporer@connelly.name"], ["encrypted_password", "$2a$11$SJ20.Gvw9uyT1MohyvJf5enMTkDMY0KA7X/Q1aj3nmBgBD/JZgGnO"], ["confirmation_token", "XmsvAVFnmiVR1NkEtySP"], ["confirmed_at", 2017-04-08 19:29:56 UTC], ["confirmation_sent_at", 2017-04-08 19:29:56 UTC], ["created_at", 2017-04-08 19:29:56 UTC], ["updated_at", 2017-04-08 19:29:56 UTC]]
+  [1m[35m (81.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "katarina@strosin.info"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "ffd0d350c82dcf50a8996a1590d55e250c7157ed5e04b9159c9fceb0e833d2dc"], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "katarina@strosin.info"], ["encrypted_password", "$2a$11$CpNMFSRYQlvSxWooRaKo9.QTvvYk1FCStktv7AFOyo..KlvdL2nui"], ["confirmation_token", "gg6Qk_TXEgKQ1aKsRE11"], ["confirmed_at", 2017-04-08 19:29:57 UTC], ["confirmation_sent_at", 2017-04-08 19:29:57 UTC], ["created_at", 2017-04-08 19:29:57 UTC], ["updated_at", 2017-04-08 19:29:57 UTC]]
+  [1m[35m (84.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "efren@gutmann.net"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "1d4c3fd9a8b60eca3d89f23411cb82db8d19a896bf4f6fb377e5b5c048995238"], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "efren@gutmann.net"], ["encrypted_password", "$2a$11$YKwVgdBi2VDlJmDmroX1UuzPOk67vhsGD5.d/6EkqSqOJnSVrcc/2"], ["confirmation_token", "kZbCKxtdkfioV3ExpZAW"], ["confirmed_at", 2017-04-08 19:29:57 UTC], ["confirmation_sent_at", 2017-04-08 19:29:57 UTC], ["created_at", 2017-04-08 19:29:57 UTC], ["updated_at", 2017-04-08 19:29:57 UTC]]
+  [1m[35m (82.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "glenda@mueller.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "1087abbf759b812feddee870cee7fde505e3c743dc126e17eda2af2a465a1f36"], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "glenda@mueller.com"], ["encrypted_password", "$2a$11$iFcMu7OL.VoJI5R6LHvOne8tjAX/ZfER4PB0ORV/3Hbn6HAzP/GUi"], ["confirmation_token", "KPLFvuRhb7BVHsYsgTyz"], ["confirmed_at", 2017-04-08 19:29:57 UTC], ["confirmation_sent_at", 2017-04-08 19:29:57 UTC], ["created_at", 2017-04-08 19:29:57 UTC], ["updated_at", 2017-04-08 19:29:57 UTC]]
+  [1m[35m (82.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aliya@farrell.io"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "9c71418249715b475721606878fcbccd0590eef7236cfcfbfafd5aac7007c8a1"], ["LIMIT", 1]]
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aliya@farrell.io"], ["encrypted_password", "$2a$11$u4iQQh48ZUGBlHQ.sL/XqOKuvz1jw6Paz0khaK/TC1if6phmoABUS"], ["confirmation_token", "GmgiMBRJxzwzhxJZzKzF"], ["confirmed_at", 2017-04-08 19:29:57 UTC], ["confirmation_sent_at", 2017-04-08 19:29:57 UTC], ["created_at", 2017-04-08 19:29:57 UTC], ["updated_at", 2017-04-08 19:29:57 UTC]]
+  [1m[35m (84.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "erica_stroman@dach.org"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "00a17edf4749bb4b57e41d5a2dff0d65bab211904d05bbf4dd2c828f0d9f9c23"], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "erica_stroman@dach.org"], ["encrypted_password", "$2a$11$krBHiOBFDAdRT9jxXYu8d.5Snb3n6rLkLKjoUm.tGwmFkj/vn5mbS"], ["confirmation_token", "NteL-BniZezAHpBSYsB5"], ["confirmed_at", 2017-04-08 19:29:58 UTC], ["confirmation_sent_at", 2017-04-08 19:29:58 UTC], ["created_at", 2017-04-08 19:29:58 UTC], ["updated_at", 2017-04-08 19:29:58 UTC]]
+  [1m[35m (83.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "chase@kunze.name"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "f55b01481dc950a9cf695a4de84edbf58b6fe55ab3840e1955b288fa58e93582"], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "chase@kunze.name"], ["encrypted_password", "$2a$11$XqkxEtOPCjzevAHuu8F6t.NSlscVsC7z/FYXIAxsYwgfDpb89aND2"], ["confirmation_token", "hzimbxEyK8DJeaBaDVRK"], ["confirmed_at", 2017-04-08 19:29:58 UTC], ["confirmation_sent_at", 2017-04-08 19:29:58 UTC], ["created_at", 2017-04-08 19:29:58 UTC], ["updated_at", 2017-04-08 19:29:58 UTC]]
+  [1m[35m (90.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jaquelin@schneider.net"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "369839d61c005b74e4bb2dafdc4892f692cf966762c20e24eee9704d2198dbb8"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jaquelin@schneider.net"], ["encrypted_password", "$2a$11$s8IJAYaDQRuKUb4ZTo9m/ub4qnRDMyLHiTCMLRjStzNgYHcO3dWNm"], ["confirmation_token", "qVpNBbshFfLUWR3ef7xU"], ["confirmed_at", 2017-04-08 19:29:58 UTC], ["confirmation_sent_at", 2017-04-08 19:29:58 UTC], ["created_at", 2017-04-08 19:29:58 UTC], ["updated_at", 2017-04-08 19:29:58 UTC]]
+  [1m[35m (82.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "clifford@blanda.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "34b3cfa9060f56696424a9fff6dd5cd2e01f90f49a04c9d909521dfe59b6eb72"], ["LIMIT", 1]]
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "clifford@blanda.com"], ["encrypted_password", "$2a$11$kN4K81gFu/PNZV9e3GGRp.Lpjm4xqkyJheD4zmr8O.ksBp/.8wjS6"], ["confirmation_token", "szaxEyiPBZ2TuH_TxmQG"], ["confirmed_at", 2017-04-08 19:29:58 UTC], ["confirmation_sent_at", 2017-04-08 19:29:58 UTC], ["created_at", 2017-04-08 19:29:58 UTC], ["updated_at", 2017-04-08 19:29:58 UTC]]
+  [1m[35m (91.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (12.7ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Ms. Petra O'Connell"], ["city", "New Brockburgh"], ["state", "Wisconsin"], ["user_id", 2]]
+  [1m[35m (166.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Walton Schroeder"], ["city", "Ibrahimstad"], ["state", "North Carolina"], ["user_id", 3]]
+  [1m[35m (101.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.9ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Aliyah Stracke"], ["city", "New Lexie"], ["state", "Oklahoma"], ["user_id", 4]]
+  [1m[35m (101.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Ressie Kuvalis"], ["city", "Rauburgh"], ["state", "Michigan"], ["user_id", 5]]
+  [1m[35m (108.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Mikel Jakubowski"], ["city", "Port Angelita"], ["state", "Indiana"], ["user_id", 6]]
+  [1m[35m (99.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Stacy Yost"], ["city", "Framiberg"], ["state", "Colorado"], ["user_id", 7]]
+  [1m[35m (109.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Ms. Brittany Stiedemann"], ["city", "Cruickshankburgh"], ["state", "Oregon"], ["user_id", 8]]
+  [1m[35m (100.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Krystel Schumm"], ["city", "North Martachester"], ["state", "Nevada"], ["user_id", 9]]
+  [1m[35m (92.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Jalyn Marquardt"], ["city", "North Cayla"], ["state", "New Hampshire"], ["user_id", 10]]
+  [1m[35m (93.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "In a Glass Darkly"], ["author", "Karson Larkin"], ["year", 2009], ["fiction", true], ["user_id", 3]]
+  [1m[35m (82.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Many Waters"], ["author", "Margarita Skiles"], ["year", 2007], ["fiction", false], ["user_id", 8]]
+  [1m[35m (82.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Quo Vadis"], ["author", "Claudia Russel I"], ["year", 2014], ["fiction", true], ["user_id", 5]]
+  [1m[35m (85.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "I Sing the Body Electric"], ["author", "Kayla Walter"], ["year", 2011], ["fiction", true], ["user_id", 2]]
+  [1m[35m (84.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "A Many-Splendoured Thing"], ["author", "Carmella Larkin"], ["year", 2014], ["fiction", false], ["user_id", 10]]
+  [1m[35m (82.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Butter In a Lordly Dish"], ["author", "Dr. Rashad Streich"], ["year", 2010], ["fiction", false], ["user_id", 10]]
+  [1m[35m (89.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "O Pioneers!"], ["author", "Malika Hane"], ["year", 1998], ["fiction", false], ["user_id", 4]]
+  [1m[35m (73.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Vile Bodies"], ["author", "Chad Dooley"], ["year", 2011], ["fiction", true], ["user_id", 3]]
+  [1m[35m (74.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Cabbages and Kings"], ["author", "Clementine Roob"], ["year", 2014], ["fiction", true], ["user_id", 7]]
+  [1m[35m (76.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Proper Study"], ["author", "Ezra Wehner"], ["year", 1996], ["fiction", true], ["user_id", 4]]
+  [1m[35m (82.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (15.0ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Sed dignissimos amet tempore explicabo quia."], ["body", "Similique repellendus voluptatem corporis ut illo occaecati. Error atque voluptas omnis dignissimos praesentium fuga reiciendis. Magni qui numquam est eum rerum. Architecto ducimus ut. Ullam sequi inventore vel sed dolore enim. Quis sint deleniti. A et aut et sit. Dolorem nihil explicabo eveniet eum ducimus et expedita. Voluptatem voluptate dolore. Aut blanditiis minima sit dolores expedita officiis. Voluptate rerum qui nostrum. Doloremque quia voluptas. Illum et tenetur velit saepe. Dolores enim dignissimos rerum optio. Eaque qui dolorum reiciendis."], ["rating", 1], ["user_id", 2], ["book_id", 1]]
+  [1m[35m (92.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (8.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Voluptate commodi non culpa."], ["body", "Quod laboriosam qui odio voluptate omnis recusandae est. Aspernatur et ut. Consequatur inventore quia vel doloribus. Recusandae ipsam expedita quas nulla. Nihil nemo sit ut. Dolorum est itaque. Autem quaerat rerum odio sequi modi voluptas neque. Et id dignissimos. Occaecati ratione autem error iure et sapiente."], ["rating", 2], ["user_id", 2], ["book_id", 2]]
+  [1m[35m (92.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Fugiat cumque dignissimos quasi quam aspernatur recusandae omnis aliquid."], ["body", "Molestiae cupiditate ipsa sed voluptatum aut libero eligendi. Architecto ea porro eaque ipsa nemo sint. Perspiciatis amet quis nobis iste. Quia tempora accusantium. Quae iure alias ut laudantium velit. Necessitatibus enim nostrum earum magni quia nulla. Ipsam provident qui quos velit. Esse quia at vitae nisi. Odit voluptatem corporis id rem facilis. Facilis sed non neque quaerat. Sapiente quidem cumque totam optio."], ["rating", 3], ["user_id", 2], ["book_id", 3]]
+  [1m[35m (103.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (8.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Optio quis harum fugiat labore ducimus dolore."], ["body", "Aperiam quia sit sunt dignissimos nesciunt vero et. Omnis magnam nisi in repellat neque. Cumque est dolorem blanditiis impedit saepe architecto. Ut qui rerum sint earum adipisci porro. Laborum animi nihil temporibus quos ut. Asperiores ut consectetur. Quia magnam cum libero modi expedita itaque. Explicabo officia et. Nemo commodi natus fugit laudantium voluptate. Delectus expedita tempora et et deleniti. Dignissimos quas earum sed magni occaecati. Velit et officiis accusamus."], ["rating", 4], ["user_id", 2], ["book_id", 4]]
+  [1m[35m (107.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (9.8ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Necessitatibus harum quia fuga nisi voluptas."], ["body", "Sed qui et quis temporibus quia placeat. Commodi repudiandae iste et. Eligendi qui voluptas nemo deserunt vero. Qui magnam quis aliquam eos harum voluptatem fuga. Voluptatem est vel id mollitia quis labore. Illo sint sed commodi quia nostrum quo eum. Distinctio accusantium quis dolorem omnis adipisci quo architecto. Necessitatibus voluptatem et ex illum accusantium cum. Non praesentium repudiandae consequuntur eaque iste. Ullam et rem delectus soluta omnis voluptatem. Laboriosam et architecto id sit. Id eos et molestias quia a nam repellat. Atque minus optio in culpa aut ex iure. Perspiciatis architecto repudiandae impedit rem. Cumque unde praesentium animi eum inventore et. Hic facilis quis sapiente. Beatae tempora non odio natus impedit blanditiis ipsam. Cumque rerum quia quidem et ratione voluptatem. Molestiae maiores alias. Rerum vel et quibusdam deserunt. Odio eos consectetur voluptatem."], ["rating", 5], ["user_id", 2], ["book_id", 5]]
+  [1m[35m (117.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (8.8ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Facere cupiditate et rem veritatis distinctio."], ["body", "Aut aspernatur ipsam incidunt soluta. Ad architecto aut provident a tempore beatae. Temporibus voluptatibus sint. Expedita nam dolorem aliquid dolorem eaque. Quia sint sed vel. Eum architecto sunt. Ipsa sit repellendus et quia et quo amet. Quod amet expedita. Non ab commodi. Quisquam laborum placeat aut voluptatum. Iusto nesciunt eveniet sed dolores dolor quisquam ut. Enim ut ratione officia."], ["rating", 5], ["user_id", 3], ["book_id", 6]]
+  [1m[35m (106.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (8.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Alias animi necessitatibus nihil velit temporibus accusamus quis."], ["body", "Ipsam enim optio dolorum iure et. Dolore accusantium aliquid. Sequi voluptate veniam blanditiis explicabo. Neque modi voluptatem ut quia voluptatum illum. Ea voluptas sequi labore. Doloribus qui accusamus et perferendis consequuntur quia. Id magnam eum. Sequi numquam et."], ["rating", 4], ["user_id", 3], ["book_id", 7]]
+  [1m[35m (108.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (13.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Et blanditiis tenetur fuga ut."], ["body", "Sunt sit quaerat sed voluptate explicabo. Nulla velit sequi nihil qui numquam. Reprehenderit eum ipsa numquam. Neque doloremque qui ut sed. Doloribus et voluptatem repellat libero sint omnis consequatur. Sed at a esse ex molestiae. Voluptate est eaque facere. Cum voluptas cupiditate dolore qui."], ["rating", 3], ["user_id", 3], ["book_id", 8]]
+  [1m[35m (101.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (10.0ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Eum dolorem ut illo ipsum consequatur sint dolorem."], ["body", "Asperiores dolor rerum aspernatur facere nam. Ipsam pariatur ut facere rerum. Nisi et doloribus. Qui non debitis sequi vitae eaque omnis ipsam. Est accusamus nemo sint veritatis non. Omnis enim ut quibusdam ipsum doloremque voluptate. Amet eum quos. Sit ut quos ipsum voluptatem beatae tenetur est. Qui aut omnis hic non quae. Nesciunt corrupti optio. Et tempora voluptates porro maiores quidem ducimus. Qui libero magnam. Nesciunt repellendus facere incidunt. Voluptas provident consectetur illum non sit nemo sit. Consequatur id quibusdam voluptatem nihil. Rerum sit itaque. Amet iste molestiae. Est quaerat veritatis recusandae tempore. Dicta consequatur inventore minima facilis. Dolor quidem enim quo deleniti facere."], ["rating", 2], ["user_id", 3], ["book_id", 9]]
+  [1m[35m (107.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (8.9ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Fugit eius doloremque recusandae repellendus quae ut fugiat."], ["body", "Aut illum amet neque. Nihil culpa consequatur. Eligendi libero qui quidem qui aperiam voluptate dignissimos. Saepe asperiores quia aliquam architecto dolorum. Magnam voluptate nesciunt laborum et et. Aut dolorem et suscipit consequatur eveniet numquam. Natus voluptate officia aut. Sed occaecati sed ut. Quae laborum ea. Expedita porro debitis. Eius sit et aliquam perspiciatis ipsa vel. Quod quia optio. Quia corrupti possimus labore quisquam debitis. Voluptatibus laudantium repellat id harum fugiat. Sint itaque voluptates nobis impedit."], ["rating", 1], ["user_id", 3], ["book_id", 10]]
+  [1m[35m (106.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Ut est ipsum perferendis dolores ut ducimus recusandae."], ["body", "Repudiandae ipsam quia quos tempora. Eos dolorem sit quisquam ut. Et ea eum minima. Sed rem ipsam harum. Officiis rerum voluptates consequuntur recusandae earum eius. Asperiores dolorum numquam."], ["rating", 1], ["user_id", 4], ["book_id", 1]]
+  [1m[35m (109.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quis vel recusandae sit odio ullam consequatur qui."], ["body", "Nihil qui delectus occaecati. Corporis dicta doloremque culpa voluptas eligendi nisi. Eum eos in ut. Asperiores sit voluptatem est quisquam esse ea eveniet. Minima accusamus eveniet alias et ex non nisi. Iure et sint magni. Et voluptas exercitationem eaque nemo non. Distinctio est molestiae qui sit occaecati tempora. Minus saepe error. Fugit inventore natus sed quod voluptates. Quia reiciendis ea eos ea. Provident repudiandae quasi architecto aut sit. Mollitia inventore expedita. Sunt nesciunt molestias. Corporis reiciendis magni dignissimos. Voluptatem fugit laborum ipsa est error."], ["rating", 2], ["user_id", 4], ["book_id", 3]]
+  [1m[35m (105.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Id est amet nam culpa harum illo blanditiis et."], ["body", "Et vitae veritatis et in dolore. Animi itaque autem sed laudantium. Voluptas sapiente sit laboriosam sed aut fugiat. Enim ipsa quos ut ad quibusdam culpa consectetur. Ipsa esse maiores. Sed voluptas vel dolore impedit et aliquam. Libero et facilis quibusdam perspiciatis. Alias iusto odit. Atque velit fugiat veritatis incidunt eius quidem reiciendis. Temporibus aliquid vel aliquam ducimus dolores quibusdam nobis. Est dolor nobis et et omnis qui. Aut molestiae odit omnis eaque et."], ["rating", 3], ["user_id", 4], ["book_id", 5]]
+  [1m[35m (110.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Sit in consequatur odit explicabo voluptatem vel voluptas."], ["body", "Ut quia aliquid nostrum omnis. Quasi perferendis autem et dolores atque et et. Sapiente laborum est aut eveniet quae iusto sunt. Ullam quo assumenda est nisi culpa esse. Non repellendus molestiae aperiam facere ex delectus. Atque id beatae doloremque voluptas. Laudantium soluta consequuntur officiis quibusdam. Dolore sit et voluptates qui. Mollitia sit quia officia voluptas et."], ["rating", 4], ["user_id", 4], ["book_id", 7]]
+  [1m[35m (101.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Amet tempore maiores voluptas officia."], ["body", "Ab sint cum deleniti est. Quisquam sed ab. Rerum cumque enim itaque. Sed vero alias quia excepturi cum libero rerum. Ut expedita rerum nulla consequatur. Et quo sequi. Est dolor ea voluptatem incidunt a. Voluptatibus voluptates ab delectus explicabo eligendi. Consequuntur vel reiciendis voluptas doloribus. Consectetur voluptas voluptas voluptatibus accusantium. Cum voluptatibus quo sit ut. Et maiores fugit sed ab id eos."], ["rating", 5], ["user_id", 4], ["book_id", 9]]
+  [1m[35m (99.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (8.8ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Id et doloremque amet aliquid voluptatem harum exercitationem."], ["body", "Autem aut modi dolorem. Velit aliquid qui expedita hic sed. Voluptatem aut omnis. Qui natus veniam enim aspernatur quia in id. Enim placeat asperiores voluptatem accusantium dolor et. Natus esse debitis. Dolorem nam repellat delectus. Rem aut ullam sed est ea. Voluptatem illum expedita commodi omnis. Soluta nulla voluptatem est velit id distinctio. Omnis nostrum aspernatur. Dolorem sunt eum alias. Quo harum fuga tempore ut commodi. Qui neque voluptas fugiat voluptatibus voluptas voluptatem."], ["rating", 5], ["user_id", 5], ["book_id", 2]]
+  [1m[35m (100.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Ut aut eaque atque est doloremque vel molestias."], ["body", "Dolores totam aut officiis incidunt natus soluta. Nulla aut quidem velit accusamus autem. Exercitationem impedit dolores similique et perspiciatis sit iste. Debitis sint est sed doloremque mollitia. Sapiente doloribus non impedit debitis fugit. Libero voluptatibus officiis assumenda voluptates alias. Numquam voluptatem placeat harum aut. Commodi possimus facere molestiae ut. Fugiat occaecati et ducimus voluptatem. Quisquam id ad in cupiditate sunt officiis. Atque a et incidunt cumque voluptatem quis minima. Minus repudiandae enim officia consequatur dolorem. Nostrum veritatis expedita. Quam aut vel. Illo ex a. Cumque ab dolorem voluptas. Eum assumenda ratione illo aut corporis id qui. Sed natus aut adipisci. Quo et inventore."], ["rating", 4], ["user_id", 5], ["book_id", 4]]
+  [1m[35m (100.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Ea et nihil temporibus ut consequatur rerum fugiat."], ["body", "Minus rerum dolor nihil. Aut quibusdam dolor ab iusto inventore. Aut culpa dignissimos laudantium vel. Deleniti dolor in nihil eaque consequatur sint. Nostrum perferendis accusamus veniam sed. Tenetur omnis corrupti voluptate quas quia. Voluptates dolore quos expedita et natus. Nostrum ea est rem. Totam quaerat unde. Vel ea recusandae. Aut non laboriosam vel pariatur. Est totam repellat numquam maiores molestiae provident inventore. Corrupti harum quod est. Amet labore et. Et quos repellat deserunt consequatur veritatis est."], ["rating", 3], ["user_id", 5], ["book_id", 6]]
+  [1m[35m (93.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quasi suscipit dolores voluptatibus."], ["body", "Aut aperiam consectetur. Aliquam dolor consequatur eos enim. Qui perferendis quo. Ea sunt veniam illum est esse earum cumque. Animi sed tempora nostrum temporibus reprehenderit officiis vero. Molestiae nihil ab optio numquam incidunt. Optio praesentium suscipit non minus officia. Dolor quisquam suscipit occaecati provident. In odio quisquam enim. Et eum fugit. Deleniti debitis praesentium error earum aut. Minima aliquam id aut ut veniam qui soluta. Facere magnam corrupti. Recusandae laboriosam id. Voluptatem quas omnis. Beatae autem dolore molestiae odit quaerat laborum. Eum commodi hic officia ullam similique. Id sunt sed ut ut. Molestias id ipsum et repudiandae eos qui deserunt."], ["rating", 2], ["user_id", 5], ["book_id", 8]]
+  [1m[35m (85.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Laborum natus ut ut quasi eos odit repellat id."], ["body", "Possimus incidunt omnis dignissimos. Voluptatem sequi illo repellendus et. Id ipsam et placeat. Cupiditate est vel. Et saepe voluptatem eius sed. Ut aut et. Nesciunt vitae corrupti itaque est ipsam. Similique omnis eius pariatur itaque sit. Quia et sapiente sed explicabo illum omnis enim. Aut iste ipsam illum omnis commodi. Dignissimos eius dolorem et voluptas nihil nobis. Deserunt culpa neque quaerat. Doloremque ut saepe quis itaque voluptatibus qui ut. Impedit iusto ut. Sint qui aliquam rerum quia laboriosam. Quaerat similique eum quidem architecto non. Eveniet itaque quis accusamus. Facilis unde ut ut. Excepturi reprehenderit aperiam."], ["rating", 1], ["user_id", 5], ["book_id", 10]]
+  [1m[35m (90.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Distinctio qui doloremque minima temporibus quas."], ["body", "Qui labore doloribus ad. Est sint maiores. Qui eaque tenetur sint dolorem libero molestiae ut. Non in consectetur. Perspiciatis fuga et quis sed quidem iste. Itaque rerum quas labore ea laudantium eveniet. Laudantium voluptatem id rerum dicta impedit placeat rerum. Animi in quasi est."], ["rating", 1], ["user_id", 6], ["book_id", 1]]
+  [1m[35m (92.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Dolores ipsam enim aut."], ["body", "Omnis tenetur dolor aut quod vero. Eos vel est debitis amet suscipit eos. At non aut. Iure qui doloremque autem id. Maiores praesentium dolor. Enim non neque aspernatur nemo et. Suscipit provident et esse ipsa. Aut et nihil natus aut quod. Aut ducimus amet. Eos qui quam voluptas. Quisquam facere ex sunt. Odio ipsum voluptatibus molestiae autem. Sunt quas voluptatem ut placeat itaque. Illum quod repellat et voluptates. Quo voluptate autem iure quia aliquid illum. Et fugit quis tempore nesciunt esse nemo. Harum sint omnis atque."], ["rating", 2], ["user_id", 6], ["book_id", 2]]
+  [1m[35m (100.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (8.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quo deserunt architecto pariatur voluptatem maxime quos et."], ["body", "Minus molestias aut consequatur. Quo libero enim est minus fugit inventore saepe. Et optio nobis quae magni. Consequuntur eius natus rerum vel quos. Velit qui officia exercitationem eveniet non explicabo. Inventore vel nulla est vero. Facilis quia similique et. Sequi quam aliquid. Sed distinctio porro in tempore pariatur facilis. Dolore recusandae iure consequatur impedit. Quo nisi voluptatem modi voluptas perferendis et quis. Et ratione est quasi et. Sint doloribus veniam eligendi consequatur sit aut minima. Repellendus impedit et sit. Magnam occaecati deleniti non. Est vitae dolores quaerat. Qui et maiores ea esse expedita ad et. Quod sunt et quo qui. Sed mollitia culpa ipsum et accusamus. Voluptatem ducimus at sit distinctio quis dolor. Officia quisquam quod ut quibusdam maxime a. Eos animi itaque dolorum culpa."], ["rating", 3], ["user_id", 6], ["book_id", 3]]
+  [1m[35m (100.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "At eum voluptas autem a quas dolorem ea officia."], ["body", "Dicta enim quibusdam est molestias mollitia vitae. Quod labore quos omnis ipsa sunt magnam. Ut itaque ea. Sit sint ut omnis blanditiis cupiditate. Omnis veniam incidunt voluptatibus omnis et. Perspiciatis sed tenetur dolores dicta quis eos. Fuga eum doloremque sit dignissimos cupiditate ea. Explicabo eveniet nesciunt animi facilis omnis consequatur voluptatum. Autem distinctio minima aut deserunt sed. Voluptatum consectetur enim aut in est voluptas nemo. Animi maiores repellendus molestiae. Molestias omnis totam sit rerum distinctio dicta. Nobis voluptatem expedita. Quos nemo excepturi et voluptatem. Tenetur ut qui sit corporis eos qui. Qui nesciunt et. Et amet enim fugiat assumenda. Ex quibusdam perspiciatis. At et sit dolores temporibus exercitationem molestiae."], ["rating", 4], ["user_id", 6], ["book_id", 9]]
+  [1m[35m (100.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (8.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "In ea officia quod voluptas nulla natus aut esse."], ["body", "Explicabo beatae aspernatur ipsa voluptatem libero. Laboriosam optio corrupti aut nihil ducimus quia. In ipsam eos soluta alias. In quisquam dignissimos quia iste dolorum dolor assumenda. Rem esse consequatur fugiat animi corporis placeat libero. Asperiores reprehenderit fuga iusto in nam. Est et nisi. Ipsam ut est esse velit. Sed impedit accusamus. Ducimus dicta culpa qui velit est. Ut et rerum. Sit velit excepturi."], ["rating", 5], ["user_id", 6], ["book_id", 10]]
+  [1m[35m (98.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Asperiores eum aut harum fugit omnis ut."], ["body", "Veritatis perspiciatis vero sint quaerat minima. Vel asperiores sint in quos. Voluptas nemo itaque atque quo aut. Veritatis delectus voluptatem magni. Fugit fuga repellat ut. Saepe consequatur incidunt et. Repellendus optio ut. Est dolores sint corrupti quam autem officia et. Unde magni amet quis voluptate in."], ["rating", 5], ["user_id", 6], ["book_id", 4]]
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (8.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Voluptatem accusantium modi qui est."], ["body", "Temporibus ipsum perspiciatis et. Consequatur quo facilis harum possimus velit nostrum sint. Quis culpa et alias. Et facilis voluptas fugiat voluptatem quos repellendus aliquam. Mollitia impedit blanditiis velit ratione est necessitatibus. Et porro beatae ea nobis vel. Fugiat itaque quis autem rem nulla. Earum non vel. Fuga suscipit dolorum."], ["rating", 4], ["user_id", 6], ["book_id", 5]]
+  [1m[35m (100.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Ducimus dolores et et quis dolor ea atque."], ["body", "Nulla est quo facilis dolor voluptas voluptatem saepe. Iusto vitae nobis at sit. Eaque laudantium et pariatur nesciunt est. Vitae voluptatem sequi optio. Laudantium enim et et dolore in rerum enim. Neque repudiandae possimus vel eaque dignissimos vitae. Esse non animi cupiditate nesciunt odit. Eius molestias iure."], ["rating", 3], ["user_id", 6], ["book_id", 6]]
+  [1m[35m (101.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quae tempora delectus consectetur."], ["body", "Qui maxime possimus voluptas molestias hic dolore aut. Quas nulla iure nam quo accusamus. Fuga voluptas corporis quam deleniti culpa aut. Similique dignissimos tempore et repellat. Qui impedit amet vero ratione harum provident dolorem. Et in quis tenetur voluptas. Aut quaerat totam magni et eligendi qui. Suscipit dolor ipsum modi. Vero nesciunt eligendi incidunt qui nihil tempore. Et maxime debitis veritatis id praesentium. Autem consectetur voluptatem saepe pariatur dolor fugiat quisquam. Consequuntur quod sed quas nulla vel."], ["rating", 2], ["user_id", 6], ["book_id", 7]]
+  [1m[35m (110.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (6.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Rerum quo omnis quisquam suscipit delectus."], ["body", "Dolorem culpa nemo consectetur neque quidem. Et illum consequatur velit. Animi et repudiandae distinctio. Et provident ut consequatur. Libero qui quod cupiditate autem quo corporis tenetur. Voluptatem impedit nobis. Totam optio sunt aut odio. Nulla consectetur magnam ducimus nihil et autem. Debitis quidem ea assumenda distinctio totam aut qui. Velit totam nemo quas. Aut nihil est rerum. Ut aut est consequuntur illum rem culpa qui. Accusamus dicta eius. Molestiae id doloremque cum veniam. Nisi eos saepe nemo autem laboriosam non aut. Dolorem veniam unde alias delectus debitis. Doloribus esse eos. Officia ut eius in autem aut."], ["rating", 1], ["user_id", 6], ["book_id", 8]]
+  [1m[35m (109.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Est amet quos qui numquam ipsum omnis."], ["body", "Laboriosam autem laborum occaecati ab voluptatem praesentium. Voluptatem et et. Doloribus ipsum recusandae eaque illum tenetur. Dolor quia natus non rerum voluptatibus error minima. Asperiores velit error est officia. Amet eos velit delectus saepe numquam facere dignissimos. Perferendis temporibus asperiores voluptatum porro alias. Aut dicta voluptas reprehenderit velit voluptatibus. Voluptate aspernatur nulla dolorum est et esse. Dolorum qui modi iste. Quisquam rem et. Et doloribus molestiae non earum. Consequatur a et vero. Velit harum et. Aliquid ratione autem voluptatum. Est ipsa voluptatem inventore error dolorem. Et minus deleniti sed nihil aut cupiditate. Porro nemo rerum est. Ut et sunt aut omnis eos."], ["rating", 1], ["user_id", 7], ["book_id", 1]]
+  [1m[35m (100.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Adipisci aut voluptatum mollitia aut."], ["body", "Ut veniam pariatur quia dolorem quia. Assumenda et temporibus incidunt minus culpa. Quod doloremque quia aperiam corporis architecto. Sapiente eligendi quibusdam labore eos ut optio. Molestiae unde et maxime aut quo. Eveniet et doloremque et quis sunt. Odio vel et sit. Blanditiis non quia suscipit voluptas ut sapiente. Dolor rerum ut minus. Ut qui architecto laboriosam doloremque saepe. Modi illum ea. Occaecati cupiditate magnam soluta eaque quia temporibus ea. Aliquam commodi porro non voluptates sint."], ["rating", 2], ["user_id", 7], ["book_id", 2]]
+  [1m[35m (109.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Repellat dolores aspernatur earum perferendis molestias aut incidunt."], ["body", "Nulla et et et nobis in. Reiciendis minus voluptas voluptatibus. Voluptas sed hic qui ab. Modi rerum et at voluptates. Recusandae voluptate accusamus eum est. Aut blanditiis et labore commodi. Ut placeat ipsam consequatur saepe qui iste consequuntur. Earum aspernatur laudantium quo adipisci qui nobis. Eos eum illo ut corrupti repellat. Aut quasi molestiae qui consequatur. Exercitationem debitis nihil sunt molestiae. Ipsa quae et nobis earum iure. Provident saepe voluptate. Quas odit dolorem quo est sapiente dolor. Dignissimos assumenda nostrum accusantium. Aut delectus accusantium unde harum blanditiis libero. Et voluptatem qui consequuntur accusamus illo quasi vel. Recusandae quia qui rerum reiciendis eius sed. Dolores ex doloremque tenetur mollitia. Velit nobis aut eum deserunt ut voluptatem."], ["rating", 3], ["user_id", 7], ["book_id", 3]]
+  [1m[35m (101.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Error quae architecto corporis voluptatem velit consectetur sit."], ["body", "Voluptatibus accusantium in rerum. Adipisci laborum exercitationem itaque. Sequi nam quasi reprehenderit facilis. Necessitatibus ex omnis. Expedita distinctio similique. Et magnam fugiat. Ratione qui quos quo reiciendis iusto voluptatem doloribus. Possimus iusto commodi est. Corrupti expedita consequatur cum eum voluptatem. Qui doloribus magni quos soluta error placeat sed. Aut optio error et voluptatem libero ea quisquam. Ducimus asperiores voluptatum veritatis cumque. Aut accusamus et veniam repellat illum assumenda. Nobis eaque reiciendis. Quos ullam iusto nemo. Assumenda nam delectus quod debitis officia rerum. Ducimus deleniti voluptatum illum natus similique blanditiis. Quasi esse sint autem quo."], ["rating", 4], ["user_id", 7], ["book_id", 4]]
+  [1m[35m (99.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Ullam impedit cum vero ipsam."], ["body", "In blanditiis laboriosam sed porro commodi quia eligendi. Minus quaerat similique vel rerum. Hic optio voluptas dolorem amet. Dolore id ut voluptatem sit ab. Consectetur sed quos illum ea. Ut et quae amet laborum dolorum dolores."], ["rating", 5], ["user_id", 7], ["book_id", 5]]
+  [1m[35m (109.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Unde aut dolore similique sunt voluptates asperiores non sapiente."], ["body", "Hic perferendis enim ratione dolorum modi eum aliquam. Corporis ullam tenetur molestiae eveniet. Voluptate molestiae atque autem nisi sunt enim. Iusto corporis beatae dignissimos. Quia voluptas libero. Et qui maiores voluptatem. Cum qui alias est in. Vel ab eum. Saepe ut voluptatem officia tempore. Molestiae reprehenderit enim eum eos. Molestiae et dolores culpa placeat quibusdam exercitationem quia. Architecto adipisci omnis ullam nesciunt. Exercitationem natus deleniti illo neque. Qui iure repellat."], ["rating", 5], ["user_id", 8], ["book_id", 6]]
+  [1m[35m (109.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Veritatis et voluptate ipsam et."], ["body", "Sint nihil minus. Eum asperiores commodi qui adipisci sint qui. Totam est voluptatum rerum provident molestias. Dolores quaerat ducimus ut. Eum voluptates est consequatur voluptas vel illo dolorem. Omnis et natus sunt."], ["rating", 4], ["user_id", 8], ["book_id", 7]]
+  [1m[35m (108.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (8.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Repudiandae facere cupiditate explicabo."], ["body", "Delectus rerum autem iste omnis nemo. Ex aliquam ipsam laborum similique expedita voluptas. Doloremque neque quia est eum saepe recusandae. Laboriosam quia nobis officiis praesentium natus iusto dolore. Sit provident expedita quo repudiandae magni odit quas. Et nisi enim modi ut."], ["rating", 3], ["user_id", 8], ["book_id", 8]]
+  [1m[35m (98.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Omnis at dolorum aliquam nostrum quia a qui corporis."], ["body", "Nulla vero doloremque similique. Qui accusantium voluptas aut explicabo in. Quae aut maiores aut. Debitis nobis aut mollitia. At voluptas officia aut. Et excepturi et fugiat modi. Veritatis assumenda corporis dolores id minima ex sit. Molestiae laudantium est ut illo nesciunt."], ["rating", 2], ["user_id", 8], ["book_id", 9]]
+  [1m[35m (91.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Illo deserunt est delectus."], ["body", "Ratione delectus omnis laboriosam suscipit sit sint et. Consequuntur non quibusdam. Modi nam porro et occaecati veritatis. Qui molestiae fuga nam officia aperiam dolores. Quod eum dolorum. Dignissimos sint laboriosam porro est molestiae. Rerum numquam ipsum."], ["rating", 1], ["user_id", 8], ["book_id", 10]]
+  [1m[35m (93.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Praesentium qui sit eaque et eligendi ipsa dolore placeat."], ["body", "Magnam aut quo et dolores omnis quaerat tenetur. Excepturi ab enim est facere earum similique beatae. Non aut et. Non hic earum ipsam. Sequi vel quibusdam velit reprehenderit vitae accusamus. Expedita in nostrum. Vero sint eos velit maiores dolores ipsum. Minima accusantium mollitia amet aliquid ut alias impedit. Facere ad minima itaque inventore sint consequatur. Ratione numquam est. Autem nam voluptatum molestias ad. Quam excepturi sint rem. Sint in sed. Impedit maiores et ad velit animi. Itaque sed consectetur illum enim sit ea. Recusandae asperiores quo corporis voluptates quia nobis alias. Iste exercitationem ut culpa et soluta temporibus qui. Et officiis mollitia vitae consequuntur distinctio cum."], ["rating", 1], ["user_id", 9], ["book_id", 1]]
+  [1m[35m (97.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Laboriosam animi rerum sed tenetur ea dolores harum."], ["body", "Earum nobis ad laborum minima consequatur. Vel enim et est id. Eos ut molestias. Corporis nulla qui cumque non et eaque. Et ut suscipit hic aut. Nihil hic eum aliquam. Blanditiis dolor quidem natus. Ad doloribus ut temporibus at quis aliquam quia. Assumenda saepe pariatur recusandae illum. Natus modi quisquam veritatis debitis ullam. Autem inventore dolorem ut sapiente. Assumenda nobis asperiores. Temporibus occaecati inventore facere quo. Cumque ea adipisci sint. Dolorum unde omnis quod labore provident ipsam. Sequi sed dignissimos enim porro. Ut quia incidunt."], ["rating", 2], ["user_id", 9], ["book_id", 3]]
+  [1m[35m (93.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Laborum non natus inventore sapiente tempora."], ["body", "Adipisci optio debitis quis quis aut expedita vel. Eveniet labore repellendus dolor. Fugit voluptates ut sequi qui. Dolore error et dicta vel deserunt corporis. Adipisci velit est error deleniti fugiat. Optio nostrum illum numquam aut repudiandae expedita. Nulla ea ut eum sit ex. Quae est ducimus rerum asperiores. Et laborum sed dignissimos commodi. Perspiciatis corrupti temporibus voluptatem facilis adipisci ut quam. Consequatur beatae ea eligendi sint dolor cumque qui. Sed corrupti nihil eligendi vel sed. Voluptatem ea vitae. Corporis ipsa ut. Aut doloribus harum. Molestiae iure consequatur. Quae et minus."], ["rating", 3], ["user_id", 9], ["book_id", 5]]
+  [1m[35m (98.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Amet nemo nisi iste non aliquid vitae."], ["body", "Autem aliquam saepe tempora. Distinctio expedita dignissimos a hic aliquam eos. Quas magnam nihil ipsum laudantium sit. Nam perferendis sunt ea quo est. Quaerat ut atque est nihil sit dignissimos. Facere temporibus assumenda. Debitis in at iste ipsam omnis consequatur. Asperiores fugit odio in voluptas vero eos. Voluptatibus beatae ut dolor vitae rerum. Et quae amet quam nemo. Magnam cupiditate nisi perferendis eveniet. Quis reiciendis ea ut. Unde repellat omnis commodi consequuntur consequatur vero. Voluptates eum aut sint suscipit enim quod. Consequatur enim qui et aut. Ducimus nemo iste exercitationem suscipit quam et autem. Nostrum temporibus error sint qui aut iure accusantium. Aperiam aut nihil a omnis repellendus. Blanditiis quia dolorem laborum officia voluptas. Id voluptas quos eaque aut quasi qui ducimus."], ["rating", 4], ["user_id", 9], ["book_id", 7]]
+  [1m[35m (100.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (12.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Corporis deleniti rerum atque nesciunt."], ["body", "Reprehenderit voluptatem consectetur. Et expedita repellendus similique aliquid. Ratione enim minima blanditiis. Velit hic ea et consequatur. Et sed consectetur aperiam sit id provident. Veniam nemo fugiat tempora magni. Et voluptas quisquam et minus sequi. Odit facilis est repudiandae vero aperiam aliquid cum. In possimus laboriosam ut voluptatem. Voluptas officiis perspiciatis fuga commodi dolorum nostrum. Non ipsa a dolorum. Tempora et quas sed non et consequatur. Magni rerum debitis est et aspernatur fuga et. Explicabo ipsum eaque nihil facilis aut qui. Nam natus ullam error tempora. Tempore perferendis voluptas illo vitae velit. Quo voluptate consectetur aut quia. Recusandae cumque similique error unde. Repellat sint eius ea iure modi et reiciendis. Aut possimus excepturi doloribus. Quia minima et. Porro laborum voluptas dolor libero aspernatur eum."], ["rating", 5], ["user_id", 9], ["book_id", 9]]
+  [1m[35m (96.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Nihil necessitatibus animi error."], ["body", "Reprehenderit molestias libero id consequatur. Enim rem provident. Consequatur dolore consequatur dolores cumque ratione. Et est non beatae aut minus. In laborum labore repellat dolor. Qui rerum ipsum. Dolore architecto aut quidem nihil voluptatum iste labore."], ["rating", 5], ["user_id", 10], ["book_id", 2]]
+  [1m[35m (91.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Unde at ut aliquid consequatur debitis laboriosam nihil ex."], ["body", "Quod sed inventore accusantium praesentium et aut architecto. Maxime sit autem et id molestiae qui voluptatem. Sed placeat autem hic harum explicabo illum. Voluptas voluptatem praesentium quia et quo hic. Atque nobis iure. Placeat amet voluptas est. Consequuntur voluptatum sed rerum corporis. Inventore perferendis dolor. Dignissimos tempore natus aliquam sit eveniet recusandae. Ea numquam ut. Aliquid quasi reiciendis cupiditate qui quia. Ut dolore debitis et error voluptatibus ut voluptatem. Magnam sit dolore quia. Dolorem odit qui fugiat labore quis nam nulla. Qui aliquid magni dolorum. Iusto nihil quos consectetur et ab. Sunt voluptas aut aliquam qui. Sapiente quae optio magnam nobis labore similique maiores. Dolore ea dolores quos perferendis qui dolor. Distinctio quisquam nisi odit impedit."], ["rating", 4], ["user_id", 10], ["book_id", 4]]
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Sed necessitatibus optio blanditiis ut."], ["body", "Minima ipsam quidem quas tenetur unde placeat dolores. Neque molestiae laboriosam quis atque commodi. Labore molestiae quia nihil. Nisi omnis quia. Modi odit quia veritatis. Ipsam sunt alias porro culpa eveniet et. Deleniti voluptatum nulla inventore fugit impedit blanditiis non. Eos voluptatem aut corporis et. Ratione amet architecto minus sapiente atque vero. Qui delectus labore. A quia atque quisquam ab iusto error. Perferendis corporis consequatur porro. Ut voluptatem corporis labore iusto dolores. Eos odio quia autem. Animi eos veritatis hic quibusdam sint id."], ["rating", 3], ["user_id", 10], ["book_id", 6]]
+  [1m[35m (101.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Reiciendis doloribus ipsam consectetur omnis consequuntur non quia."], ["body", "Nostrum atque quasi nam. Excepturi autem tempora id. Fugiat ut molestias assumenda quia iusto excepturi. Voluptas vitae consequatur dolorum quo ut quam suscipit. Dolores sit eaque est qui optio qui rem. Eius non expedita ullam non. Quis possimus soluta quaerat consectetur ut nobis at. Cum adipisci culpa sint. Aliquam esse vel. Ab molestias saepe. Sed omnis molestiae. Quasi fuga nesciunt dignissimos et consequatur. Deserunt mollitia nesciunt veniam velit et sit."], ["rating", 2], ["user_id", 10], ["book_id", 8]]
+  [1m[35m (100.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Dicta beatae ex voluptatem."], ["body", "Adipisci delectus vero voluptatem deleniti nihil. Sunt sit aut voluptates incidunt quia. Rerum quidem delectus repudiandae in consequatur magnam. Saepe debitis sit velit fugiat. Aperiam facere perspiciatis numquam corrupti iure optio natus. Possimus dolorum sunt laborum nisi non ipsam excepturi. Nisi voluptate ut. Soluta asperiores dolor voluptatem. Sunt sapiente esse. Minus eius numquam nihil et vitae voluptas. Aut dignissimos praesentium magni quasi laboriosam aspernatur illo. Ut rerum consequatur culpa veritatis. Vel hic cupiditate voluptas reiciendis non. Eos ad voluptas ipsum et rerum est occaecati. Adipisci temporibus nam soluta consequatur quae rerum illum. Ex quo odit perferendis."], ["rating", 1], ["user_id", 10], ["book_id", 10]]
+  [1m[35m (98.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (84.8ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year" integer, "fiction" boolean, "user_id" integer)[0m
+  [1m[35m (96.9ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (107.8ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35m (107.0ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "summary" varchar, "body" text, "rating" integer, "user_id" integer, "book_id" integer)[0m
+  [1m[35m (107.4ms)[0m  [1m[35mCREATE TABLE "user_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "state" varchar, "user_id" integer)[0m
+  [1m[35m (120.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin?" boolean DEFAULT 'f', "name" varchar)[0m
+  [1m[35m (107.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (106.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (111.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (195.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170211195112')[0m
+  [1m[35m (118.6ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170209210757'),
+('20170209212637'),
+('20170210023147'),
+('20170210030106'),
+('20170210160707'),
+('20170211193756');
+
+[0m
+  [1m[35m (113.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-08 19:30:46 UTC], ["updated_at", 2017-04-08 19:30:46 UTC]]
+  [1m[35m (100.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (91.7ms)[0m  [1m[35mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year" integer, "fiction" boolean, "user_id" integer)[0m
+  [1m[35m (80.2ms)[0m  [1m[35mCREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (90.9ms)[0m  [1m[35mCREATE  INDEX "index_identities_on_user_id" ON "identities" ("user_id")[0m
+  [1m[35m (91.0ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "summary" varchar, "body" text, "rating" integer, "user_id" integer, "book_id" integer)[0m
+  [1m[35m (91.5ms)[0m  [1m[35mCREATE TABLE "user_infos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "state" varchar, "user_id" integer)[0m
+  [1m[35m (95.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "admin?" boolean DEFAULT 'f', "name" varchar)[0m
+  [1m[35m (108.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (105.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (125.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (105.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170211195112')[0m
+  [1m[35m (107.5ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170209210757'),
+('20170209212637'),
+('20170210023147'),
+('20170210030106'),
+('20170210160707'),
+('20170211193756');
+
+[0m
+  [1m[35m (115.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-08 19:30:48 UTC], ["updated_at", 2017-04-08 19:30:48 UTC]]
+  [1m[35m (108.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@home.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "2d0b3000d49dbc550b9f17013c015dae5e24d2a708bcadaa33cfb9004919c1b1"], ["LIMIT", 1]]
+  [1m[35mSQL (45.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at", "admin?") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin@home.com"], ["encrypted_password", "$2a$11$lvYcz30VLgXQdTbGweUPc.Pu2H2D2jVFvNZwZ1d1byp3aY.cv4gZi"], ["confirmation_token", "_UZE7vjRj9-WQgcqmKxL"], ["confirmed_at", 2017-04-08 19:30:49 UTC], ["confirmation_sent_at", 2017-04-08 19:30:49 UTC], ["created_at", 2017-04-08 19:30:48 UTC], ["updated_at", 2017-04-08 19:30:48 UTC], ["admin?", true]]
+  [1m[35m (100.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "iac_lebsack@parker.name"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "d947836125ea2d4cef284dc9194c1af4387a6f6f2a0da8598ddc050bea130c9c"], ["LIMIT", 1]]
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "iac_lebsack@parker.name"], ["encrypted_password", "$2a$11$FZBHXNOrFIyFhJG/.fAwjeeHKX5qoTR7OJWKIqbVYuwzJr5LiuQum"], ["confirmation_token", "by3xNTBKxEgcpW4bq3Yc"], ["confirmed_at", 2017-04-08 19:30:49 UTC], ["confirmation_sent_at", 2017-04-08 19:30:49 UTC], ["created_at", 2017-04-08 19:30:49 UTC], ["updated_at", 2017-04-08 19:30:49 UTC]]
+  [1m[35m (97.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sydnee@feeneygislason.co"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "6a6d4a49c01b0209f465289baa6de8ada1954aac61092c6d569127ef9fe36eb2"], ["LIMIT", 1]]
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "sydnee@feeneygislason.co"], ["encrypted_password", "$2a$11$bXx.PgJN3IksxsAPac6ro./Im1gNYQnpHMZhQafq3IVedkfrcAOv2"], ["confirmation_token", "VSdCAQDb5WQeZAszQVux"], ["confirmed_at", 2017-04-08 19:30:50 UTC], ["confirmation_sent_at", 2017-04-08 19:30:50 UTC], ["created_at", 2017-04-08 19:30:50 UTC], ["updated_at", 2017-04-08 19:30:50 UTC]]
+  [1m[35m (92.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "alverta.towne@wizafriesen.name"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "6f9a47980bcc050bc89a1e033db1d69f6a701fc4d30c248cf12018fbd43ee811"], ["LIMIT", 1]]
+  [1m[35mSQL (10.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "alverta.towne@wizafriesen.name"], ["encrypted_password", "$2a$11$G1EJ4mUCzdDKjX5dSlgnf.LlKOFgNC672GIcEuD9HgnD2GTKsgGhe"], ["confirmation_token", "RRjy24TF2hzsViQRxJx3"], ["confirmed_at", 2017-04-08 19:30:50 UTC], ["confirmation_sent_at", 2017-04-08 19:30:50 UTC], ["created_at", 2017-04-08 19:30:50 UTC], ["updated_at", 2017-04-08 19:30:50 UTC]]
+  [1m[35m (91.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevie@goyette.biz"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "f691b7d07a0098f46a866ed97bc306472cb11b5c421331d61e607fed6d5f0366"], ["LIMIT", 1]]
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "stevie@goyette.biz"], ["encrypted_password", "$2a$11$MZ4kBcQS.TSombrXrMuoGelSMnZC4GZcOHmJMJ7XK20NvT1cHatUq"], ["confirmation_token", "sxN2NFWiXX53CyQ-8guS"], ["confirmed_at", 2017-04-08 19:30:50 UTC], ["confirmation_sent_at", 2017-04-08 19:30:50 UTC], ["created_at", 2017-04-08 19:30:50 UTC], ["updated_at", 2017-04-08 19:30:50 UTC]]
+  [1m[35m (93.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jena@kris.net"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "227b2d551041de5fe9611671f94beed6c488c793434da94f754db3db641aa318"], ["LIMIT", 1]]
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jena@kris.net"], ["encrypted_password", "$2a$11$WNxeIG4cGKf26nqalv/Wp.E0bKfI.6bIdupmYOgMLpQG0NchsDtLO"], ["confirmation_token", "eBNfNzgdLHmBv3mMBJPY"], ["confirmed_at", 2017-04-08 19:30:50 UTC], ["confirmation_sent_at", 2017-04-08 19:30:50 UTC], ["created_at", 2017-04-08 19:30:50 UTC], ["updated_at", 2017-04-08 19:30:50 UTC]]
+  [1m[35m (101.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "imelda_schmidt@bergstrom.net"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "b390768f99810a8615f1a4b95110fe169b643476ef60b66b794325b3d17732ac"], ["LIMIT", 1]]
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "imelda_schmidt@bergstrom.net"], ["encrypted_password", "$2a$11$G0AozePAG7VSK9Bk22Hs4urrIPQhLUVA/Qt.LJBNJlhvvzVfptuZS"], ["confirmation_token", "Xj7u3na1xieCdeed-T-q"], ["confirmed_at", 2017-04-08 19:30:51 UTC], ["confirmation_sent_at", 2017-04-08 19:30:51 UTC], ["created_at", 2017-04-08 19:30:51 UTC], ["updated_at", 2017-04-08 19:30:51 UTC]]
+  [1m[35m (124.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "keira.marvin@bruenorn.info"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "3ef83a321bc1537c873eeda7fd160590f9d5b74e71bfeab249efc65bb01dbe1c"], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "keira.marvin@bruenorn.info"], ["encrypted_password", "$2a$11$RtTAWxxIizzsDpDGSm8YLejswG7u9t72YeghWY9aq/TN34sUarOcW"], ["confirmation_token", "gzXz1JMnRPBD4Y2SjvZX"], ["confirmed_at", 2017-04-08 19:30:51 UTC], ["confirmation_sent_at", 2017-04-08 19:30:51 UTC], ["created_at", 2017-04-08 19:30:51 UTC], ["updated_at", 2017-04-08 19:30:51 UTC]]
+  [1m[35m (108.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "marcella@kemmerhuel.name"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "1eaa0579547598118dc7f8358ddf9b524d32fa1f7ff76764a2be453d1d86681e"], ["LIMIT", 1]]
+  [1m[35mSQL (10.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "marcella@kemmerhuel.name"], ["encrypted_password", "$2a$11$gKcqQ7R3TIWOXsX73Y8itOwH.f8/V8gjW9JGunGDzKpMl.HCr5tp2"], ["confirmation_token", "qBTpg25g4soYqdZ3wU66"], ["confirmed_at", 2017-04-08 19:30:51 UTC], ["confirmation_sent_at", 2017-04-08 19:30:51 UTC], ["created_at", 2017-04-08 19:30:51 UTC], ["updated_at", 2017-04-08 19:30:51 UTC]]
+  [1m[35m (108.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "magnolia.schinner@fay.org"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "ef4d69208626e975b80000b0e6cfa7e9e0d090a8f29ecfc12535e1bc0431566e"], ["LIMIT", 1]]
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "magnolia.schinner@fay.org"], ["encrypted_password", "$2a$11$A3qInWQ/zJG2eiWwuQbxT.1L3Kr85KTI2pmQlouTUYNgT692fCimO"], ["confirmation_token", "Zn_busTrTANr327Wz4od"], ["confirmed_at", 2017-04-08 19:30:51 UTC], ["confirmation_sent_at", 2017-04-08 19:30:51 UTC], ["created_at", 2017-04-08 19:30:51 UTC], ["updated_at", 2017-04-08 19:30:51 UTC]]
+  [1m[35m (107.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Ms. Melvin Lockman"], ["city", "Erinfort"], ["state", "Virginia"], ["user_id", 2]]
+  [1m[35m (97.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Shana Dietrich"], ["city", "Lake Guido"], ["state", "Arizona"], ["user_id", 3]]
+  [1m[35m (90.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Sigurd Cassin"], ["city", "Ciceroport"], ["state", "Kentucky"], ["user_id", 4]]
+  [1m[35m (90.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Sadie Hermiston I"], ["city", "Carlosport"], ["state", "South Dakota"], ["user_id", 5]]
+  [1m[35m (98.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Ibrahim Ryan"], ["city", "East Aureliofurt"], ["state", "Ohio"], ["user_id", 6]]
+  [1m[35m (90.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Greta Nolan"], ["city", "Ernserfurt"], ["state", "Colorado"], ["user_id", 7]]
+  [1m[35m (84.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Dr. Eleanore Shanahan"], ["city", "Wittingfurt"], ["state", "Idaho"], ["user_id", 8]]
+  [1m[35m (83.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Dr. Theo Brown"], ["city", "Rippinborough"], ["state", "Arkansas"], ["user_id", 9]]
+  [1m[35m (99.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[32mINSERT INTO "user_infos" ("name", "city", "state", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Neoma Mitchell III"], ["city", "North Franz"], ["state", "Arkansas"], ["user_id", 10]]
+  [1m[35m (92.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Recalled to Life"], ["author", "Meda Lubowitz"], ["year", 2009], ["fiction", true], ["user_id", 3]]
+  [1m[35m (81.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Tiger! Tiger!"], ["author", "Darron Franecki"], ["year", 2007], ["fiction", false], ["user_id", 8]]
+  [1m[35m (91.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Stars' Tennis Balls"], ["author", "Freddie Sporer"], ["year", 2014], ["fiction", true], ["user_id", 5]]
+  [1m[35m (94.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Lilies of the Field"], ["author", "Bethel Huels"], ["year", 2011], ["fiction", true], ["user_id", 2]]
+  [1m[35m (93.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Time To Murder And Create"], ["author", "Vicenta O'Reilly Jr."], ["year", 2014], ["fiction", false], ["user_id", 10]]
+  [1m[35m (86.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "The Violent Bear It Away"], ["author", "Idell Rempel II"], ["year", 2010], ["fiction", false], ["user_id", 10]]
+  [1m[35m (91.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Wildfire at Midnight"], ["author", "Cordia Shields"], ["year", 1998], ["fiction", false], ["user_id", 4]]
+  [1m[35m (105.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Specimen Days"], ["author", "Mr. Noemie Donnelly"], ["year", 2011], ["fiction", true], ["user_id", 3]]
+  [1m[35m (91.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "I Sing the Body Electric"], ["author", "Cecil Fadel"], ["year", 2014], ["fiction", true], ["user_id", 7]]
+  [1m[35m (91.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "year", "fiction", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Of Human Bondage"], ["author", "Miss Katlynn Bogisich"], ["year", 1996], ["fiction", true], ["user_id", 4]]
+  [1m[35m (91.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (10.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Nihil consequatur possimus hic a."], ["body", "Accusantium atque vel ratione quasi. Est voluptatum beatae doloribus consequatur cupiditate reiciendis debitis. Quod natus aperiam magni itaque tenetur labore officia. Repudiandae rerum odio quibusdam quidem ut dolore. Deleniti voluptatem rerum. Numquam et deleniti assumenda sunt sint. Earum mollitia et laborum nulla consequatur dolore doloribus. Officia error non quia ut ab corrupti. Et consequatur quo quam aliquid. Fugit aspernatur rerum. Aliquid qui autem dolore id eveniet et molestiae. Qui cum necessitatibus. Omnis earum accusamus illum quibusdam praesentium. Quod maiores delectus animi facilis eius rerum beatae."], ["rating", 1], ["user_id", 2], ["book_id", 1]]
+  [1m[35m (99.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Dolore reiciendis corrupti eveniet dolores."], ["body", "Facere rerum ad saepe. Est laborum qui vitae. Sunt veniam sapiente aperiam totam. Temporibus quia velit. Aperiam quo possimus quos consectetur saepe odit. Occaecati eaque quidem odio nobis et quia omnis. Deserunt aut illo aut tempore rerum."], ["rating", 2], ["user_id", 2], ["book_id", 2]]
+  [1m[35m (101.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Modi quos tempora tempore est officiis ipsa voluptatum."], ["body", "Eveniet eligendi corrupti voluptatibus. Quia eligendi nulla et. At qui fugit voluptatem. Enim assumenda suscipit amet ut quae. Aut repudiandae recusandae temporibus. Quidem molestiae exercitationem aspernatur autem. Minus aperiam molestiae illum ad quisquam consequatur. Quasi perspiciatis voluptas dolorum ea. Fuga et at. Repellendus et accusamus sit ab vero tenetur perspiciatis. Hic id et rerum fuga aspernatur ducimus sed. Vitae aperiam debitis doloremque exercitationem. Earum itaque magnam labore quia doloribus. Est dolore provident magnam consectetur laborum nobis cum. Qui sunt laborum quia corporis qui commodi in. Quidem ex occaecati quas eos non. Temporibus incidunt suscipit non autem. Qui ut autem aut minima saepe. Nisi eum omnis voluptatem."], ["rating", 3], ["user_id", 2], ["book_id", 3]]
+  [1m[35m (102.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quam ut exercitationem consectetur consequatur."], ["body", "Minus et nisi corporis ipsa a magnam cupiditate. Rerum quod dolorum eum autem placeat sit dolor. Officia eligendi dicta ut. Cumque molestiae qui sed rem vero sint et. Numquam sed qui corporis quo quia. Beatae rerum ad eos tenetur voluptatem. Officia aut quo. Omnis est occaecati soluta iusto adipisci nulla. Voluptates ducimus sit vero pariatur blanditiis et fugiat. Qui culpa excepturi omnis eum qui perspiciatis. Ea cum minima eveniet recusandae praesentium a facilis. Ea provident quod."], ["rating", 4], ["user_id", 2], ["book_id", 4]]
+  [1m[35m (111.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Aut magni harum quo officiis cupiditate placeat blanditiis esse."], ["body", "Blanditiis velit debitis enim repellendus exercitationem. Asperiores assumenda ab quaerat quia consequatur. Repellendus consequatur fugiat possimus. Consequuntur sunt consequatur illum sint dolores. Unde voluptatem autem sed. Molestiae repellat ut quia tenetur. Rerum repellat vel consequatur et nobis."], ["rating", 5], ["user_id", 2], ["book_id", 5]]
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (8.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quis cupiditate nostrum consectetur accusantium."], ["body", "Provident repellendus odio accusamus labore maiores. Dolor inventore aut iste animi. Labore laudantium ad. Nulla et saepe consequuntur deleniti et et. Et fugiat consequatur blanditiis. In esse velit fuga officia doloribus atque neque. Ea ut alias. Repellat sapiente alias quia eaque. Omnis nihil corrupti ullam optio. Quasi qui officia. Dolor dolorem sed voluptatem qui laboriosam facere aliquid. Enim ut in. Possimus provident debitis. Tenetur possimus itaque dolore quia quaerat labore. Ut ipsum et consequatur. Rem dicta unde voluptates quo. Accusantium repudiandae exercitationem voluptatem. Dignissimos sed esse non."], ["rating", 5], ["user_id", 3], ["book_id", 6]]
+  [1m[35m (108.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Exercitationem nulla velit consequatur deserunt molestiae."], ["body", "Reiciendis modi ea quam quas. Voluptatem neque eligendi laboriosam quasi et atque voluptatem. Vel suscipit sint natus. Sint aperiam explicabo in. Minima ipsam excepturi ad. Id aperiam magni."], ["rating", 4], ["user_id", 3], ["book_id", 7]]
+  [1m[35m (100.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Repellat consequuntur quidem quis sequi."], ["body", "Dolorem nihil similique cumque dolores. Molestias repudiandae velit rerum exercitationem quam. Consequatur reiciendis corporis qui. Rerum suscipit et nemo rem aut animi similique. Quibusdam sint officiis ipsum minima quia dolores. Nostrum dolorem accusamus voluptatem molestiae et. Rerum sequi et aut accusamus qui sint aut. Ut nostrum pariatur. Sed deserunt eaque. Suscipit pariatur enim. Doloremque est et et aperiam. Molestiae expedita nesciunt sed. Voluptas voluptatibus aut enim ea quisquam quia. Inventore ratione fuga occaecati dolore hic."], ["rating", 3], ["user_id", 3], ["book_id", 8]]
+  [1m[35m (109.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (8.8ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Iusto doloribus eaque expedita dolores."], ["body", "Qui vitae dolores nam reiciendis iure. Magnam natus pariatur velit consequuntur non accusamus. Tenetur saepe eligendi quos. Quidem aut minus sit illo aut sit. Quis dicta vel earum nobis repellat explicabo. Praesentium omnis dignissimos amet qui. Quis occaecati animi quia voluptatem magni velit ut. Quia placeat expedita. Voluptatem et alias omnis ea. Nihil harum aut. Et ut minus magnam amet dolorem impedit ab. Sapiente tenetur a. Exercitationem et et ut. In aperiam nam minima sed. Dolorem odit explicabo. Quis non beatae quidem perspiciatis."], ["rating", 2], ["user_id", 3], ["book_id", 9]]
+  [1m[35m (106.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (10.8ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Sunt est dolores sint non."], ["body", "Libero laboriosam officia. Earum id sunt eaque tempora eos. Voluptate voluptatem quia cupiditate ut delectus doloremque repellendus. Maiores iure voluptatem et dignissimos nulla vero eum. Porro et vero quisquam vel reiciendis. Eaque explicabo sit consequuntur consequatur fugit sapiente. Aliquid consequuntur qui ex quas incidunt debitis. Optio earum rerum ab voluptas voluptatum eum. Est nulla unde ex. Impedit doloremque commodi voluptate. Asperiores veniam molestias. Ut deserunt qui maxime aut error quis. A porro repellat sed."], ["rating", 1], ["user_id", 3], ["book_id", 10]]
+  [1m[35m (106.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Optio laboriosam sunt odio voluptate ullam qui eos."], ["body", "Eaque aut eos numquam exercitationem unde provident. Eos vitae quae natus fuga qui vero. Voluptatem quis architecto. Ipsam et illum provident. Odio iste nam officiis autem et. Consequatur minima cum ex qui ut ullam qui. Consectetur ex voluptas minima. Quae non dolores sit enim."], ["rating", 1], ["user_id", 4], ["book_id", 1]]
+  [1m[35m (92.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "In suscipit quo consequatur excepturi quae."], ["body", "Temporibus aliquid fugiat et. Fuga velit a ut maxime officiis asperiores. Sequi natus aut est quibusdam ad sit. Ut quo voluptas consequatur earum beatae rerum. Atque sit vel pariatur tempore fugiat. Temporibus architecto pariatur. Sint autem ad qui excepturi aliquid. Inventore delectus quo earum rerum voluptate molestiae. Unde sit magnam repellat. Porro explicabo repellendus dolore quo consequatur error ipsa. Reiciendis aspernatur non optio. Iste voluptas rerum dicta. Non eum et consequatur et voluptatum voluptatem sed. Impedit neque vero unde nemo odio ullam et. Sed et necessitatibus voluptatem."], ["rating", 2], ["user_id", 4], ["book_id", 3]]
+  [1m[35m (99.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Laboriosam odit voluptates dolor."], ["body", "Quam quo sapiente quaerat. Natus sit eaque odio molestiae perspiciatis sed qui. Odit itaque mollitia. Soluta quaerat veritatis natus molestiae iste. Error id debitis ut aut sit. Sunt natus doloribus. Enim non quasi. Explicabo veniam velit voluptatum accusantium. Dolores non et. Quis occaecati quia nesciunt adipisci modi labore inventore."], ["rating", 3], ["user_id", 4], ["book_id", 5]]
+  [1m[35m (100.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (10.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Veritatis sed dolore atque numquam unde quibusdam praesentium."], ["body", "Quo voluptatibus odit dolorem enim. Labore praesentium eos est inventore dolor voluptatem. Placeat enim sunt possimus vero. Aut inventore repellat porro et molestiae a. Officia voluptate dignissimos accusamus molestiae. Quam consectetur temporibus architecto vel ut. Repellat non nostrum."], ["rating", 4], ["user_id", 4], ["book_id", 7]]
+  [1m[35m (99.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quia perspiciatis velit et rerum est."], ["body", "Sit nulla omnis porro. Aut corporis praesentium soluta. Exercitationem et accusantium aut tempora similique. Nostrum voluptatem repellat id autem asperiores voluptas. Nam tenetur hic beatae doloribus quo corporis. Quasi aut voluptatibus earum et cupiditate. Ex qui id corporis qui est. Quia totam id molestias. Nesciunt rerum consectetur voluptas iusto enim maxime. Nostrum aliquid et possimus. Praesentium delectus magni quasi saepe qui quis cum. Tempora odio et debitis voluptatem. Sit sit sed doloribus minus. Blanditiis dolorem et sunt ea. Ut aut nesciunt expedita velit ut consequatur sint. Dolorem qui nesciunt dicta sunt vitae nostrum voluptatem. Natus voluptatem incidunt. Esse aut rerum aliquam incidunt. Aut quia autem ut recusandae dicta neque."], ["rating", 5], ["user_id", 4], ["book_id", 9]]
+  [1m[35m (101.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Adipisci consectetur aut similique et beatae quibusdam repellat porro."], ["body", "Voluptas et voluptas expedita. Ab et et unde. Cumque natus sed modi quia sit et. Consequatur ut eius aliquam suscipit corporis rerum. Quos est et. Officia consequatur a maiores omnis explicabo. Qui recusandae hic. Rerum explicabo ex dolorem. Commodi consequatur non qui. Consequatur aut culpa reiciendis ut. Odio atque est quia earum minima repudiandae consectetur. Beatae laboriosam maiores aut autem facere. Ducimus sed ab. Dolor vero voluptatem ut. Modi error adipisci. Est earum provident ut fuga iure. Sequi rem facilis eligendi repellat. Pariatur nobis suscipit illo ex natus ad rem. Enim vitae et ducimus culpa maiores."], ["rating", 5], ["user_id", 5], ["book_id", 2]]
+  [1m[35m (99.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Nihil corporis non sit dolores."], ["body", "Et in sit non. Quas quod dolores. Sed enim sed nihil. Qui placeat corporis optio maxime. Pariatur qui est. Unde cupiditate voluptatem sit debitis sunt dolor. Non tenetur sed possimus ipsam earum dignissimos est. Deserunt nihil beatae adipisci earum magnam eius sit. Alias veniam minima. Impedit nesciunt assumenda est dolore. Temporibus rerum et tempore odit quis."], ["rating", 4], ["user_id", 5], ["book_id", 4]]
+  [1m[35m (102.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (8.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Doloribus autem sunt quia aut atque sed."], ["body", "Voluptatem impedit dolor quam labore. Aperiam libero in doloremque provident quasi. Esse eligendi consequatur sit. Dolore rem placeat adipisci eum. Enim consequatur impedit. Animi quia quis ut porro quam aut. Quia ea laborum molestiae. Assumenda debitis voluptatem doloribus similique nihil aut fugit. Est ratione ut. Voluptatem et dolor nulla. Eum voluptatem neque quae aliquam necessitatibus. Ut laborum sed quia."], ["rating", 3], ["user_id", 5], ["book_id", 6]]
+  [1m[35m (99.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (8.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Animi aliquam qui excepturi sunt eveniet omnis libero deleniti."], ["body", "Quisquam dolores sit labore. Voluptates et qui ipsa. Ad eaque voluptatum dignissimos. Porro harum sint nostrum vero eligendi et. Sed dicta beatae et quia id voluptate. Qui perspiciatis corporis reprehenderit aut. Et assumenda vero. Hic itaque provident."], ["rating", 2], ["user_id", 5], ["book_id", 8]]
+  [1m[35m (99.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Minima quae omnis distinctio."], ["body", "Incidunt et excepturi. Adipisci tempora quae. Ut dolor recusandae qui natus quam. Est autem minima ea. Dolorum amet modi voluptatum adipisci eveniet. Eveniet omnis totam similique nam est molestias dolores. Pariatur temporibus voluptatem sint quae. Assumenda corrupti velit vel consectetur consequatur illum. Ipsum debitis illo dolor exercitationem ut. Fuga aut occaecati sed mollitia laboriosam ab. Repellendus vitae molestias a omnis nemo harum. Omnis eos atque ab ut. Quibusdam porro id ratione ut et soluta cupiditate. Quidem maxime et enim assumenda nihil. Recusandae velit qui voluptas et dolores eveniet."], ["rating", 1], ["user_id", 5], ["book_id", 10]]
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quas consequatur quia corporis atque."], ["body", "Unde aut neque quidem. Et maxime blanditiis dolorem aut architecto dolore. Cumque consequatur veritatis nobis sint. Placeat aut voluptas eius et rem sed odit. Ipsa voluptatem enim qui veniam."], ["rating", 1], ["user_id", 6], ["book_id", 1]]
+  [1m[35m (100.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Molestias explicabo nisi earum animi."], ["body", "Atque amet officiis sit molestiae. Voluptatibus aperiam reiciendis enim delectus dignissimos. Temporibus nulla aut. Et ut sequi. Qui ab eveniet ut inventore eos dicta. Repudiandae fugiat ex aspernatur nemo dolores aperiam repellat."], ["rating", 2], ["user_id", 6], ["book_id", 2]]
+  [1m[35m (100.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Laborum dicta eius facilis et."], ["body", "In aut ut voluptate sint voluptatem ipsum beatae. Qui eius dolores. Omnis et rem. Aperiam totam ab. Et laudantium quae. Illum itaque et velit. Qui consequuntur sed ad suscipit. Quod facilis quia. Deleniti perferendis praesentium odit et sunt laborum consequuntur. Sed est aut omnis aperiam."], ["rating", 3], ["user_id", 6], ["book_id", 3]]
+  [1m[35m (99.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Odio doloremque et non magnam autem non facilis voluptate."], ["body", "Sint ullam dolore eligendi. Tenetur aut quo. A voluptas et quis quasi. Fugiat voluptatem asperiores et voluptas. Sed totam temporibus ad omnis omnis dolores et. Veritatis officiis id consequatur tempora. Harum maxime qui. Et sunt minima quasi omnis. Quis atque omnis. Explicabo et doloribus sint quia quia quos. Velit ea consequuntur. Nam dicta quas quis nihil neque doloremque nulla."], ["rating", 4], ["user_id", 6], ["book_id", 9]]
+  [1m[35m (100.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (8.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Voluptate eaque rerum magnam."], ["body", "Hic perferendis dolor mollitia. Adipisci aut delectus exercitationem consequatur sapiente neque consequatur. Non sunt hic eius eos pariatur. Est ut officia et totam. Sed doloremque quis quis consequatur. Ut est dolore molestiae placeat exercitationem reprehenderit nostrum. Amet aut deserunt tempore eos voluptas. Labore placeat perferendis sunt. Nulla laboriosam nisi at ut. Et voluptas vel consequatur assumenda inventore ab. Vitae vel modi consequatur repudiandae. Et rem cupiditate exercitationem autem quae. Consequatur ipsum sunt nemo impedit. Incidunt iure fuga culpa quibusdam omnis ad ipsa."], ["rating", 5], ["user_id", 6], ["book_id", 10]]
+  [1m[35m (109.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (8.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Dicta est voluptas consequuntur qui quae."], ["body", "Fuga in omnis corrupti. Nihil recusandae sunt cum reiciendis reprehenderit aperiam animi. Ipsa ducimus nulla. Amet voluptates aut tempora. Assumenda non voluptatem adipisci. Placeat maxime a excepturi exercitationem nobis qui. Natus atque ea provident. Modi non nam alias omnis vitae. Eum velit cupiditate minus expedita quod corrupti. Dolor culpa omnis ab minus. Asperiores aspernatur minus laboriosam fuga. Necessitatibus esse perspiciatis sed autem dignissimos id. Veniam unde magnam pariatur consectetur. Sit nihil ad quo laudantium doloribus. Molestias numquam fugiat est aspernatur rem. Id et est. Consequatur vel ratione dolorum. Voluptas nemo dicta laboriosam amet."], ["rating", 5], ["user_id", 6], ["book_id", 4]]
+  [1m[35m (108.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Laboriosam corrupti aut quod nesciunt deserunt facilis."], ["body", "Nam veritatis ut voluptatem velit quo dolorum provident. Autem sed aliquid placeat quo deserunt ad ipsum. Accusamus et tenetur sit quod quia cupiditate voluptatem. Id et ullam quod dolores ut quos. Inventore sed dignissimos esse dolorem aliquam. Officia reprehenderit placeat necessitatibus soluta provident."], ["rating", 4], ["user_id", 6], ["book_id", 5]]
+  [1m[35m (107.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (7.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Numquam consequatur et distinctio veniam iure autem."], ["body", "Odio qui consequatur sapiente quis eos at. Eaque exercitationem omnis quasi non ab. Quibusdam perferendis consequuntur provident et. Eligendi ex qui enim nobis vero veritatis. Sed voluptate earum ut. Velit qui officia in veritatis tempore maiores. Minima est quisquam natus."], ["rating", 3], ["user_id", 6], ["book_id", 6]]
+  [1m[35m (101.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Explicabo exercitationem iure possimus modi iusto enim et."], ["body", "Et repellendus rerum quia id. Maiores qui illo quia. Molestiae non sit iure porro saepe voluptas. Nam ratione voluptas dolore perspiciatis animi. Voluptatem aperiam consequatur tenetur qui vel. Est ipsa molestiae error aut impedit aperiam consequatur. Voluptatem pariatur quia ut eos. Autem odit culpa voluptatem hic ut."], ["rating", 2], ["user_id", 6], ["book_id", 7]]
+  [1m[35m (97.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Exercitationem et in non reiciendis."], ["body", "Dolorum autem ducimus. Iusto ut inventore quia molestias. Cumque rerum voluptas in maxime. Est ipsa ut. Dicta aliquam tempore harum. Consequuntur officiis voluptatum aut cumque quae. Enim eaque aut. Dolores et excepturi qui autem omnis voluptatibus. Vel quisquam cupiditate a. Ut ipsa dignissimos porro tempore quod illum qui."], ["rating", 1], ["user_id", 6], ["book_id", 8]]
+  [1m[35m (99.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Molestiae omnis ut rerum quisquam molestias suscipit."], ["body", "Ducimus temporibus molestiae itaque natus. Amet occaecati nisi odit qui laborum ut. Sint et quis ullam. Quam officiis magni culpa corporis voluptatem voluptatibus. Doloremque laborum consequatur adipisci."], ["rating", 1], ["user_id", 7], ["book_id", 1]]
+  [1m[35m (93.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (9.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Non fuga molestias id a."], ["body", "Ut tempora quae sed delectus sequi. Id aspernatur dolorem. Ea doloribus sed atque perferendis itaque. Blanditiis magni dolor sint voluptatibus. Molestias nulla explicabo temporibus iusto debitis. Cupiditate necessitatibus corrupti. Consequatur consectetur delectus animi voluptas dolor quisquam autem. Magni distinctio sit reiciendis nesciunt itaque et. Quidem velit qui. Illum facere et labore recusandae voluptas praesentium eius. Possimus excepturi delectus iure et rerum. Et atque animi dicta. Expedita non nihil totam officiis quidem. Qui autem id quod eum enim amet ab. Sequi praesentium ea sit nihil. Quos officiis asperiores molestiae omnis facere impedit. Possimus nihil tempora hic ut vel. Id sed asperiores temporibus."], ["rating", 2], ["user_id", 7], ["book_id", 2]]
+  [1m[35m (99.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (7.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Repudiandae natus atque quibusdam reiciendis quos."], ["body", "Ut qui dolores consequuntur natus quo. Quibusdam temporibus aut ex nulla voluptatum eum aut. Explicabo enim aliquam et est. Dolorum quasi vero provident. Adipisci quae iste amet ex. Est neque velit voluptatem. Assumenda excepturi facilis rem nisi. Dolor ea aut non et sed earum et. Est voluptas ut ab minus. Maiores est corrupti et. Quae aperiam voluptas. Illo quisquam reprehenderit vitae consequuntur earum voluptas sequi. Officiis quod quas corrupti incidunt veritatis quam. Dolor quaerat explicabo modi et. Aut distinctio reiciendis quidem dolorem facilis eaque laudantium. Sunt quis ut facere aspernatur. Suscipit et unde est laborum facilis similique. Doloribus maxime magnam voluptatum ex rem."], ["rating", 3], ["user_id", 7], ["book_id", 3]]
+  [1m[35m (95.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (8.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Aut ut vel architecto aliquam autem nobis."], ["body", "Earum necessitatibus quisquam. Beatae ratione odit quia ipsam eum. Amet dolor aut odio aspernatur asperiores error. Non consequatur vero quaerat sunt dignissimos est omnis. Consectetur dignissimos doloremque maxime qui fuga voluptates ea. Et aut dolorem tempore. Nostrum quia alias. Recusandae voluptas dolore aut nihil id nostrum. Saepe numquam velit eos consequatur non enim. Temporibus aut fuga dolores amet et molestias dolore. Veniam esse praesentium. Sapiente facere numquam non est labore voluptatum reprehenderit. Eum nemo omnis deserunt quod sed vel fugiat."], ["rating", 4], ["user_id", 7], ["book_id", 4]]
+  [1m[35m (98.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (8.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Pariatur omnis quidem repellat fuga eligendi."], ["body", "Ad dignissimos atque distinctio dolores id reiciendis. Tenetur suscipit animi ducimus est quam reprehenderit unde. Rerum voluptatem et delectus unde officiis. Qui magnam maiores non dolor. Ut quia asperiores cum exercitationem sapiente. Assumenda aut ut ratione corporis quibusdam quae sint. Totam facere delectus quos provident. Velit fuga ratione quo dicta repellat at."], ["rating", 5], ["user_id", 7], ["book_id", 5]]
+  [1m[35m (107.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Facere fuga veniam praesentium ut."], ["body", "Deleniti occaecati sed consequatur aut. Iure molestias cupiditate sequi rerum. Aliquid rerum qui est omnis. Consequatur et beatae ratione ut. Provident assumenda omnis ducimus ut ipsa doloribus. Aliquam molestias sit aperiam enim sequi atque. Tenetur sit repudiandae. Sit quae perspiciatis. Est blanditiis cumque voluptatem suscipit incidunt officiis vitae. Eaque officia distinctio. Iusto est aut aliquid dolorum et deserunt consequatur. Aut omnis molestiae dolorem consequatur corporis modi. Veritatis ut omnis ut aut error optio ad. Voluptatem voluptatem dolorem dolores ut perspiciatis. Recusandae eveniet officia sequi incidunt. Amet omnis omnis et voluptas optio. Est saepe et vitae temporibus qui aut. Ad quaerat facilis magnam numquam eaque animi in. Ut et pariatur est ratione modi. Porro laboriosam necessitatibus quo nesciunt ipsam. Odit nisi omnis."], ["rating", 5], ["user_id", 8], ["book_id", 6]]
+  [1m[35m (108.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (8.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Consequatur incidunt perspiciatis aut perferendis modi nostrum vitae."], ["body", "Esse quidem aliquam est est. Eos esse repellendus autem sit aut sit. Aliquid enim excepturi id eum id asperiores. Est perferendis sint veritatis nihil veniam deserunt at. Asperiores velit occaecati eaque. Maiores dolores aut quia. Non est facilis itaque harum consequuntur. Aliquam in dolorem fugit et adipisci laudantium. Tempora minima dignissimos quisquam temporibus deserunt non. Ipsam unde molestiae. Eius sed ea quae sequi est neque. Et ut modi ducimus. Voluptate ea dolore dolorem doloribus officia. Eligendi veniam recusandae aliquam. Laborum corrupti fuga beatae nemo accusamus id veritatis. Aut atque amet voluptatum."], ["rating", 4], ["user_id", 8], ["book_id", 7]]
+  [1m[35m (107.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Aut tenetur repellat excepturi sed corrupti laboriosam ducimus."], ["body", "Fugit vel ratione. Aspernatur nihil est ducimus quis necessitatibus itaque laudantium. Consequuntur veniam doloribus fugit et sapiente aut. Distinctio repellendus sunt odio dolor laboriosam. Voluptatem quod a impedit provident error. Quidem voluptatem sapiente quia aliquam debitis ut. In ducimus ullam. Molestiae ducimus illo esse in laudantium animi. Magnam in non perspiciatis quia accusantium earum natus. Voluptatem ut nobis et dolorem voluptatem tempora. Illum natus voluptatem laudantium distinctio necessitatibus."], ["rating", 3], ["user_id", 8], ["book_id", 8]]
+  [1m[35m (107.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Vel illum magnam quo minima id fuga ut."], ["body", "Laudantium molestiae vel et vel sequi eos. Nihil expedita earum sit ex dicta. Facere omnis qui. Et ut architecto eius enim. Error ipsa sequi. Dolorem qui amet officia ratione voluptatem. Quidem doloremque et veniam excepturi suscipit optio consequatur. Optio omnis iure corporis itaque. Aut rerum cupiditate voluptates eligendi numquam perferendis. Ad deleniti molestias eligendi. Eaque cum dolorem quis quisquam vitae eum. Facilis debitis qui explicabo veniam deleniti. Consequatur excepturi veritatis non similique. Ut ut vel quo aliquid sapiente est dignissimos. Labore dignissimos facilis similique adipisci. Incidunt consectetur placeat et aut eos molestiae."], ["rating", 2], ["user_id", 8], ["book_id", 9]]
+  [1m[35m (110.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (8.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Sit sed vero perspiciatis eius."], ["body", "Corporis rerum quia eaque omnis velit aut et. Omnis vitae nemo voluptas. Tempore itaque culpa iste distinctio esse nisi. Culpa expedita et est eos impedit eum et. Iste totam eos ut voluptas. Voluptas iste enim. Voluptas est eveniet. Vel impedit in blanditiis omnis qui quia. Modi nam aut. Porro et qui cumque sunt quia. Provident amet eos ipsum."], ["rating", 1], ["user_id", 8], ["book_id", 10]]
+  [1m[35m (107.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 1 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (10.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Ab non et aspernatur."], ["body", "Ut laboriosam dolores. Illo non doloribus est consequatur aliquam iste. Ut consequatur maiores. Aut molestias autem sit recusandae perspiciatis est. Sunt eaque quibusdam commodi deleniti dicta. Voluptatibus alias consequatur maiores enim nobis aut. Esse quia rerum tempore quidem. Et sed ea et pariatur dolorem. Aut maiores iste voluptatum doloribus quia. In beatae quo pariatur."], ["rating", 1], ["user_id", 9], ["book_id", 1]]
+  [1m[35m (106.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 3 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (10.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Quia sit sit fuga est velit aut qui exercitationem."], ["body", "Ea laboriosam autem enim natus hic occaecati. Eum nobis hic. Voluptate ducimus suscipit quo voluptates optio ad. Placeat aut autem ea non alias qui in. Eius dolor sunt. Laboriosam eum molestiae qui sunt molestiae. Alias vel perspiciatis aut tenetur aut cumque. Et expedita ab vitae magni eos. Sapiente consequuntur non voluptas fugiat labore beatae et. Nobis at quibusdam. Sed alias accusantium. Non esse quasi voluptatem aut possimus. Corrupti quibusdam sapiente quam et. Veniam dolor recusandae et voluptatem sed at temporibus. Voluptatum autem ipsum doloremque fugit voluptatem dicta odit. Voluptas maiores ea ut corporis sed."], ["rating", 2], ["user_id", 9], ["book_id", 3]]
+  [1m[35m (105.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 5 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Molestias dolorem beatae temporibus et."], ["body", "Nesciunt non quos fuga omnis quia unde. Magni consequatur occaecati architecto. Aliquam et totam. Nobis ea ullam. Dicta iure ut quisquam tenetur ut aspernatur."], ["rating", 3], ["user_id", 9], ["book_id", 5]]
+  [1m[35m (202.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 7 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (89.1ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Pariatur non vitae id recusandae ea."], ["body", "Incidunt autem voluptate qui voluptas unde. Rerum consequuntur et autem beatae sapiente molestias. Quod tenetur doloribus veniam eligendi voluptate. Et voluptatem fugiat corrupti et reiciendis voluptas rem. Aut repellendus commodi. Qui voluptatem minima odio consequatur. Ad asperiores vitae a delectus qui rerum ullam. Beatae nesciunt enim tempora quia. Eligendi nobis ratione. Ut occaecati consectetur repellat sunt blanditiis. Neque eos qui dicta. Dolorem et voluptatibus cumque ipsum aliquid."], ["rating", 4], ["user_id", 9], ["book_id", 7]]
+  [1m[35m (109.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 9 LIMIT ?[0m  [["user_id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Sunt laudantium optio placeat cumque rerum fugit."], ["body", "Et quo doloribus. Vel magni nihil necessitatibus quia consequatur. Quis tenetur explicabo nihil quia reiciendis similique libero. Occaecati corrupti cum dolores ea. Ut dolorem qui qui et doloribus ad. Corrupti eum autem quam voluptates dolor eligendi assumenda."], ["rating", 5], ["user_id", 9], ["book_id", 9]]
+  [1m[35m (104.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 2 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (8.2ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Non ex quo nihil maiores."], ["body", "Nihil sed ad ullam. Sed voluptates autem commodi aut veniam quisquam. Fugiat eum delectus libero sed. Et repudiandae ut libero. Dolor a vitae officia magnam. Ratione a laudantium deserunt. Ea voluptatem quasi et natus. Dolorem nobis occaecati autem."], ["rating", 5], ["user_id", 10], ["book_id", 2]]
+  [1m[35m (100.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 4 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Qui magni quibusdam ad est blanditiis."], ["body", "Eos aut ab. Nostrum qui natus autem omnis unde non. Similique sint ut quia. Quis nostrum aliquid omnis et laborum voluptatem. Ab tempore quasi corporis dolorem doloremque. Atque sed beatae."], ["rating", 4], ["user_id", 10], ["book_id", 4]]
+  [1m[35m (99.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 6 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Et recusandae expedita sunt."], ["body", "Et quisquam dolorem voluptatibus quis consequatur. Id sequi commodi at qui dignissimos autem iure. Odit quo alias. Qui eum ut id voluptas. Inventore aut rerum quibusdam sed velit perspiciatis sed. Dignissimos dicta in sint eveniet nisi et. Veritatis illo architecto facilis magni molestiae. A sit maiores dolorem. Neque accusamus et dolor. Molestiae et voluptatum aspernatur. Deserunt deleniti distinctio. Iure aut numquam rem sequi quisquam aspernatur et. Consequatur deleniti voluptas ut odit et distinctio. Quia repudiandae vero possimus dolorem."], ["rating", 3], ["user_id", 10], ["book_id", 6]]
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 8 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (9.3ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Nulla qui excepturi rerum et magnam architecto."], ["body", "Labore sunt sed vel modi ipsum vero. Repellat eius aut inventore eligendi vitae quia dolorum. Molestiae quia ducimus et. Accusantium labore consequatur et. Voluptas sed placeat pariatur sapiente sunt. Adipisci sit itaque cum molestiae. Non quo ab dolores enim sint. Consequuntur voluptas eos laborum. Et eum unde corrupti est quaerat. Aut ipsum repellat nobis officia repudiandae. Rerum porro ut autem. Nisi est sit. Deleniti nulla exercitationem est non nihil magnam."], ["rating", 2], ["user_id", 10], ["book_id", 8]]
+  [1m[35m (99.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."book_id" = 10 LIMIT ?[0m  [["user_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "reviews" ("summary", "body", "rating", "user_id", "book_id") VALUES (?, ?, ?, ?, ?)[0m  [["summary", "Qui quaerat dolor et perspiciatis rerum quia iste."], ["body", "Ipsa architecto vel voluptates quo et eaque. Illum ut ratione et nemo rerum. Recusandae qui enim nobis eligendi ad provident illum. Tenetur consequatur quidem in. Inventore sint debitis minus velit repellat odit error. Culpa praesentium quis. Ex et maiores. Vitae sed et quia. Nostrum eos cupiditate. Nam dolorem porro similique aut exercitationem. Aspernatur ut vitae voluptatem. Sequi deserunt corporis explicabo vero numquam qui. Explicabo dolor tempora deleniti iusto. Asperiores voluptates dignissimos voluptatum vero in. Libero repudiandae voluptas modi hic consectetur pariatur. Ratione quae consequatur beatae neque consequatur id et. Quis et tempore non eos qui maiores similique. Sunt totam aut voluptate enim voluptatibus. Velit quaerat accusamus officia delectus beatae. Facere consequuntur rerum vitae voluptate dicta quibusdam."], ["rating", 1], ["user_id", 10], ["book_id", 10]]
+  [1m[35m (104.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-04-08 15:32:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /home/rmulligan/vendor/bundle/gems/devise-4.0.0/app/views/devise/sessions/new.html.erb within layouts/application (556.8ms)
+Completed 200 OK in 884ms (Views: 821.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-04-08 15:33:06 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uFbgcBdStI9nvOTUkyBmTdWaVwJh2OYBWkCv3dWrvNeuv2nuW3oY53pTTmFOrWqTFI3n44RBhOPtHQ3AfuBBfg==", "user"=>{"email"=>"magnolia.schinner@fay.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "magnolia.schinner@fay.org"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 207ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-08 15:33:06 -0400
+Processing by WelcomeController#home as HTML
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 74.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-08 15:33:11 -0400
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "books"[0m
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (23.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Completed 200 OK in 137ms (Views: 106.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-04-08 15:33:25 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Completed 200 OK in 98ms (Views: 77.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books/1/reviews/1" for 127.0.0.1 at 2017-04-08 15:33:28 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"book_id"=>"1", "id"=>"1"}
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE (book_id = '1')[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (book_id = '1')[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (27.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Completed 200 OK in 68ms (Views: 52.9ms | ActiveRecord: 2.2ms)
+
+
