@@ -1,11 +1,17 @@
-<h3>Title: <%= @book.title %></h3>
-<h3>Author: <%= @book.author %></h3>
-<h3>Released: <%= @book.year %></h3>
-<% if @book.fiction %>
-  <h3>Fiction </h3>
-<% else %>
-  <h3>Non-Fiction</h3>
-<% end %>
-<%= link_to("See reviews", book_review_path(@book)) %><br>
-<%= link_to("Write a review", new_book_review_path(@book)) %><br>
-<a href="/books">Return to index</a><br>
+<div  class="book-table">
+  <table>
+    <th>Title: <%= @book.title %></th>
+    <tr><td>Author: <%= @book.author %></td></tr>
+    <tr><td>Released: <%= @book.year %></td></tr>
+    <% if @book.fiction %>
+      <tr><td>Fiction</td></tr>
+    <% else %>
+      <tr><td>Non-Fiction</td></tr>
+    <% end %>
+  </table>
+</div>
+<div class="links">
+  <%= link_to("See reviews", book_review_path(@book)) %><br>
+  <%= link_to("Write a review", new_book_review_path(@book)) %><br>
+  <a href="/books">Return to index</a><br>
+</div>

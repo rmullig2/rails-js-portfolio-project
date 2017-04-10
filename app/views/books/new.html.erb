@@ -1,2 +1,24 @@
 <h1>New Book</h1>
-<%= render 'book' %>
+<!--<%= render 'book' %>-->
+<%= form_for @book do |f| %>
+      <div class="book-info">
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title %><br>
+      </div>
+      <div class="book-info">
+      <%= f.label :author, "Author" %>
+      <%= f.text_field :author%><br>
+      </div>
+      <div class="book-info">
+      <%= f.label :year, "Year" %>
+      <%= f.number_field :year, in:1950..2017 %><br>
+      </div>
+      <div class="book-info">
+      <%= f.label :fiction, "Fiction" %>
+      <%= f.check_box :fiction %><br>
+      </div>
+      <div id="book-info">
+      <div class="book-info">
+        <%= f.submit %>
+      </div>
+<% end %>

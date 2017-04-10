@@ -1,11 +1,17 @@
 <% if !@reviews.empty? %>
   <% @reviews.each do |review| %>
-    <h3>Reviewed by: <%= review.user.email %></h3>
-    <p>Summary: <%= review.summary %></p>
-    <p>Rating: <%= review.rating %> stars</p>
-    <p>Body: <%= review.body %></p>
+    <div  class="book-table">
+    <table>
+      <th>Reviewed by: <%= review.user.email %></th>
+      <tr><td>Summary: <%= review.summary %></td></tr>
+      <tr><td>Rating: <%= review.rating %> stars</td></tr>
+      <tr><td>Body: <%= review.body %></td></tr>
+    </table>
+    </div>
   <% end %>
 <% else %>
   <h3>There are no reviews for this book</h3>
 <% end %>
-<a href="/books">Return to index</a><br>
+<div class="links">
+  <a href="/books">Return to index</a><br>
+</div>

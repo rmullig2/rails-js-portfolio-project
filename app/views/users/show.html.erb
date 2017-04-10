@@ -23,5 +23,6 @@
 <% else %>
   <h3>You have not reviewed any books!</h3>
 <% end %>
-<%= link_to("My personal information", user_edit_path(current_user.id)) %>
-<br>
+<div class="links">
+  <%= link_to("My personal information", user_edit_path(current_user.id)) %>
+</div>

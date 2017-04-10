@@ -2,20 +2,34 @@
 <%= form_for @user do |f| %>
   <%= f.fields_for :info do |i| %>
     <% if userinfo.nil? %>
+      <div id="user-info">
       <%= i.label :name %>
       <%= i.text_field :name %><br>
+      </div>
+      <div id="user-info">
       <%= i.label :city %>
       <%= i.text_field :city %><br>
+      </div>
+      <div id="user-info">
       <%= i.label :state %>
       <%= i.text_field :state %><br>
+      </div>
     <% else %>
+      <div id="user-info">
       <%= i.label :name %>
       <%= i.text_field :name, value: userinfo.name %><br>
+      </div>
+      <div id="user-info">
       <%= i.label :city %>
       <%= i.text_field :city, value: userinfo.city%><br>
+      </div>
+      <div id="user-info">
       <%= i.label :state %>
       <%= i.text_field :state, value: userinfo.state %><br>
+      </div>
     <% end %>
+      <div id="user-info">
     <%= f.submit %>
+      </div>
   <% end %>
 <% end %>
