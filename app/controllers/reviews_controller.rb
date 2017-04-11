@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
   
   def show
     @reviews = Review.book_review(params[:book_id])
+    @book = Book.find(params[:book_id])
   end
   
   def edit
