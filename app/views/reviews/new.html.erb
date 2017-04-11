@@ -1,2 +1,20 @@
 <h1>Create Review</h1>
-<%= render 'review' %>
+<!--<%= render 'review' %>-->
+<%= form_for @review, url: {action: "create"} do |f| %>
+      <div class="book-info">
+      <%= f.label :summary, "Summary: " %>
+      <%= f.text_field :summary %><br>
+      </div>
+      <div class="book-info">
+      <%= f.label :rating, "Rating: " %>
+      <%= f.number_field :rating, in:1..5 %><br>
+      </div>
+      <div class="book-info">
+      <%= f.label :body, "Body: " %>
+      <%= f.text_area :body, size: "50x10" %><br>
+      </div>
+      <div id="book-info">
+      <div class="book-info">
+        <%= f.submit %>
+      </div>
+<% end %>
