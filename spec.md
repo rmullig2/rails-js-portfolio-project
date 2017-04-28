@@ -7,7 +7,7 @@ Specs:
 - [x] Include at least one has_many through relationship (user has many books through reviews)
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (reviews has summary, body, and rating)
 - [x] Include reasonable validations for simple model objects (validations on books, reviews, and user information)
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [X] Include a class level ActiveRecord scope method (review object, user_review and book_review, users#show and books#show, /users/:id and books/:id
 - [x] Include a nested form writing to an associated model using a custom attribute writer (users#updateinfo)
 - [x] Include signup (how e.g. Devise)
 - [x] Include login (how e.g. Devise)
