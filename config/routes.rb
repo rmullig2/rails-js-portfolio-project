@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit', as: 'user_edit'
   delete '/users/:id', to: 'users#destroy'
   patch '/users/:id', to: 'users#updateinfo'
+  
+  get 'books/list', to: 'books#list', as: 'list_books'
 end
