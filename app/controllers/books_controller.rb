@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :load_book, only: [:show, :edit, :update, :destroy]
   
   def index
-    @books = Book.all
+    #@books = Book.all
   end
   
   def show
@@ -45,7 +45,8 @@ class BooksController < ApplicationController
   end
   
   def list
-    #code
+    @books = Book.all
+    render json: @books
   end
   
 end
