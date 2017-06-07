@@ -1,5 +1,6 @@
 <div  class="book-table">
   <table>
+    <% binding.pry %>
     <th>Title: <%= @book.title %></th>
     <tr><td>Author: <%= @book.author %></td></tr>
     <tr><td>Released: <%= @book.year %></td></tr>
@@ -15,3 +16,13 @@
   <%= link_to("Write a review", new_book_review_path(@book)) %><br>
   <a href="/books">Return to index</a><br>
 </div>
+<script type="text/javascript">
+  //alert("So far, so good!");
+  $(function () {
+    var key = "<%= params[:id] %>";
+    console.log(key);
+    
+    //var reviews = $.ajax( { type: "GET", async: false, url: "/reviews/show" }).responseJSON;
+    console.log(reviews);
+  })
+</script>

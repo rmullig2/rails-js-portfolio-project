@@ -16,7 +16,7 @@
   //alert("So far, so good!");
   $(function () {
     var books = $.ajax( { type: "GET", async: false, url: "/books/list" }).responseJSON;
-    console.log(books);
+    //console.log(books);
     books.forEach(function(book) {
       var fiction = "";
       if (book.fiction)
