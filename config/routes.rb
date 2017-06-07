@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get 'books/list', to: 'books#list', as: 'list_books'
   get 'book/detail/:id', to: 'books#detail', as: 'detail_book'
   resources :books do
-    resources :reviews
+    resources :reviews, only: [ :new, :create ]
+    get 'reviews', to: 'reviews#show', as: 'book_reviews'
   end
   
   resources :reviews, only: :destroy

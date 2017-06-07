@@ -27,7 +27,9 @@
     });       
     $('#show_reviews').click(function(event) {
       event.preventDefault();
-      alert('So far, so good!');
+      //alert('So far, so good!');
+      var reviews = $.ajax({ type: "GET", url: "/books/" + book_id + "/reviews/" + book_id });
+      console.log(reviews);
     })
   })
 </script>
