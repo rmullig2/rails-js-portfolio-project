@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   
   get 'books/list', to: 'books#list', as: 'list_books'
-  get 'book/detail/:id', to: 'book#detail', as: 'detail_book'
+  get 'book/detail/:id', to: 'books#detail', as: 'detail_book'
   resources :books do
     resources :reviews
   end

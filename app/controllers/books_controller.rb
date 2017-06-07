@@ -50,6 +50,7 @@ class BooksController < ApplicationController
   end
   
   def detail
+    #binding.pry
     @book = Book.find_by(params[:id])
     render json: @book
   end
