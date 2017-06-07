@@ -49,5 +49,9 @@ class BooksController < ApplicationController
     render json: @books
   end
   
+  def detail
+    @book = Book.find_by(params[:id])
+    render json: @book
+  end
   
 end
