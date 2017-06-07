@@ -12,23 +12,18 @@
 -->  </table>
 </div>
 <div class="links">
-  <%= link_to("See reviews", book_review_path(@book)) %><br>
-  <%= link_to("Write a review", new_book_review_path(@book)) %><br>
+  <%= link_to("See reviews", book_review_path(@book), class: "show_reviews") %><br>
+  <%= link_to("Write a review", new_book_review_path(@book), class: "write_review") %><br>
   <a href="/books">Return to index</a><br>
 </div>
 <script type="text/javascript">
-  //alert("So far, so good!");
   $(function () {
     var key = "<%= params[:id] %>";
-    //console.log(key);
     var book = $.ajax( { type: "GET", async: false, url: "/book/detail/" + key }).responseJSON;
-    console.log(book.title);
     if (book.fiction)
         fiction = "Yes";
       else
         fiction = "No";
-    //$('table').append("<tr>Title: " + book.title + "</tr><tr>Author: " + book.author +
-    //                       "</tr><tr>Released: " + book.year + "</tr><tr>Fiction: " + fiction + "</tr>");
     $('#book-info').append("<tr><td>Title: " + book.title + "</td></tr><tr><td>Author: " + book.author +
                            "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + fiction + "</tr></td>");
 
