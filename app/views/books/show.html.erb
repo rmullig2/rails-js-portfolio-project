@@ -19,14 +19,14 @@
 <script type="text/javascript">
   $(function () {
     var key = "<%= params[:id] %>";
-    var book = $.ajax( { type: "GET", async: false, url: "/book/detail/" + key }).responseJSON;
+    $.ajax( { type: "GET", url: "/book/detail/" + key } ).done(function(book) {
     if (book.fiction)
         fiction = "Yes";
       else
         fiction = "No";
     $('#book-info').append("<tr><td>Title: " + book.title + "</td></tr><tr><td>Author: " + book.author +
                            "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + fiction + "</tr></td>");
-
+    });       
     //var reviews = $.ajax( { type: "GET", async: false, url: "/reviews/show" }).responseJSON;
     //console.log(reviews);
   })
