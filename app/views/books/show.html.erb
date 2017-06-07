@@ -16,14 +16,13 @@
   <%= link_to("Write a review", new_book_review_path(@book), class: "write_review") %><br>
   <a href="/books">Return to index</a><br>
 </div>
+<p id="b_id"><%= @book.id %></p>
 <script type="text/javascript">
   $(function () {
-    var key = "<%= params[:id] %>";
-    $.ajax( { type: "GET", url: "/book/detail/" + key } ).done(function(book) {
-    if (book.fiction)
-        fiction = "Yes";
-      else
-        fiction = "No";
+    var book_id = document.getElementById('b_id').innerHTML;
+    console.log(book_id);
+    $.ajax( { type: "GET", url: "/book/detail/" + book_id } ).done(function(book) {
+    book.fiction ? fiction = "Yes" : fiction = "No";
     $('#book-info').append("<tr><td>Title: " + book.title + "</td></tr><tr><td>Author: " + book.author +
                            "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + fiction + "</tr></td>");
     });       

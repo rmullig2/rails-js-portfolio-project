@@ -51,7 +51,7 @@ class BooksController < ApplicationController
   
   def detail
     #binding.pry
-    @book = Book.find_by(params[:id])
+    @book = Book.find_by(id: params[:id])
     render json: @book
   end
   
