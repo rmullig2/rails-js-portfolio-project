@@ -15,18 +15,16 @@
 <script type="text/javascript">
   //alert("So far, so good!");
   $(function () {
-    let data = $.ajax( { type: "GET", url: "/books/list" });
-    let books = data.responseText;
-    console.log(data);
+    var books = $.ajax( { type: "GET", async: false, url: "/books/list" }).responseJSON;
     console.log(books);
-    //for (var key in books) {
-    //  if (books.hasOwnProperty(key)) {
-    //    console.log(key + ": "  + books[key]);
-    //  }
-    //}
-    //books.each(function (book) {
-    //  $('tbody').append("<tr><td><a href=/books/" + book.id + ">" + book.title + " </a></td><td>" + book.author +
-    //                     "</td><td>" + book.year + "</td><td" + book.fiction ? Fiction : Non-Fiction + "/td></tr>");
-    //})
+    books.forEach(function(book) {
+      var fiction = "";
+      if (book.fiction)
+        fiction = "Yes";
+      else
+        fiction = "No";
+      $('tbody').append("<tr><td><a href=/books/" + book.id + ">" + book.title + " </a></td><td>" + book.author +
+                         "</td><td>" + book.year + "</td><td>" + fiction + "</td></tr>");
+    })
   })
 </script>
