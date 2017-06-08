@@ -11,6 +11,7 @@
     <% end %>
 -->  </table>
 </div>
+<div id="reviews"><h3>Reviews</h3></div>
 <div class="links">
   <%= link_to("See reviews", book_reviews_path(@book), id: "show_reviews") %><br>
   <%= link_to("Write a review", new_book_review_path(@book), id: "write_review") %><br>
@@ -27,9 +28,9 @@
     });       
     $('#show_reviews').click(function(event) {
       event.preventDefault();
-      //alert('So far, so good!');
-      var reviews = $.ajax({ type: "GET", url: "/books/" + book_id + "/reviews/" + book_id });
-      console.log(reviews);
+      var reviews = $.ajax({ type: "GET", url: "/books/" + book_id + "/reviews/" + book_id }).done(function(review) {
+        console.log(reviews.responseJSON);  
+      })
     })
   })
 </script>
