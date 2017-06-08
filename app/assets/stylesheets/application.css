@@ -60,7 +60,7 @@ tr:nth-child(odd){
     opacity: 0.7;
     }
 
-.book-table {
+.book-table, #reviews {
     border: 3px solid;
     margin: 5px
 }

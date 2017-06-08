@@ -25,7 +25,7 @@
       var reviews = $.ajax({ type: "GET", url: "/books/" + book_id + "/reviews/" + book_id }).done(function(review) {
       console.log(reviews.responseJSON);
       reviews.responseJSON.forEach(function (review) {
-        $("#reviews").html("<tr><td>Reviewed by: " + review.user.email + "</td></tr><tr><td>Summary: " +
+        $("#reviews").append("<tr><td>Reviewed by: " + review.user.email + "</td></tr><tr><td>Summary: " +
                              review.summary + "</td></tr><tr><td>Rating: " + review.rating + " stars</td></tr><tr><td>" +
                              review.body + "</td></tr>");
       })
