@@ -6,9 +6,10 @@ class ReviewsController < ApplicationController
   end
   
   def show
-    binding.pry
-    @reviews = Review.book_review(params[:book_id])
+    #binding.pry
     @book = Book.find(params[:book_id])
+    @reviews = Review.book_review(params[:book_id])
+    render json: @book.reviews
   end
   
   def edit

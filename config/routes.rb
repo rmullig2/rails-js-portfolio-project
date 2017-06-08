@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     #post 'reviews', to: 'reviews#show'
   end
   
+  #map.resources :books, has_many: :reviews
+  
   resources :reviews, only: :destroy
   
   get '/users/:id', to: 'users#show', as: 'user'
