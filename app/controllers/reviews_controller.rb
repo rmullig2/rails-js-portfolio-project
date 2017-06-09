@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
       #redirect_to book_reviews_path(@book)
       render json: @review
     else
-      flash[:error] = "All fields must be filled in"
+      #flash[:error] = "All fields must be filled in"
       #binding.pry
       #redirect_to book_path(@book)
       render json: '{}'
