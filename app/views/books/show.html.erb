@@ -9,7 +9,9 @@
 <div id="my_review"></div>
 <div class="links">
   <%= link_to("See reviews", book_reviews_path(@book), id: "show_reviews") %><br>
-  <%= link_to("Write a review", new_book_review_path(@book), id: "write_review") %><br>
+  <% if ( !current_user.reviews.select {|review| review["book_id"] == @book.id} ) %>
+    <%= link_to("Write a review", new_book_review_path(@book), id: "write_review") %><br>
+  <% end %>
   <a href="/books">Return to index</a><br>
 </div>
 <p id="b_id" hidden=><%= @book.id %></p>
@@ -52,7 +54,12 @@
       event.preventDefault();
       
       var response = $.ajax( { type: "POST", url: "/books/" + book_id + "/reviews", data: $(this).serialize()});
-      var new_review = response.responseJSON;
+      if (response.status == 500) {
+        var new_review = null;
+      }
+      else {
+        var new_review = response.responseJSON;
+      }
       console.log(new_review);
       
       function Review(id, rating, summary, body) {
@@ -81,11 +88,14 @@
           }
         }
       }
-      if (my_review.id) {
+      if (new_review) {
         var my_review = Review.new(new_review.id, new_review.rating, new_review.summary, new_review.body);
+        $("#my_review").html("<h2>Your Review</h2><h3>" + my_review.my_rating + "</h3><h3>" + my_review.summary +
+                             "</h3><h3>" + my_review.body + "</h3>");
+        
       }
       else {
-        $('#my_review').flash_message({ text: "All fields must be filled in", how: 'append'})
+        alert("All fields must be filled in");
       }
     });
   })
