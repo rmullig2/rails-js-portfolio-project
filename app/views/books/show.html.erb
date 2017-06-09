@@ -12,6 +12,27 @@
   <a href="/books">Return to index</a><br>
 </div>
 <p id="b_id" hidden=><%= @book.id %></p>
+<div id="new_form" hidden>
+  <% @review = Review.new %>
+  <%= form_for @review, url: {action: "create"} do |f| %>
+      <div class="book-info">
+      <%= f.label :summary, "Summary: " %>
+      <%= f.text_field :summary %><br>
+      </div>
+      <div class="book-info">
+      <%= f.label :rating, "Rating: " %>
+      <%= f.number_field :rating, in:1..5 %><br>
+      </div>
+      <div class="book-info">
+      <%= f.label :body, "Body: " %>
+      <%= f.text_area :body, size: "50x10" %><br>
+      </div>
+      <div id="book-info">
+      <div class="book-info">
+        <%= f.submit %>
+      </div>
+<% end %>
+</div>
 <script type="text/javascript">
   $(function () {
     var book_id = document.getElementById('b_id').innerHTML;
@@ -33,7 +54,7 @@
     })
     $('#write_review').click(function(event) {
       event.preventDefault();
-      alert('So far, so good!');
+      $('#new_form').removeAttr('hidden');
     })
   })
 </script>
