@@ -60,6 +60,26 @@
         this.rating = rating;
         this.summary = summary;
         this.body = body;
+        this.my_rating = function() {
+          r = this.rating;
+          switch (r) {
+            case 1:
+              "Hated It";
+              break;
+            case 2:
+              "Didn't care for it";
+              break;
+            case 3:
+              "Neutral";
+              break;
+            case 4:
+              "Liked it";
+              break;
+            case 5:
+              "Loved It";
+              break;
+          }
+        }
       }
       if (my_review.id) {
         var my_review = Review.new(new_review.id, new_review.rating, new_review.summary, new_review.body);
