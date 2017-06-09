@@ -21,6 +21,7 @@ class ReviewsController < ApplicationController
   end
   
   def create
+    #binding.pry
     @review = Review.new(summary: params[:review][:summary], rating: params[:review][:rating], body: params[:review][:body], book_id: params[:book_id], user_id: current_user.id)
     @book = Book.find(params[:book_id])
     if @review.save
