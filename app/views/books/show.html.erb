@@ -6,6 +6,7 @@
 <table id="reviews">
   <th>Reviews</th>
 </table>
+<div id="my_review"></div>
 <div class="links">
   <%= link_to("See reviews", book_reviews_path(@book), id: "show_reviews") %><br>
   <%= link_to("Write a review", new_book_review_path(@book), id: "write_review") %><br>
@@ -53,6 +54,19 @@
       var response = $.ajax( { type: "POST", url: "/books/" + book_id + "/reviews", data: $(this).serialize()});
       var new_review = response.responseJSON;
       console.log(new_review);
+      
+      function Review(id, rating, summary, body) {
+        this.id = id;
+        this.rating = rating;
+        this.summary = summary;
+        this.body = body;
+      }
+      if (my_review.id) {
+        var my_review = Review.new(new_review.id, new_review.rating, new_review.summary, new_review.body);
+      }
+      else {
+        $('#my_review').flash_message({ text: "All fields must be filled in", how: 'append'})
+      }
     });
   })
 </script>
