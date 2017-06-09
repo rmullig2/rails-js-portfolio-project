@@ -50,8 +50,9 @@
     $( "form#new_review" ).on( "submit", function( event ) {
       event.preventDefault();
       
-      $.ajax( { type: "POST", url: "/books/" + book_id + "/reviews", data: $(this).serialize()});
-      
+      var response = $.ajax( { type: "POST", url: "/books/" + book_id + "/reviews", data: $(this).serialize()});
+      var new_review = response.responseJSON;
+      console.log(new_review);
     });
   })
 </script>

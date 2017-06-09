@@ -21,14 +21,18 @@ class ReviewsController < ApplicationController
   end
   
   def create
-    #binding.pry
     @review = Review.new(summary: params[:review][:summary], rating: params[:review][:rating], body: params[:review][:body], book_id: params[:book_id], user_id: current_user.id)
     @book = Book.find(params[:book_id])
+    #binding.pry
     if @review.save
-      redirect_to book_reviews_path(@book)
+      #binding.pry
+      #redirect_to book_reviews_path(@book)
+      render json: @review
     else
       flash[:error] = "All fields must be filled in"
-      redirect_to book_path(@book)
+      #binding.pry
+      #redirect_to book_path(@book)
+      render json: '{}'
     end
   end
   
