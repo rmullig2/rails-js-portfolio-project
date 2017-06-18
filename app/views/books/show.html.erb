@@ -31,11 +31,13 @@
 <script type="text/javascript">
   $(function () {
     var book_id = document.getElementById('b_id').innerHTML;
+    
     $.ajax( { type: "GET", url: "/book/detail/" + book_id } ).done(function(book) {
       book.fiction ? fiction = "Yes" : fiction = "No";
       $('#book-info').html("<tr><td>Title: " + book.title + "</td></tr><tr><td>Author: " + book.author +
                              "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + fiction + "</tr></td>");
-    });       
+    });
+    
     $('#show_reviews').click(function(event) {
       event.preventDefault();
       var reviews = $.ajax({ type: "GET", url: "/books/" + book_id + "/reviews/" + book_id }).done(function(review) {
@@ -47,10 +49,12 @@
         document.getElementById("show_reviews").remove();
       })
     })
+    
     $('#write_review').click(function(event) {
       event.preventDefault();
       $('#new_form').removeAttr('hidden');
     })
+    
     $( "form#new_review" ).on( "submit", function( event ) {
       event.preventDefault();
       var new_review;

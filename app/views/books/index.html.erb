@@ -1,3 +1,4 @@
+
 <h1>Reviewed Books</h1>
   <table border="1">
     <thead>
@@ -12,15 +13,6 @@
 <div class="links">
      <a href="/books/new">Create new book</a><br>
 </div>
-<script type="text/javascript">
-  //alert("So far, so good!");
-  $(function () {
-    var books = $.ajax( { type: "GET", async: false, url: "/books/list" }).responseJSON;
-    //console.log(books);
-    books.forEach(function(book) {
-      book.fiction ? fiction = "Yes" : fiction = "No";
-      $('tbody').append("<tr><td><a href=/books/" + book.id + ">" + book.title + " </a></td><td>" + book.author +
-                         "</td><td>" + book.year + "</td><td>" + fiction + "</td></tr>");
-    })
-  })
-</script>
+
+<%= javascript_include_tag "bookIndex" %>
+
