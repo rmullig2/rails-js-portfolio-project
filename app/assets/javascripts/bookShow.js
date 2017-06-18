@@ -1,38 +1,43 @@
 $(function () {
     //console.log("Running bookShow.js")
   var book_id = document.getElementById('b_id').innerHTML;
+  //console.log(book_id);
   var ratings = {1: "Hated It", 2: "Didn't care for it", 3: "Neutral", 4: "Liked it", 5: "Loved It" }
   
-  function Review(id, rating, summary, body) {
+  function Review(id, rating, email, summary, body) {
     this.id = id;
     this.rating = rating;
     this.summary = summary;
+    this.email = email;
     this.body = body;
     this.my_rating = function() {
       return ratings[this.rating]
     }
   }
   
+  Review.prototype.appendToElement = function(element) {
+    $(element).append("<tr><td>Reviewed by: " + this.email + "</td></tr><tr><td>Summary: " + this.summary +
+                      "</td></tr><tr><td>Rating: " + this.rating + " stars</td></tr><tr><td>" + this.body + "</td></tr>");
+  }
+  
   function attachReviews() {
     var reviews = $.ajax({ type: "GET", url: "/books/" + book_id + "/reviews/" + book_id }).done(function(review) {
       reviews.responseJSON.forEach(function (review) {
-        $("#reviews").append("<tr><td>Reviewed by: " + review.user.email + "</td></tr><tr><td>Summary: " +
-                             review.summary + "</td></tr><tr><td>Rating: " + review.rating + " stars</td></tr><tr><td>" +
-                             review.body + "</td></tr>");
+        var next_review = new Review(review.id, review.rating, review.user.email, review.summary, review.body);
+        next_review.appendToElement('#reviews')
       })
       document.getElementById("show_reviews").remove();
     })
   }
   
   $.ajax( { type: "GET", url: "/book/detail/" + book_id } ).done(function(book) {
-    console.log(book.id)
     book.fiction ? fiction = "Yes" : fiction = "No";
     $('#book-info').html("<tr><td>Title: " + book.title + "</td></tr><tr><td>Author: " + book.author +
                            "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + fiction + "</tr></td>");
   });
   
   $('#show_reviews').click(function(event) {
-    debugger
+    //debugger
     event.preventDefault();
     attachReviews();
   })

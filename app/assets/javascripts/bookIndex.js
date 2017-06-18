@@ -20,7 +20,7 @@ $(function () {
   //console.log(books)
   books.forEach(function(book) {
     var next_book = new Book(book);
-    console.log(next_book);
+    //console.log(next_book);
     next_book.fiction ? fiction = "Yes" : fiction = "No";
     next_book.appendToElement('tbody')
   })
