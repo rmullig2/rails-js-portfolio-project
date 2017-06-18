@@ -1,6 +1,7 @@
 $(function () {
     //console.log("Running bookShow.js")
   var book_id = document.getElementById('b_id').innerHTML;
+  var ratings = {1: "Hated It", 2: "Didn't care for it", 3: "Neutral", 4: "Liked it", 5: "Loved It" }
   
   function Review(id, rating, summary, body) {
     this.id = id;
@@ -8,24 +9,7 @@ $(function () {
     this.summary = summary;
     this.body = body;
     this.my_rating = function() {
-      r = this.rating;
-      switch (r) {
-        case 1:
-          return "Hated It";
-          break;
-        case 2:
-          return "Didn't care for it";
-          break;
-        case 3:
-          return "Neutral";
-          break;
-        case 4:
-          return "Liked it";
-          break;
-        case 5:
-          return "Loved It";
-          break;
-      }
+      return ratings[this.rating]
     }
   }
   
@@ -48,6 +32,7 @@ $(function () {
   });
   
   $('#show_reviews').click(function(event) {
+    debugger
     event.preventDefault();
     attachReviews();
   })

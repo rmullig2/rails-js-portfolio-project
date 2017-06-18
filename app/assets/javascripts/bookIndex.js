@@ -1,6 +1,6 @@
 $(function () {
     //console.log("Running JavaScript")
-  var books = $.ajax( { type: "GET", async: false, url: "/books/list" }).responseJSON;
+  //var books = $.ajax( { type: "GET", async: false, url: "/books/list" }).responseJSON;
   function Book(book_info) {
     let keys = Object.keys(book_info)
     for (let i = 0; i < keys.length; i++) {
@@ -14,11 +14,16 @@ $(function () {
                                                       "</td><td>" + fiction + "</td></tr>")
   }
   
-  console.log(books)
+  
+  $.ajax( { type: "GET", url: "/books/list" }).done(function(books  ) {
+  //var books = string.responseJSON
+  //console.log(books)
   books.forEach(function(book) {
     var next_book = new Book(book);
-    
+    console.log(next_book);
     next_book.fiction ? fiction = "Yes" : fiction = "No";
     next_book.appendToElement('tbody')
   })
+})
+
 })
