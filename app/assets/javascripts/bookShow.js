@@ -1,7 +1,5 @@
 $(function () {
-    //console.log("Running bookShow.js")
   var book_id = document.getElementById('b_id').innerHTML;
-  //console.log(book_id);
   var ratings = {1: "Hated It", 2: "Didn't care for it", 3: "Neutral", 4: "Liked it", 5: "Loved It" }
   
   function Review(id, rating, email, summary, body) {
@@ -30,28 +28,9 @@ $(function () {
     })
   }
   
-  $.ajax( { type: "GET", url: "/book/detail/" + book_id } ).done(function(book) {
-    book.fiction ? fiction = "Yes" : fiction = "No";
-    $('#book-info').html("<tr><td>Title: " + book.title + "</td></tr><tr><td>Author: " + book.author +
-                           "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + fiction + "</tr></td>");
-  });
-  
-  $('#show_reviews').click(function(event) {
-    //debugger
-    event.preventDefault();
-    attachReviews();
-  })
-  
-  $('#write_review').click(function(event) {
-    event.preventDefault();
-    $('#new_form').removeAttr('hidden');
-  })
-  
-  $( "form#new_review" ).on( "submit", function( event ) {
-    event.preventDefault();
+  function newReview(review) {
     var new_review;
-    
-    $.ajax( { type: "POST", url: "/books/" + book_id + "/reviews", data: $(this).serialize()}).done(function(response) {
+    $.ajax( { type: "POST", url: "/books/" + book_id + "/reviews", data: $(review).serialize()}).done(function(response) {
       if ('body' in response) {
         new_review = response;
       }
@@ -68,5 +47,26 @@ $(function () {
         alert("All fields must be filled in");
       }
     })
+  }
+  
+  $.ajax( { type: "GET", url: "/book/detail/" + book_id } ).done(function(book) {
+    book.fiction ? fiction = "Yes" : fiction = "No";
+    $('#book-info').html("<tr><td>Title: " + book.title + "</td></tr><tr><td>Author: " + book.author +
+                           "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + fiction + "</tr></td>");
+  });
+  
+  $('#show_reviews').click(function(event) {
+    event.preventDefault();
+    attachReviews();
+  })
+  
+  $('#write_review').click(function(event) {
+    event.preventDefault();
+    $('#new_form').removeAttr('hidden');
+  })
+  
+  $( "form#new_review" ).on( "submit", function( event ) {
+    event.preventDefault();
+    newReview(this);
   });
 })
