@@ -7,11 +7,15 @@ $(function () {
       this[keys[i]] = book_info[keys[i]]
     }
   }
+  
+  Book.prototype.isFiction = function() {
+    return this.fiction ? "Yes" : "No"
+  }
 
   Book.prototype.appendToElement = function(element) {
                                     $(element).append("<tr><td><a href=/books/" + this.id + ">" +this.title +
                                                       " </a></td><td>" + this.author + "</td><td>" + this.year +
-                                                      "</td><td>" + fiction + "</td></tr>")
+                                                      "</td><td>" + this.isFiction() + "</td></tr>")
   }
   
   
