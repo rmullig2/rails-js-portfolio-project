@@ -8,7 +8,6 @@
   <% if @isReviewed %><%= link_to("Write a review", new_book_review_path(@book), id: "write_review") %><br><% end %>
   <a href="/books">Return to index</a><br>
 </div>
-<!--<p><%= @isReviewed %></p>-->
 <p id="b_id" hidden=><%= @book.id %></p>
 <div id="new_form" hidden>
   <% @review = Review.new %>

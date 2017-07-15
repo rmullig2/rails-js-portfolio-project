@@ -28,23 +28,36 @@ $(function () {
     })
   }
   
+  //function newReview(review) {
+  //  var new_review;
+  //  $.ajax( { type: "POST", url: "/books/" + book_id + "/reviews", data: $(review).serialize()}).done(function(response) {
+  //    if ('body' in response) {
+  //      new_review = response;
+  //    }
+  //    else {
+  //      new_review = null;
+  //    }
+  //    if (new_review != null) {
+  //      var my_review = new Review(new_review.id, new_review.rating, new_review.summary, new_review.body);
+  //      $("#my_review").html("<h2>Your Review</h2><h3>" + my_review.my_rating() + "</h3><h3>" + my_review.summary +
+  //                           "</h3><h3>" + my_review.body + "</h3>");
+  //      $('#new_form').attr('hidden', 'true');
+  //    }
+  //    else {
+  //      alert("All fields must be filled in");
+  //    }
+  //  })
+  //}
+
   function newReview(review) {
-    var new_review;
     $.ajax( { type: "POST", url: "/books/" + book_id + "/reviews", data: $(review).serialize()}).done(function(response) {
-      if ('body' in response) {
-        new_review = response;
-      }
+      if (!('body' in response))
+        alert("All fields must be filled in");
       else {
-        new_review = null;
-      }
-      if (new_review != null) {
-        var my_review = new Review(new_review.id, new_review.rating, new_review.summary, new_review.body);
+        var my_review = new Review(response.id, response.rating, response.summary, response.body);
         $("#my_review").html("<h2>Your Review</h2><h3>" + my_review.my_rating() + "</h3><h3>" + my_review.summary +
                              "</h3><h3>" + my_review.body + "</h3>");
-        $('#new_form').attr('hidden', 'true');
-      }
-      else {
-        alert("All fields must be filled in");
+        $('#new_form').remove('hidden', 'true');
       }
     })
   }
@@ -64,7 +77,7 @@ $(function () {
     event.preventDefault();
     $('#new_form').removeAttr('hidden');
   })
-  
+
   $( "form#new_review" ).on( "submit", function( event ) {
     event.preventDefault();
     newReview(this);
