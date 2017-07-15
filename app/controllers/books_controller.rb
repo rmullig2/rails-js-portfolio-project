@@ -7,6 +7,7 @@ class BooksController < ApplicationController
   end
   
   def show
+    @isReviewed = !(current_user.reviews.select {|review| review["book_id"] == @book.id}).empty?
   end
   
   def edit

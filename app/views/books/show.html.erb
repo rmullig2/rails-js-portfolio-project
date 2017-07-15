@@ -5,11 +5,10 @@
 <div id="my_review"></div>
 <div class="links">
   <%= link_to("See reviews", book_reviews_path(@book), id: "show_reviews") %><br>
-  <% if ( (current_user.reviews.select {|review| review["book_id"] == @book.id}).empty? ) %>
-    <%= link_to("Write a review", new_book_review_path(@book), id: "write_review") %><br>
-  <% end %>
+  <% if @isReviewed %><%= link_to("Write a review", new_book_review_path(@book), id: "write_review") %><br><% end %>
   <a href="/books">Return to index</a><br>
 </div>
+<!--<p><%= @isReviewed %></p>-->
 <p id="b_id" hidden=><%= @book.id %></p>
 <div id="new_form" hidden>
   <% @review = Review.new %>
