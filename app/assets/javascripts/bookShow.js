@@ -1,6 +1,5 @@
 $(function () {
   var book_id = document.getElementById('b_id').innerHTML;
-  var ratings = {1: "Hated It", 2: "Didn't care for it", 3: "Neutral", 4: "Liked it", 5: "Loved It" }
   
   function Review(id, rating, email, summary, body) {
     this.id = id;
@@ -8,9 +7,6 @@ $(function () {
     this.summary = summary;
     this.email = email;
     this.body = body;
-    this.my_rating = function() {
-      return ratings[this.rating]
-    }
   }
   
   Review.prototype.appendToElement = function(element) {
