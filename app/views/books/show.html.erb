@@ -1,7 +1,5 @@
 <table class="book-table" id="book-info"></table>
-<table id="reviews">
-  <th>Reviews</th>
-</table>
+<table id="reviews"></table>
 <div id="my_review"></div>
 <div class="links">
   <%= link_to("See reviews", book_reviews_path(@book), id: "show_reviews") %><br>
@@ -21,4 +19,5 @@
       <%= f.submit %>
   <% end %>
 </div>
+<%= javascript_include_tag "book" %>
 <%= javascript_include_tag "bookShow" %>

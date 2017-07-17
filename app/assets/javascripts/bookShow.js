@@ -58,10 +58,10 @@ $(function () {
     })
   }
   
-  $.ajax( { type: "GET", url: "/book/detail/" + book_id } ).done(function(book) {
-    book.fiction ? fiction = "Yes" : fiction = "No";
+  $.ajax( { type: "GET", url: "/book/detail/" + book_id } ).done(function(b) {
+    book = new Book(b);
     $('#book-info').html("<tr><td>Title: " + book.title + "</td></tr><tr><td>Author: " + book.author +
-                           "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + fiction + "</tr></td>");
+                           "</td></tr><tr><td>Released: " + book.year + "</tr></td><tr><td>Fiction: " + book.isFiction() + "</tr></td>");
   });
   
   $('#show_reviews').click(function(event) {

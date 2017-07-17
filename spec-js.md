@@ -8,7 +8,7 @@ Specs:
 - [X] Include at least one has_many relationship in information rendered via JSON and appended to the DOM. (Book has many reviews)
 - [X] Use your Rails API and a form to create a resource and render the response without a page refresh. (Create new review on book show page)
 - [X] Translate JSON responses into js model objects. (Retrived book review data is used to create Review object)
-- [X] At least one of the js model objects must have at least one method added by your code to the prototype. (my_rating method on Review object)
+- [X] At least one of the js model objects must have at least one method added by your code to the prototype. (isFiction method on Book object)
 Confirm
 
 - [X] You have a large number of small Git commits (Many commits on create, serializer, and show branchs)
