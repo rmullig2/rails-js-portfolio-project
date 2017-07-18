@@ -4,7 +4,6 @@
 <div class="links">
   <%= link_to("See reviews", book_reviews_path(@book), id: "show_reviews") %><br>
   <% if @isReviewed %><%= link_to("Write a review", new_book_review_path(@book), id: "write_review") %><br><% end %>
-  <a href="/books">Return to index</a><br>
 </div>
 <p id="b_id" hidden=><%= @book.id %></p>
 <div id="new_form" hidden>
@@ -19,5 +18,4 @@
       <%= f.submit %>
   <% end %>
 </div>
-<%= javascript_include_tag "book" %>
 <%= javascript_include_tag "bookShow" %>
