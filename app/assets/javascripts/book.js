@@ -9,9 +9,46 @@ Book.prototype.isFiction = function() {
   return this.fiction ? "Yes" : "No"
 }
 
-Book.prototype.appendToElement = function(element) {
-                                  $(element).append("<tr><td><a href=/books/" + this.id + ">" +this.title +
-                                                    " </a></td><td>" + this.author + "</td><td>" + this.year +
-                                                    "</td><td>" + this.isFiction() + "</td></tr>")
+Book.prototype.appendToElementAsTableRow = function(element) {
+  $(element).append(`
+    <tr>
+      <td>
+        <a href="/books/${this.id}">${this.title}</a>
+      </td>
+      <td>
+        ${this.author}
+      </td>
+      <td>
+        ${this.year}
+      </td>
+      <td>
+        ${this.isFiction()}
+      </td>
+    </tr>
+  `)
 }
 
+Book.prototype.appendToElementAsTableRows = function(element) {
+  $(element).append(`
+    <tr>
+      <td>
+        <a href="/books/${this.id}">${this.title}</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Author: ${this.author}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Year: ${this.year}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Fiction: ${this.isFiction()}
+      </td>
+    </tr>
+  `)
+}
